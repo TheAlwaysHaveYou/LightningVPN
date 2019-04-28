@@ -1,0 +1,557 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		311365E122758B9F00BB1D9E /* HTTPRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 311365E022758B9F00BB1D9E /* HTTPRequestManager.m */; };
+		311365E422758BB200BB1D9E /* GlobalManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 311365E322758BB200BB1D9E /* GlobalManager.m */; };
+		311365E9227597C900BB1D9E /* LVLeftMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 311365E8227597C900BB1D9E /* LVLeftMenuVC.m */; };
+		311365EC227597DA00BB1D9E /* LVMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 311365EB227597DA00BB1D9E /* LVMainVC.m */; };
+		311365F022759F9E00BB1D9E /* LVLeftMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 311365EF22759F9E00BB1D9E /* LVLeftMenuCell.m */; };
+		311365F322759FB200BB1D9E /* LVLeftMenuHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = 311365F222759FB200BB1D9E /* LVLeftMenuHeaderView.m */; };
+		311365F72275AF1100BB1D9E /* LVMainNavigationView.m in Sources */ = {isa = PBXBuildFile; fileRef = 311365F62275AF1100BB1D9E /* LVMainNavigationView.m */; };
+		311365FA2275B73600BB1D9E /* LVLeftMenuFooterView.m in Sources */ = {isa = PBXBuildFile; fileRef = 311365F92275B73600BB1D9E /* LVLeftMenuFooterView.m */; };
+		311365FE2275BCEA00BB1D9E /* LVAboutVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 311365FD2275BCEA00BB1D9E /* LVAboutVC.m */; };
+		311366012275EFF800BB1D9E /* LVMainConnectButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 311366002275EFF800BB1D9E /* LVMainConnectButtonView.m */; };
+		311366042275FE0B00BB1D9E /* LVMainConnectNoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 311366032275FE0B00BB1D9E /* LVMainConnectNoteView.m */; };
+		311366072276038500BB1D9E /* LVMainLineSelecteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 311366062276038500BB1D9E /* LVMainLineSelecteView.m */; };
+		31A76CC3227586A5003E39B2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A76CC2227586A5003E39B2 /* AppDelegate.m */; };
+		31A76CCB227586A7003E39B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31A76CCA227586A7003E39B2 /* Assets.xcassets */; };
+		31A76CD1227586A7003E39B2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A76CD0227586A7003E39B2 /* main.m */; };
+		31A76CDF22758ADD003E39B2 /* LVBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A76CDE22758ADD003E39B2 /* LVBaseModel.m */; };
+		31A76CE222758AF6003E39B2 /* LVBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A76CE122758AF6003E39B2 /* LVBaseViewController.m */; };
+		31A76CE522758B46003E39B2 /* LVTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A76CE422758B46003E39B2 /* LVTabbarController.m */; };
+		8601E951F92C6FD1E5FD3AC9 /* Pods_LightningVPN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B40DB1612D275CA2A0B5AB78 /* Pods_LightningVPN.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXFileReference section */
+		0BF3F11AFF53C3B71A800A62 /* Pods-LightningVPN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightningVPN.debug.xcconfig"; path = "Target Support Files/Pods-LightningVPN/Pods-LightningVPN.debug.xcconfig"; sourceTree = "<group>"; };
+		2C6FA9D22EE21C4332121B61 /* Pods-LightningVPN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightningVPN.release.xcconfig"; path = "Target Support Files/Pods-LightningVPN/Pods-LightningVPN.release.xcconfig"; sourceTree = "<group>"; };
+		311365DF22758B9F00BB1D9E /* HTTPRequestManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPRequestManager.h; sourceTree = "<group>"; };
+		311365E022758B9F00BB1D9E /* HTTPRequestManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTTPRequestManager.m; sourceTree = "<group>"; };
+		311365E222758BB200BB1D9E /* GlobalManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlobalManager.h; sourceTree = "<group>"; };
+		311365E322758BB200BB1D9E /* GlobalManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlobalManager.m; sourceTree = "<group>"; };
+		311365E7227597C900BB1D9E /* LVLeftMenuVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LVLeftMenuVC.h; sourceTree = "<group>"; };
+		311365E8227597C900BB1D9E /* LVLeftMenuVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LVLeftMenuVC.m; sourceTree = "<group>"; };
+		311365EA227597DA00BB1D9E /* LVMainVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LVMainVC.h; sourceTree = "<group>"; };
+		311365EB227597DA00BB1D9E /* LVMainVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LVMainVC.m; sourceTree = "<group>"; };
+		311365EE22759F9E00BB1D9E /* LVLeftMenuCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LVLeftMenuCell.h; sourceTree = "<group>"; };
+		311365EF22759F9E00BB1D9E /* LVLeftMenuCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LVLeftMenuCell.m; sourceTree = "<group>"; };
+		311365F122759FB200BB1D9E /* LVLeftMenuHeaderView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LVLeftMenuHeaderView.h; sourceTree = "<group>"; };
+		311365F222759FB200BB1D9E /* LVLeftMenuHeaderView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LVLeftMenuHeaderView.m; sourceTree = "<group>"; };
+		311365F52275AF1100BB1D9E /* LVMainNavigationView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LVMainNavigationView.h; sourceTree = "<group>"; };
+		311365F62275AF1100BB1D9E /* LVMainNavigationView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LVMainNavigationView.m; sourceTree = "<group>"; };
+		311365F82275B73600BB1D9E /* LVLeftMenuFooterView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LVLeftMenuFooterView.h; sourceTree = "<group>"; };
+		311365F92275B73600BB1D9E /* LVLeftMenuFooterView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LVLeftMenuFooterView.m; sourceTree = "<group>"; };
+		311365FC2275BCEA00BB1D9E /* LVAboutVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LVAboutVC.h; sourceTree = "<group>"; };
+		311365FD2275BCEA00BB1D9E /* LVAboutVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LVAboutVC.m; sourceTree = "<group>"; };
+		311365FF2275EFF800BB1D9E /* LVMainConnectButtonView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LVMainConnectButtonView.h; sourceTree = "<group>"; };
+		311366002275EFF800BB1D9E /* LVMainConnectButtonView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LVMainConnectButtonView.m; sourceTree = "<group>"; };
+		311366022275FE0B00BB1D9E /* LVMainConnectNoteView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LVMainConnectNoteView.h; sourceTree = "<group>"; };
+		311366032275FE0B00BB1D9E /* LVMainConnectNoteView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LVMainConnectNoteView.m; sourceTree = "<group>"; };
+		311366052276038500BB1D9E /* LVMainLineSelecteView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LVMainLineSelecteView.h; sourceTree = "<group>"; };
+		311366062276038500BB1D9E /* LVMainLineSelecteView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LVMainLineSelecteView.m; sourceTree = "<group>"; };
+		31A76CBE227586A5003E39B2 /* LightningVPN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LightningVPN.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		31A76CC1227586A5003E39B2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
+		31A76CC2227586A5003E39B2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
+		31A76CCA227586A7003E39B2 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		31A76CCF227586A7003E39B2 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		31A76CD0227586A7003E39B2 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		31A76CD72275892F003E39B2 /* LightningVPN.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LightningVPN.pch; sourceTree = "<group>"; };
+		31A76CDD22758ADD003E39B2 /* LVBaseModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LVBaseModel.h; sourceTree = "<group>"; };
+		31A76CDE22758ADD003E39B2 /* LVBaseModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LVBaseModel.m; sourceTree = "<group>"; };
+		31A76CE022758AF6003E39B2 /* LVBaseViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LVBaseViewController.h; sourceTree = "<group>"; };
+		31A76CE122758AF6003E39B2 /* LVBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LVBaseViewController.m; sourceTree = "<group>"; };
+		31A76CE322758B46003E39B2 /* LVTabbarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LVTabbarController.h; sourceTree = "<group>"; };
+		31A76CE422758B46003E39B2 /* LVTabbarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LVTabbarController.m; sourceTree = "<group>"; };
+		B40DB1612D275CA2A0B5AB78 /* Pods_LightningVPN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LightningVPN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		31A76CBB227586A5003E39B2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8601E951F92C6FD1E5FD3AC9 /* Pods_LightningVPN.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		20B7931E36720AF70E31189E /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				0BF3F11AFF53C3B71A800A62 /* Pods-LightningVPN.debug.xcconfig */,
+				2C6FA9D22EE21C4332121B61 /* Pods-LightningVPN.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		311365E52275979200BB1D9E /* LeftMenu */ = {
+			isa = PBXGroup;
+			children = (
+				311365E7227597C900BB1D9E /* LVLeftMenuVC.h */,
+				311365E8227597C900BB1D9E /* LVLeftMenuVC.m */,
+				311365ED22759F0200BB1D9E /* View */,
+			);
+			path = LeftMenu;
+			sourceTree = "<group>";
+		};
+		311365E6227597AC00BB1D9E /* Main */ = {
+			isa = PBXGroup;
+			children = (
+				311365EA227597DA00BB1D9E /* LVMainVC.h */,
+				311365EB227597DA00BB1D9E /* LVMainVC.m */,
+				311365F42275AEFB00BB1D9E /* View */,
+			);
+			path = Main;
+			sourceTree = "<group>";
+		};
+		311365ED22759F0200BB1D9E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				311365F122759FB200BB1D9E /* LVLeftMenuHeaderView.h */,
+				311365F222759FB200BB1D9E /* LVLeftMenuHeaderView.m */,
+				311365EE22759F9E00BB1D9E /* LVLeftMenuCell.h */,
+				311365EF22759F9E00BB1D9E /* LVLeftMenuCell.m */,
+				311365F82275B73600BB1D9E /* LVLeftMenuFooterView.h */,
+				311365F92275B73600BB1D9E /* LVLeftMenuFooterView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		311365F42275AEFB00BB1D9E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				311365F52275AF1100BB1D9E /* LVMainNavigationView.h */,
+				311365F62275AF1100BB1D9E /* LVMainNavigationView.m */,
+				311365FF2275EFF800BB1D9E /* LVMainConnectButtonView.h */,
+				311366002275EFF800BB1D9E /* LVMainConnectButtonView.m */,
+				311366022275FE0B00BB1D9E /* LVMainConnectNoteView.h */,
+				311366032275FE0B00BB1D9E /* LVMainConnectNoteView.m */,
+				311366052276038500BB1D9E /* LVMainLineSelecteView.h */,
+				311366062276038500BB1D9E /* LVMainLineSelecteView.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		311365FB2275BCCC00BB1D9E /* About */ = {
+			isa = PBXGroup;
+			children = (
+				311365FC2275BCEA00BB1D9E /* LVAboutVC.h */,
+				311365FD2275BCEA00BB1D9E /* LVAboutVC.m */,
+			);
+			path = About;
+			sourceTree = "<group>";
+		};
+		31A76CB5227586A5003E39B2 = {
+			isa = PBXGroup;
+			children = (
+				31A76CC0227586A5003E39B2 /* LightningVPN */,
+				31A76CBF227586A5003E39B2 /* Products */,
+				20B7931E36720AF70E31189E /* Pods */,
+				FEFDD66AF6F63DB5EBF7BD34 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		31A76CBF227586A5003E39B2 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				31A76CBE227586A5003E39B2 /* LightningVPN.app */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		31A76CC0227586A5003E39B2 /* LightningVPN */ = {
+			isa = PBXGroup;
+			children = (
+				31A76CC1227586A5003E39B2 /* AppDelegate.h */,
+				31A76CC2227586A5003E39B2 /* AppDelegate.m */,
+				31A76CDC22758A73003E39B2 /* app support */,
+				31A76CD822758A46003E39B2 /* Base */,
+				31A76CD922758A4E003E39B2 /* Extension */,
+				31A76CDA22758A5B003E39B2 /* UI */,
+				31A76CDB22758A63003E39B2 /* Tool */,
+				31A76CCA227586A7003E39B2 /* Assets.xcassets */,
+				31A76CCF227586A7003E39B2 /* Info.plist */,
+				31A76CD72275892F003E39B2 /* LightningVPN.pch */,
+				31A76CD0227586A7003E39B2 /* main.m */,
+			);
+			path = LightningVPN;
+			sourceTree = "<group>";
+		};
+		31A76CD822758A46003E39B2 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				31A76CDD22758ADD003E39B2 /* LVBaseModel.h */,
+				31A76CDE22758ADD003E39B2 /* LVBaseModel.m */,
+				31A76CE022758AF6003E39B2 /* LVBaseViewController.h */,
+				31A76CE122758AF6003E39B2 /* LVBaseViewController.m */,
+				31A76CE322758B46003E39B2 /* LVTabbarController.h */,
+				31A76CE422758B46003E39B2 /* LVTabbarController.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		31A76CD922758A4E003E39B2 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
+		31A76CDA22758A5B003E39B2 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				311365E52275979200BB1D9E /* LeftMenu */,
+				311365E6227597AC00BB1D9E /* Main */,
+				311365FB2275BCCC00BB1D9E /* About */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		31A76CDB22758A63003E39B2 /* Tool */ = {
+			isa = PBXGroup;
+			children = (
+				311365E222758BB200BB1D9E /* GlobalManager.h */,
+				311365E322758BB200BB1D9E /* GlobalManager.m */,
+				311365DF22758B9F00BB1D9E /* HTTPRequestManager.h */,
+				311365E022758B9F00BB1D9E /* HTTPRequestManager.m */,
+			);
+			path = Tool;
+			sourceTree = "<group>";
+		};
+		31A76CDC22758A73003E39B2 /* app support */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "app support";
+			sourceTree = "<group>";
+		};
+		FEFDD66AF6F63DB5EBF7BD34 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B40DB1612D275CA2A0B5AB78 /* Pods_LightningVPN.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		31A76CBD227586A5003E39B2 /* LightningVPN */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 31A76CD4227586A7003E39B2 /* Build configuration list for PBXNativeTarget "LightningVPN" */;
+			buildPhases = (
+				6D4EFCDD6F03854FE6A50769 /* [CP] Check Pods Manifest.lock */,
+				31A76CBA227586A5003E39B2 /* Sources */,
+				31A76CBB227586A5003E39B2 /* Frameworks */,
+				31A76CBC227586A5003E39B2 /* Resources */,
+				5456539E74B8942EECE12DF3 /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = LightningVPN;
+			productName = LightningVPN;
+			productReference = 31A76CBE227586A5003E39B2 /* LightningVPN.app */;
+			productType = "com.apple.product-type.application";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		31A76CB6227586A5003E39B2 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 1020;
+				ORGANIZATIONNAME = FKD;
+				TargetAttributes = {
+					31A76CBD227586A5003E39B2 = {
+						CreatedOnToolsVersion = 10.2;
+					};
+				};
+			};
+			buildConfigurationList = 31A76CB9227586A5003E39B2 /* Build configuration list for PBXProject "LightningVPN" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 31A76CB5227586A5003E39B2;
+			productRefGroup = 31A76CBF227586A5003E39B2 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				31A76CBD227586A5003E39B2 /* LightningVPN */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		31A76CBC227586A5003E39B2 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				31A76CCB227586A7003E39B2 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5456539E74B8942EECE12DF3 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LightningVPN/Pods-LightningVPN-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-LightningVPN/Pods-LightningVPN-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-LightningVPN/Pods-LightningVPN-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		6D4EFCDD6F03854FE6A50769 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-LightningVPN-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		31A76CBA227586A5003E39B2 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				311365EC227597DA00BB1D9E /* LVMainVC.m in Sources */,
+				311366012275EFF800BB1D9E /* LVMainConnectButtonView.m in Sources */,
+				31A76CD1227586A7003E39B2 /* main.m in Sources */,
+				31A76CE222758AF6003E39B2 /* LVBaseViewController.m in Sources */,
+				311366072276038500BB1D9E /* LVMainLineSelecteView.m in Sources */,
+				311366042275FE0B00BB1D9E /* LVMainConnectNoteView.m in Sources */,
+				31A76CE522758B46003E39B2 /* LVTabbarController.m in Sources */,
+				311365E122758B9F00BB1D9E /* HTTPRequestManager.m in Sources */,
+				311365E9227597C900BB1D9E /* LVLeftMenuVC.m in Sources */,
+				31A76CDF22758ADD003E39B2 /* LVBaseModel.m in Sources */,
+				311365F72275AF1100BB1D9E /* LVMainNavigationView.m in Sources */,
+				311365F322759FB200BB1D9E /* LVLeftMenuHeaderView.m in Sources */,
+				311365E422758BB200BB1D9E /* GlobalManager.m in Sources */,
+				311365FE2275BCEA00BB1D9E /* LVAboutVC.m in Sources */,
+				311365FA2275B73600BB1D9E /* LVLeftMenuFooterView.m in Sources */,
+				31A76CC3227586A5003E39B2 /* AppDelegate.m in Sources */,
+				311365F022759F9E00BB1D9E /* LVLeftMenuCell.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin XCBuildConfiguration section */
+		31A76CD2227586A7003E39B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+			};
+			name = Debug;
+		};
+		31A76CD3227586A7003E39B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		31A76CD5227586A7003E39B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0BF3F11AFF53C3B71A800A62 /* Pods-LightningVPN.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VW8U9YA9E8;
+				GCC_PREFIX_HEADER = LightningVPN/LightningVPN.pch;
+				INFOPLIST_FILE = LightningVPN/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.FanKD.www.LightningVPN;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		31A76CD6227586A7003E39B2 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 2C6FA9D22EE21C4332121B61 /* Pods-LightningVPN.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = VW8U9YA9E8;
+				GCC_PREFIX_HEADER = LightningVPN/LightningVPN.pch;
+				INFOPLIST_FILE = LightningVPN/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.FanKD.www.LightningVPN;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		31A76CB9227586A5003E39B2 /* Build configuration list for PBXProject "LightningVPN" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				31A76CD2227586A7003E39B2 /* Debug */,
+				31A76CD3227586A7003E39B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		31A76CD4227586A7003E39B2 /* Build configuration list for PBXNativeTarget "LightningVPN" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				31A76CD5227586A7003E39B2 /* Debug */,
+				31A76CD6227586A7003E39B2 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 31A76CB6227586A5003E39B2 /* Project object */;
+}

@@ -1,0 +1,45 @@
+//
+//  LightningVPN.pch
+//  LightningVPN
+//
+//  Created by 范魁东 on 2019/4/26.
+//  Copyright © 2019 FKD. All rights reserved.
+//
+
+#ifndef LightningVPN_pch
+#define LightningVPN_pch
+
+#import "YYKit.h"
+#import "Masonry.h"
+#import "MJExtension.h"
+#import "ReactiveObjC.h"
+
+#define kSCREEN_WIDTH  [UIScreen mainScreen].bounds.size.width
+#define kSCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+
+#define iPhoneX_ (kSCREEN_HEIGHT>=812?:NO)
+
+#define kNavBarHeight (iPhoneX_?88:64)
+#define kTabBarHeight (iPhoneX_?83:49)
+
+#define FITSCALE(number)  ((number)*kSCREEN_WIDTH*1.0/375.0f)
+
+#define FitFont(x)       [UIFont systemFontOfSize:FITSCALE(x)]
+#define FitBorderFont(x) [UIFont boldSystemFontOfSize:FITSCALE(x)]
+#define IMGNAME(tip)     [UIImage imageNamed:tip]
+
+#define app_Name        [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleName"]
+#define app_Version     [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleShortVersionString"]
+#define app_Identifier  [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleIdentifier"]
+#define app_DisplayName [[[NSBundle mainBundle] infoDictionary] objectForKey:@"CFBundleDisplayName"]
+
+#define kColor_BBC2D1  [UIColor colorWithHexString:@"#BBC2D1"]//浅灰
+#define kColor_EC6161  [UIColor colorWithHexString:@"#EC6161"]//红
+#define kColor_56D043  [UIColor colorWithHexString:@"#56D043"]//绿
+#define kColor_404852  [UIColor colorWithHexString:@"#404852"]//浅黑
+#define kColor_939AA8  [UIColor colorWithHexString:@"#939AA8"]//深灰
+#define kColor_4872FF  [UIColor colorWithHexString:@"#4872FF"]//浅蓝
+#define kColor_365BD6  [UIColor colorWithHexString:@"#365BD6"]//深蓝
+
+
+#endif /* LightningVPN_pch */
