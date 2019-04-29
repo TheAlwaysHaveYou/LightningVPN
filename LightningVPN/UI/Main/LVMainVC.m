@@ -10,7 +10,8 @@
 #import "LVMainNavigationView.h"
 #import "LVMainConnectNoteView.h"
 #import "LVMainConnectButtonView.h"
-
+#import "LVMainGetFreeView.h"
+#import "LVMainLineSelecteView.h"
 
 @interface LVMainVC ()<LVMainNavigationViewDelegate,LVMainConnectButtonViewDelegate>
 
@@ -21,6 +22,10 @@
 
 @property (nonatomic , strong) LVMainConnectNoteView *noteView;
 @property (nonatomic , strong) LVMainConnectButtonView *connectView;
+@property (nonatomic , strong) UIButton *freeBtn;
+
+@property (nonatomic , strong) LVMainGetFreeView *getFreeView;
+@property (nonatomic , strong) LVMainLineSelecteView *lineView;
 
 @end
 
@@ -49,6 +54,7 @@
     
     [self setupSubViews];
     [self.view addSubview:self.navigationView];
+    [self.view addSubview:self.lineView];
     
     @weakify(self)
     [[RACObserve(self.connectView, status) deliverOnMainThread] subscribeNext:^(id  _Nullable x) {
@@ -71,6 +77,18 @@
         }
     }];
     
+    [[[[NSNotificationCenter defaultCenter] rac_addObserverForName:UIKeyboardWillChangeFrameNotification object:nil] takeUntil:self.rac_willDeallocSignal] subscribeNext:^(NSNotification *notification) {
+        @strongify(self)
+        CGRect rect = [[notification.userInfo objectForKey:UIKeyboardFrameEndUserInfoKey] CGRectValue];
+        [UIView beginAnimations:nil context:nil];
+        [UIView setAnimationCurve:7];
+        if (rect.origin.y < kSCREEN_HEIGHT) {
+            [self.getFreeView changeContentViewBottom:rect.origin.y-FITSCALE(30)];
+        }else {
+            [self.getFreeView recoverOriginFrame];
+        }
+        [UIView commitAnimations];
+    }];
     
 }
 
@@ -109,6 +127,20 @@
         _navigationView.delegate = self;
     }
     return _navigationView;
+}
+
+- (LVMainGetFreeView *)getFreeView {
+    if (!_getFreeView) {
+        _getFreeView = [[LVMainGetFreeView alloc] initWithFrame:CGRectMake(FITSCALE(25), FITSCALE(185), FITSCALE(326), FITSCALE(430))];
+    }
+    return _getFreeView;
+}
+
+- (LVMainLineSelecteView *)lineView {
+    if (!_lineView) {
+        _lineView = [[LVMainLineSelecteView alloc] initWithFrame:CGRectMake(0, FITSCALE(287), kSCREEN_WIDTH, FITSCALE(525))];
+    }
+    return _lineView;
 }
 
 #pragma mark - IBActions
@@ -152,6 +184,17 @@
     self.connectView = [[LVMainConnectButtonView alloc] initWithFrame:CGRectMake(FITSCALE(24), FITSCALE(553), kSCREEN_WIDTH-FITSCALE(48), FITSCALE(56))];
     self.connectView.delegate = self;
     [self.view addSubview:self.connectView];
+    
+    self.freeBtn = [[UIButton alloc] initWithFrame:CGRectMake(FITSCALE(18), FITSCALE(638), kSCREEN_WIDTH-FITSCALE(38), FITSCALE(18))];
+    [self.freeBtn setTitle:@"限时免费领取一个月VIP" forState:UIControlStateNormal];
+    [self.freeBtn setTitleColor:kColor_4872FF forState:UIControlStateNormal];
+    self.freeBtn.titleLabel.font = FitFont(15);
+    [self.freeBtn addTarget:self action:@selector(getFreeVipMonth:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:self.freeBtn];
+}
+
+- (void)getFreeVipMonth:(UIButton *)sender {
+    [self.getFreeView show];
 }
 
 #pragma mark - Protocol conformance

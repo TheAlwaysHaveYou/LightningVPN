@@ -7,10 +7,28 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "LVMainLineModel.h"
 
 NS_ASSUME_NONNULL_BEGIN
 
 @interface LVMainLineSelecteView : UIView
+
+- (void)show;
+
+- (void)dismiss;
+
+
+@end
+
+@interface LVMainLineSelecteHeaderView : UITableViewHeaderFooterView
+
+@property (nonatomic , assign) NSInteger section;
+
+@end
+
+@interface LVMainLineSelecteCell : UITableViewCell
+
+@property (nonatomic , strong) LVMainLineModel *model;
 
 @end
 

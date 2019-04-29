@@ -22,7 +22,7 @@
     if (self) {
         self.imgV = [[UIImageView alloc] init];
         self.imgV.contentMode = UIViewContentModeScaleAspectFit;
-        self.imgV.image = IMGNAME(@"");
+        self.imgV.image = IMGNAME(@"icon_menu_about");
         [self addSubview:self.imgV];
         
         self.btn = [[UIButton alloc] init];

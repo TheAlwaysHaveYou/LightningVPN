@@ -19,6 +19,9 @@
 		311366012275EFF800BB1D9E /* LVMainConnectButtonView.m in Sources */ = {isa = PBXBuildFile; fileRef = 311366002275EFF800BB1D9E /* LVMainConnectButtonView.m */; };
 		311366042275FE0B00BB1D9E /* LVMainConnectNoteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 311366032275FE0B00BB1D9E /* LVMainConnectNoteView.m */; };
 		311366072276038500BB1D9E /* LVMainLineSelecteView.m in Sources */ = {isa = PBXBuildFile; fileRef = 311366062276038500BB1D9E /* LVMainLineSelecteView.m */; };
+		3113660A2276C75300BB1D9E /* LVMainGetFreeView.m in Sources */ = {isa = PBXBuildFile; fileRef = 311366092276C75300BB1D9E /* LVMainGetFreeView.m */; };
+		3113660D2276E2CF00BB1D9E /* LVMainCodeInputView.m in Sources */ = {isa = PBXBuildFile; fileRef = 3113660C2276E2CF00BB1D9E /* LVMainCodeInputView.m */; };
+		311366112276FF5E00BB1D9E /* LVMainLineModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 311366102276FF5E00BB1D9E /* LVMainLineModel.m */; };
 		31A76CC3227586A5003E39B2 /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A76CC2227586A5003E39B2 /* AppDelegate.m */; };
 		31A76CCB227586A7003E39B2 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 31A76CCA227586A7003E39B2 /* Assets.xcassets */; };
 		31A76CD1227586A7003E39B2 /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A76CD0227586A7003E39B2 /* main.m */; };
@@ -55,6 +58,12 @@
 		311366032275FE0B00BB1D9E /* LVMainConnectNoteView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LVMainConnectNoteView.m; sourceTree = "<group>"; };
 		311366052276038500BB1D9E /* LVMainLineSelecteView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LVMainLineSelecteView.h; sourceTree = "<group>"; };
 		311366062276038500BB1D9E /* LVMainLineSelecteView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LVMainLineSelecteView.m; sourceTree = "<group>"; };
+		311366082276C75300BB1D9E /* LVMainGetFreeView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LVMainGetFreeView.h; sourceTree = "<group>"; };
+		311366092276C75300BB1D9E /* LVMainGetFreeView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LVMainGetFreeView.m; sourceTree = "<group>"; };
+		3113660B2276E2CF00BB1D9E /* LVMainCodeInputView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LVMainCodeInputView.h; sourceTree = "<group>"; };
+		3113660C2276E2CF00BB1D9E /* LVMainCodeInputView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LVMainCodeInputView.m; sourceTree = "<group>"; };
+		3113660F2276FF5E00BB1D9E /* LVMainLineModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LVMainLineModel.h; sourceTree = "<group>"; };
+		311366102276FF5E00BB1D9E /* LVMainLineModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LVMainLineModel.m; sourceTree = "<group>"; };
 		31A76CBE227586A5003E39B2 /* LightningVPN.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LightningVPN.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		31A76CC1227586A5003E39B2 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
 		31A76CC2227586A5003E39B2 /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
@@ -107,6 +116,7 @@
 			children = (
 				311365EA227597DA00BB1D9E /* LVMainVC.h */,
 				311365EB227597DA00BB1D9E /* LVMainVC.m */,
+				3113660E2276FF4A00BB1D9E /* Model */,
 				311365F42275AEFB00BB1D9E /* View */,
 			);
 			path = Main;
@@ -136,6 +146,10 @@
 				311366032275FE0B00BB1D9E /* LVMainConnectNoteView.m */,
 				311366052276038500BB1D9E /* LVMainLineSelecteView.h */,
 				311366062276038500BB1D9E /* LVMainLineSelecteView.m */,
+				311366082276C75300BB1D9E /* LVMainGetFreeView.h */,
+				311366092276C75300BB1D9E /* LVMainGetFreeView.m */,
+				3113660B2276E2CF00BB1D9E /* LVMainCodeInputView.h */,
+				3113660C2276E2CF00BB1D9E /* LVMainCodeInputView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -147,6 +161,15 @@
 				311365FD2275BCEA00BB1D9E /* LVAboutVC.m */,
 			);
 			path = About;
+			sourceTree = "<group>";
+		};
+		3113660E2276FF4A00BB1D9E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				3113660F2276FF5E00BB1D9E /* LVMainLineModel.h */,
+				311366102276FF5E00BB1D9E /* LVMainLineModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		31A76CB5227586A5003E39B2 = {
@@ -355,7 +378,9 @@
 			files = (
 				311365EC227597DA00BB1D9E /* LVMainVC.m in Sources */,
 				311366012275EFF800BB1D9E /* LVMainConnectButtonView.m in Sources */,
+				3113660A2276C75300BB1D9E /* LVMainGetFreeView.m in Sources */,
 				31A76CD1227586A7003E39B2 /* main.m in Sources */,
+				311366112276FF5E00BB1D9E /* LVMainLineModel.m in Sources */,
 				31A76CE222758AF6003E39B2 /* LVBaseViewController.m in Sources */,
 				311366072276038500BB1D9E /* LVMainLineSelecteView.m in Sources */,
 				311366042275FE0B00BB1D9E /* LVMainConnectNoteView.m in Sources */,
@@ -363,6 +388,7 @@
 				311365E122758B9F00BB1D9E /* HTTPRequestManager.m in Sources */,
 				311365E9227597C900BB1D9E /* LVLeftMenuVC.m in Sources */,
 				31A76CDF22758ADD003E39B2 /* LVBaseModel.m in Sources */,
+				3113660D2276E2CF00BB1D9E /* LVMainCodeInputView.m in Sources */,
 				311365F72275AF1100BB1D9E /* LVMainNavigationView.m in Sources */,
 				311365F322759FB200BB1D9E /* LVLeftMenuHeaderView.m in Sources */,
 				311365E422758BB200BB1D9E /* GlobalManager.m in Sources */,

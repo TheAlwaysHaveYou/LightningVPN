@@ -8,6 +8,7 @@
 
 #import "AppDelegate.h"
 #import "RESideMenu.h"
+#import "IQKeyboardManager.h"
 #import "LVLeftMenuVC.h"
 #import "LVMainVC.h"
 
@@ -43,6 +44,10 @@
 //    sideMenuViewController.contentViewShadowEnabled = YES;
     
     self.window.rootViewController = sideMenuViewController;
+    
+    [IQKeyboardManager sharedManager].previousNextDisplayMode = IQPreviousNextDisplayModeAlwaysHide;
+    [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
+    [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
     
     return YES;
 }

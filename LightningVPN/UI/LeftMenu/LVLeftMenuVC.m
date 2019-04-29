@@ -48,9 +48,9 @@ static NSString * const cellIdentifier = @"cell";
     
     self.view.backgroundColor = kColor_4872FF;
     
-    self.sourceArr = @[@{@"image":@"",@"title":@"VIP会员"},
-                       @{@"image":@"",@"title":@"分享给朋友"},
-                       @{@"image":@"",@"title":@"给个好评"}];
+    self.sourceArr = @[@{@"image":@"icon_menu_membership",@"title":@"VIP会员"},
+                       @{@"image":@"icon_menu_share",@"title":@"分享给朋友"},
+                       @{@"image":@"icon_menu_evaluate",@"title":@"给个好评"}];
     
     [self.view addSubview:self.tableView];
     [self.view addSubview:self.footerView];
