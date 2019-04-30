@@ -11,6 +11,7 @@
 #import "LVLeftMenuCell.h"
 #import "LVLeftMenuFooterView.h"
 #import "LVAboutVC.h"
+#import "LVLeftMenuVIPBuyView.h"
 
 @interface LVLeftMenuVC ()<UITableViewDelegate,UITableViewDataSource,LVLeftMenuHeaderViewDelegate,LVLeftMenuFooterViewDelegate>
 
@@ -21,6 +22,8 @@
 @property (nonatomic , strong) LVLeftMenuFooterView *footerView;
 
 @property (nonatomic , strong) NSArray *sourceArr;
+
+@property (nonatomic , strong) LVLeftMenuVIPBuyView *buyView;
 
 @end
 
@@ -123,6 +126,13 @@ static NSString * const cellIdentifier = @"cell";
     return _footerView;
 }
 
+- (LVLeftMenuVIPBuyView *)buyView {
+    if (!_buyView) {
+        _buyView = [[LVLeftMenuVIPBuyView alloc] initWithFrame:CGRectMake(0, FITSCALE(184), kSCREEN_WIDTH, FITSCALE(628))];
+    }
+    return _buyView;
+}
+
 #pragma mark - IBActions
 
 - (IBAction)submitData:(id)sender {
@@ -161,6 +171,8 @@ static NSString * const cellIdentifier = @"cell";
 #pragma mark - UITableViewDelegate
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
     NSLog(@"点击功能---%ld",(long)indexPath.row);
+    
+    [self.buyView show];
 }
 
 #pragma mark - LVLeftMenuHeaderViewDelegate
@@ -171,8 +183,10 @@ static NSString * const cellIdentifier = @"cell";
 #pragma mark - LVLeftMenuFooterViewDelegate
 
 - (void)LVLeftMenuFooterViewFunctionAboutUS {
+    
     LVAboutVC *vc = [[LVAboutVC alloc] init];
-    [self.navigationController pushViewController:vc animated:YES];
+//    [self.navigationController pushViewController:vc animated:YES];
+    [self.sideMenuViewController.navigationController pushViewController:vc animated:YES];
 }
 
 @end

@@ -28,6 +28,9 @@
 		31A76CDF22758ADD003E39B2 /* LVBaseModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A76CDE22758ADD003E39B2 /* LVBaseModel.m */; };
 		31A76CE222758AF6003E39B2 /* LVBaseViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A76CE122758AF6003E39B2 /* LVBaseViewController.m */; };
 		31A76CE522758B46003E39B2 /* LVTabbarController.m in Sources */ = {isa = PBXBuildFile; fileRef = 31A76CE422758B46003E39B2 /* LVTabbarController.m */; };
+		31BF423E2277297500330422 /* UIButton+Extension.m in Sources */ = {isa = PBXBuildFile; fileRef = 31BF423D2277297500330422 /* UIButton+Extension.m */; };
+		31BF424122773D0500330422 /* LVLeftMenuVIPBuyView.m in Sources */ = {isa = PBXBuildFile; fileRef = 31BF424022773D0500330422 /* LVLeftMenuVIPBuyView.m */; };
+		31BF4245227749BD00330422 /* LVLeftMenuVIPBuyModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 31BF4244227749BD00330422 /* LVLeftMenuVIPBuyModel.m */; };
 		8601E951F92C6FD1E5FD3AC9 /* Pods_LightningVPN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B40DB1612D275CA2A0B5AB78 /* Pods_LightningVPN.framework */; };
 /* End PBXBuildFile section */
 
@@ -77,6 +80,12 @@
 		31A76CE122758AF6003E39B2 /* LVBaseViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LVBaseViewController.m; sourceTree = "<group>"; };
 		31A76CE322758B46003E39B2 /* LVTabbarController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LVTabbarController.h; sourceTree = "<group>"; };
 		31A76CE422758B46003E39B2 /* LVTabbarController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LVTabbarController.m; sourceTree = "<group>"; };
+		31BF423C2277297500330422 /* UIButton+Extension.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "UIButton+Extension.h"; sourceTree = "<group>"; };
+		31BF423D2277297500330422 /* UIButton+Extension.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIButton+Extension.m"; sourceTree = "<group>"; };
+		31BF423F22773D0500330422 /* LVLeftMenuVIPBuyView.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LVLeftMenuVIPBuyView.h; sourceTree = "<group>"; };
+		31BF424022773D0500330422 /* LVLeftMenuVIPBuyView.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LVLeftMenuVIPBuyView.m; sourceTree = "<group>"; };
+		31BF4243227749BD00330422 /* LVLeftMenuVIPBuyModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LVLeftMenuVIPBuyModel.h; sourceTree = "<group>"; };
+		31BF4244227749BD00330422 /* LVLeftMenuVIPBuyModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LVLeftMenuVIPBuyModel.m; sourceTree = "<group>"; };
 		B40DB1612D275CA2A0B5AB78 /* Pods_LightningVPN.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_LightningVPN.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -106,6 +115,7 @@
 			children = (
 				311365E7227597C900BB1D9E /* LVLeftMenuVC.h */,
 				311365E8227597C900BB1D9E /* LVLeftMenuVC.m */,
+				31BF42422277496B00330422 /* Model */,
 				311365ED22759F0200BB1D9E /* View */,
 			);
 			path = LeftMenu;
@@ -131,6 +141,8 @@
 				311365EF22759F9E00BB1D9E /* LVLeftMenuCell.m */,
 				311365F82275B73600BB1D9E /* LVLeftMenuFooterView.h */,
 				311365F92275B73600BB1D9E /* LVLeftMenuFooterView.m */,
+				31BF423F22773D0500330422 /* LVLeftMenuVIPBuyView.h */,
+				31BF424022773D0500330422 /* LVLeftMenuVIPBuyView.m */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -224,6 +236,8 @@
 		31A76CD922758A4E003E39B2 /* Extension */ = {
 			isa = PBXGroup;
 			children = (
+				31BF423C2277297500330422 /* UIButton+Extension.h */,
+				31BF423D2277297500330422 /* UIButton+Extension.m */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -254,6 +268,15 @@
 			children = (
 			);
 			path = "app support";
+			sourceTree = "<group>";
+		};
+		31BF42422277496B00330422 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				31BF4243227749BD00330422 /* LVLeftMenuVIPBuyModel.h */,
+				31BF4244227749BD00330422 /* LVLeftMenuVIPBuyModel.m */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		FEFDD66AF6F63DB5EBF7BD34 /* Frameworks */ = {
@@ -381,6 +404,7 @@
 				3113660A2276C75300BB1D9E /* LVMainGetFreeView.m in Sources */,
 				31A76CD1227586A7003E39B2 /* main.m in Sources */,
 				311366112276FF5E00BB1D9E /* LVMainLineModel.m in Sources */,
+				31BF4245227749BD00330422 /* LVLeftMenuVIPBuyModel.m in Sources */,
 				31A76CE222758AF6003E39B2 /* LVBaseViewController.m in Sources */,
 				311366072276038500BB1D9E /* LVMainLineSelecteView.m in Sources */,
 				311366042275FE0B00BB1D9E /* LVMainConnectNoteView.m in Sources */,
@@ -391,7 +415,9 @@
 				3113660D2276E2CF00BB1D9E /* LVMainCodeInputView.m in Sources */,
 				311365F72275AF1100BB1D9E /* LVMainNavigationView.m in Sources */,
 				311365F322759FB200BB1D9E /* LVLeftMenuHeaderView.m in Sources */,
+				31BF424122773D0500330422 /* LVLeftMenuVIPBuyView.m in Sources */,
 				311365E422758BB200BB1D9E /* GlobalManager.m in Sources */,
+				31BF423E2277297500330422 /* UIButton+Extension.m in Sources */,
 				311365FE2275BCEA00BB1D9E /* LVAboutVC.m in Sources */,
 				311365FA2275B73600BB1D9E /* LVLeftMenuFooterView.m in Sources */,
 				31A76CC3227586A5003E39B2 /* AppDelegate.m in Sources */,

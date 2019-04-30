@@ -13,7 +13,7 @@
 #import "LVMainGetFreeView.h"
 #import "LVMainLineSelecteView.h"
 
-@interface LVMainVC ()<LVMainNavigationViewDelegate,LVMainConnectButtonViewDelegate>
+@interface LVMainVC ()<LVMainNavigationViewDelegate,LVMainConnectButtonViewDelegate,LVMainLineSelecteViewDelegate>
 
 @property (nonatomic , strong) LVMainNavigationView *navigationView;
 
@@ -26,6 +26,7 @@
 
 @property (nonatomic , strong) LVMainGetFreeView *getFreeView;
 @property (nonatomic , strong) LVMainLineSelecteView *lineView;
+@property (nonatomic , strong) UIControl *maskView;//选择线路的蒙版层
 
 @end
 
@@ -54,6 +55,7 @@
     
     [self setupSubViews];
     [self.view addSubview:self.navigationView];
+    [self.view addSubview:self.maskView];
     [self.view addSubview:self.lineView];
     
     @weakify(self)
@@ -136,9 +138,25 @@
     return _getFreeView;
 }
 
+- (UIView *)maskView {
+    if (!_maskView) {
+        _maskView = [[UIControl alloc] initWithFrame:[UIScreen mainScreen].bounds];
+        _maskView.backgroundColor = [UIColor colorWithHexString:@"#1F2227"];
+        _maskView.alpha = 0;
+        @weakify(self)
+        [[_maskView rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
+            @strongify(self)
+            [self.lineView dismiss];
+        }];
+    }
+    return _maskView;
+}
+
 - (LVMainLineSelecteView *)lineView {
     if (!_lineView) {
-        _lineView = [[LVMainLineSelecteView alloc] initWithFrame:CGRectMake(0, FITSCALE(287), kSCREEN_WIDTH, FITSCALE(525))];
+//        _lineView = [[LVMainLineSelecteView alloc] initWithFrame:CGRectMake(0, FITSCALE(287), kSCREEN_WIDTH, FITSCALE(525))];
+        _lineView = [[LVMainLineSelecteView alloc] initWithFrame:CGRectMake(0,kSCREEN_HEIGHT - FITSCALE(90), kSCREEN_WIDTH, FITSCALE(525))];
+        _lineView.delegate = self;
     }
     return _lineView;
 }
@@ -188,7 +206,9 @@
     self.freeBtn = [[UIButton alloc] initWithFrame:CGRectMake(FITSCALE(18), FITSCALE(638), kSCREEN_WIDTH-FITSCALE(38), FITSCALE(18))];
     [self.freeBtn setTitle:@"限时免费领取一个月VIP" forState:UIControlStateNormal];
     [self.freeBtn setTitleColor:kColor_4872FF forState:UIControlStateNormal];
+    [self.freeBtn setImage:IMGNAME(@"icon_menu_leftArrow") forState:UIControlStateNormal];
     self.freeBtn.titleLabel.font = FitFont(15);
+    [self.freeBtn setImageDirection:RIGHT withSpan:FITSCALE(10)];
     [self.freeBtn addTarget:self action:@selector(getFreeVipMonth:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:self.freeBtn];
 }
@@ -207,6 +227,11 @@
 #pragma mark - LVMainConnectButtonViewDelegate
 - (void)LVMainConnectButtonView:(LVMainConnectButtonView *)connectView clickWithStatus:(LVConnectStatus)status {
     
+}
+
+#pragma mark - LVMainLineSelecteViewDelegate
+- (void)LVMainLineSelecteView:(LVMainLineSelecteView *)view frameYChangePercent:(CGFloat)percent {
+    self.maskView.alpha = percent;
 }
 
 @end

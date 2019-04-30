@@ -29,6 +29,7 @@
     UINavigationController *leftNav = [[UINavigationController alloc] initWithRootViewController:[[LVLeftMenuVC alloc] init]];
 //    LVLeftMenuVC *leftVC = [[LVLeftMenuVC alloc] init];
     
+    
     RESideMenu *sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:mainNav
                                                                     leftMenuViewController:leftNav
                                                                    rightMenuViewController:nil];
@@ -43,7 +44,9 @@
 //    sideMenuViewController.contentViewShadowRadius = 12;
 //    sideMenuViewController.contentViewShadowEnabled = YES;
     
-    self.window.rootViewController = sideMenuViewController;
+    UINavigationController *baseNav = [[UINavigationController alloc] initWithRootViewController:sideMenuViewController];
+    [sideMenuViewController.navigationController setNavigationBarHidden:YES animated:YES];
+    self.window.rootViewController = baseNav;
     
     [IQKeyboardManager sharedManager].previousNextDisplayMode = IQPreviousNextDisplayModeAlwaysHide;
     [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;

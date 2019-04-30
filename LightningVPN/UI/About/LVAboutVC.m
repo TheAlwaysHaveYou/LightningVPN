@@ -30,6 +30,8 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     
+    self.navigationBarHide = YES;
+    
     self.view.backgroundColor = kColor_4872FF;
     
     [self setupSubViews];

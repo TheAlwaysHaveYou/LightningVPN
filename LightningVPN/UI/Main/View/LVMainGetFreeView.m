@@ -79,7 +79,7 @@
         NSMutableAttributedString *secondAtt = [[NSMutableAttributedString alloc] initWithString:secondArr[idx] attributes:@{NSForegroundColorAttributeName:kColor_4872FF,NSFontAttributeName:FitFont(15)}];
         [secondAtt insertAttributedString:firstAtt atIndex:0];
         
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake((self.contentView.width-FITSCALE(270))/2, [yArr[idx] floatValue], FITSCALE(270), FITSCALE(21))];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake((self.contentView.width-FITSCALE(270))/2, FITSCALE([yArr[idx] floatValue]), FITSCALE(270), FITSCALE(21))];
         label.textAlignment = NSTextAlignmentCenter;
         label.attributedText = secondAtt;
         [self.contentView addSubview:label];

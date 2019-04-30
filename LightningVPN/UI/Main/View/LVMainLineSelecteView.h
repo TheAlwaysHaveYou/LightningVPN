@@ -11,7 +11,18 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class LVMainLineSelecteView;
+@protocol LVMainLineSelecteViewDelegate <NSObject>
+//传递弹出过程中Y的比例，用来改变蒙版的透明度
+- (void)LVMainLineSelecteView:(LVMainLineSelecteView *)view frameYChangePercent:(CGFloat)percent;
+
+@end
+
 @interface LVMainLineSelecteView : UIView
+
+@property (nonatomic , weak) id <LVMainLineSelecteViewDelegate> delegate;
+
+@property (nonatomic , assign , getter=isShow) BOOL show;
 
 - (void)show;
 

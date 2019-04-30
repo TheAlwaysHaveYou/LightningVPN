@@ -10,9 +10,12 @@
 
 @interface LVMainLineSelecteView ()<UITableViewDelegate,UITableViewDataSource>
 
-@property (nonatomic , strong) UIView *contentView;
+@property (nonatomic , strong) UIButton *arrowBtn;
 @property (nonatomic , strong) UILabel *nameLabel;
 @property (nonatomic , strong) UITableView *tableView;
+
+@property (nonatomic , assign) CGFloat minY;
+@property (nonatomic , assign) CGFloat showY;
 
 @end
 
@@ -22,36 +25,35 @@ static NSString * const cellIdentifier = @"cell";
 static NSString * const headerIdentifier = @"header";
 
 - (instancetype)initWithFrame:(CGRect)frame {
-    self = [super initWithFrame:[UIScreen mainScreen].bounds];
+    self = [super initWithFrame:frame];
     if (self) {
-        self.backgroundColor = [UIColor colorWithHexString:@"#1F2227"];
+        self.backgroundColor = [UIColor whiteColor];
+        self.show = NO;
+        self.minY = frame.origin.y;
+        self.showY = kSCREEN_HEIGHT-frame.size.height;
         
-        
-        
-//        self.alpha = 0;
-//        self.hidden = YES;
-        
-        self.contentView = [[UIView alloc] initWithFrame:frame];
-        self.contentView.backgroundColor = [UIColor whiteColor];
         UIBezierPath *maskPath = [UIBezierPath bezierPathWithRoundedRect:CGRectMake(0, 0, frame.size.width, frame.size.height) byRoundingCorners:UIRectCornerTopLeft | UIRectCornerTopRight cornerRadii:CGSizeMake(FITSCALE(20), FITSCALE(20))];
         CAShapeLayer *maskLayer = [[CAShapeLayer alloc] init];
         maskLayer.frame = CGRectMake(0, 0, frame.size.width, frame.size.height);
         maskLayer.path = maskPath.CGPath;
-        self.contentView.layer.mask = maskLayer;
+        self.layer.mask = maskLayer;
         
-        [self addSubview:self.contentView];
-        
-        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake((self.contentView.width-FITSCALE(334))/2, FITSCALE(30), FITSCALE(334), FITSCALE(26))];
+        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake((self.width-FITSCALE(334))/2, FITSCALE(30), FITSCALE(334), FITSCALE(26))];
         titleLabel.font = FitBorderFont(19);
         titleLabel.textColor = kColor_404852;
         titleLabel.text = @"选择线路";
-        [self.contentView addSubview:titleLabel];
+        [self addSubview:titleLabel];
         
-        self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake((self.contentView.width-FITSCALE(334))/2, FITSCALE(56), FITSCALE(334), FITSCALE(18))];
+        self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake((self.width-FITSCALE(334))/2, FITSCALE(56), FITSCALE(334), FITSCALE(18))];
         self.nameLabel.font = FitFont(15);
         self.nameLabel.textColor = kColor_939AA8;
         self.nameLabel.text = @"免费体验线路";
-        [self.contentView addSubview:self.nameLabel];
+        [self addSubview:self.nameLabel];
+        
+        self.arrowBtn = [[UIButton alloc] initWithFrame:CGRectMake(FITSCALE(341.26), FITSCALE(39), FITSCALE(13.26), FITSCALE(5.89))];
+        [self.arrowBtn setImage:IMGNAME(@"icon_main_line_arrow") forState:UIControlStateNormal];
+        [self.arrowBtn addTarget:self action:@selector(arrowBtnClick:) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:self.arrowBtn];
         
         self.tableView = [[UITableView alloc] initWithFrame:CGRectMake(0, FITSCALE(73), frame.size.width, frame.size.height-FITSCALE(73)) style:UITableViewStyleGrouped];
         self.tableView.showsVerticalScrollIndicator = NO;
@@ -66,34 +68,44 @@ static NSString * const headerIdentifier = @"header";
         }
         self.tableView.delegate = self;
         self.tableView.dataSource = self;
-        [self.contentView addSubview:self.tableView];
+        [self addSubview:self.tableView];
+        
+        @weakify(self)
+        [[RACObserve(self, frame) deliverOnMainThread] subscribeNext:^(id  _Nullable x) {
+            @strongify(self)
+            CGRect rect = [(NSValue *)x CGRectValue];
+            
+            CGFloat percent = (rect.origin.y-self.showY)/(self.minY-self.showY);
+            
+            if ([self.delegate respondsToSelector:@selector(LVMainLineSelecteView:frameYChangePercent:)]) {
+                [self.delegate LVMainLineSelecteView:self frameYChangePercent:1-percent];
+            }
+        }];
+        
+        
     }
     return self;
 }
 
-
-- (void)functionButtonClick:(UIButton *)sender {
-    
+- (void)arrowBtnClick:(UIButton *)sender {
+    [self show];
 }
 
 - (void)show {
-    [[UIApplication sharedApplication].keyWindow addSubview:self];
-    
     [UIView animateWithDuration:0.25 animations:^{
-        self.alpha = 1;
-        self.hidden = NO;
+        self.top = self.showY;
+    } completion:^(BOOL finished) {
+        self.arrowBtn.hidden = YES;
     }];
 }
 
 - (void)dismiss {
     [UIView animateWithDuration:0.25 animations:^{
-        self.alpha = 0;
-        self.hidden = YES;
+        self.top = self.minY;
+    } completion:^(BOOL finished) {
+        self.arrowBtn.hidden = NO;
     }];
-    
-    [self performSelector:@selector(removeFromSuperview) withObject:nil afterDelay:0.3];
 }
-
 
 #pragma mark - UITableViewDelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
