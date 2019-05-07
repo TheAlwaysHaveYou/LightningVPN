@@ -7,6 +7,10 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18D4C7FB2281788300CE5E02 /* LVLaunchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D4C7FA2281788300CE5E02 /* LVLaunchVC.m */; };
+		18D4C7FF2281794C00CE5E02 /* LVLaunchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D4C7FE2281794C00CE5E02 /* LVLaunchCell.m */; };
+		18D4C8032281796C00CE5E02 /* LVLaunchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D4C8022281796C00CE5E02 /* LVLaunchModel.m */; };
+		18D4C8062281AB6F00CE5E02 /* KeyChainHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D4C8052281AB6F00CE5E02 /* KeyChainHelper.m */; };
 		311365E122758B9F00BB1D9E /* HTTPRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 311365E022758B9F00BB1D9E /* HTTPRequestManager.m */; };
 		311365E422758BB200BB1D9E /* GlobalManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 311365E322758BB200BB1D9E /* GlobalManager.m */; };
 		311365E9227597C900BB1D9E /* LVLeftMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 311365E8227597C900BB1D9E /* LVLeftMenuVC.m */; };
@@ -36,6 +40,14 @@
 
 /* Begin PBXFileReference section */
 		0BF3F11AFF53C3B71A800A62 /* Pods-LightningVPN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightningVPN.debug.xcconfig"; path = "Target Support Files/Pods-LightningVPN/Pods-LightningVPN.debug.xcconfig"; sourceTree = "<group>"; };
+		18D4C7F92281788300CE5E02 /* LVLaunchVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LVLaunchVC.h; sourceTree = "<group>"; };
+		18D4C7FA2281788300CE5E02 /* LVLaunchVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LVLaunchVC.m; sourceTree = "<group>"; };
+		18D4C7FD2281794C00CE5E02 /* LVLaunchCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LVLaunchCell.h; sourceTree = "<group>"; };
+		18D4C7FE2281794C00CE5E02 /* LVLaunchCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LVLaunchCell.m; sourceTree = "<group>"; };
+		18D4C8012281796C00CE5E02 /* LVLaunchModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LVLaunchModel.h; sourceTree = "<group>"; };
+		18D4C8022281796C00CE5E02 /* LVLaunchModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LVLaunchModel.m; sourceTree = "<group>"; };
+		18D4C8042281AB6F00CE5E02 /* KeyChainHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyChainHelper.h; sourceTree = "<group>"; };
+		18D4C8052281AB6F00CE5E02 /* KeyChainHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyChainHelper.m; sourceTree = "<group>"; };
 		2C6FA9D22EE21C4332121B61 /* Pods-LightningVPN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightningVPN.release.xcconfig"; path = "Target Support Files/Pods-LightningVPN/Pods-LightningVPN.release.xcconfig"; sourceTree = "<group>"; };
 		311365DF22758B9F00BB1D9E /* HTTPRequestManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPRequestManager.h; sourceTree = "<group>"; };
 		311365E022758B9F00BB1D9E /* HTTPRequestManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTTPRequestManager.m; sourceTree = "<group>"; };
@@ -101,6 +113,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18D4C7F82281785B00CE5E02 /* Launch */ = {
+			isa = PBXGroup;
+			children = (
+				18D4C7F92281788300CE5E02 /* LVLaunchVC.h */,
+				18D4C7FA2281788300CE5E02 /* LVLaunchVC.m */,
+				18D4C8002281795400CE5E02 /* Model */,
+				18D4C7FC2281792800CE5E02 /* View */,
+			);
+			path = Launch;
+			sourceTree = "<group>";
+		};
+		18D4C7FC2281792800CE5E02 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				18D4C7FD2281794C00CE5E02 /* LVLaunchCell.h */,
+				18D4C7FE2281794C00CE5E02 /* LVLaunchCell.m */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		18D4C8002281795400CE5E02 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				18D4C8012281796C00CE5E02 /* LVLaunchModel.h */,
+				18D4C8022281796C00CE5E02 /* LVLaunchModel.m */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		20B7931E36720AF70E31189E /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -180,6 +221,8 @@
 			children = (
 				3113660F2276FF5E00BB1D9E /* LVMainLineModel.h */,
 				311366102276FF5E00BB1D9E /* LVMainLineModel.m */,
+				18D4C8042281AB6F00CE5E02 /* KeyChainHelper.h */,
+				18D4C8052281AB6F00CE5E02 /* KeyChainHelper.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -245,6 +288,7 @@
 		31A76CDA22758A5B003E39B2 /* UI */ = {
 			isa = PBXGroup;
 			children = (
+				18D4C7F82281785B00CE5E02 /* Launch */,
 				311365E52275979200BB1D9E /* LeftMenu */,
 				311365E6227597AC00BB1D9E /* Main */,
 				311365FB2275BCCC00BB1D9E /* About */,
@@ -412,6 +456,7 @@
 				311365E122758B9F00BB1D9E /* HTTPRequestManager.m in Sources */,
 				311365E9227597C900BB1D9E /* LVLeftMenuVC.m in Sources */,
 				31A76CDF22758ADD003E39B2 /* LVBaseModel.m in Sources */,
+				18D4C7FB2281788300CE5E02 /* LVLaunchVC.m in Sources */,
 				3113660D2276E2CF00BB1D9E /* LVMainCodeInputView.m in Sources */,
 				311365F72275AF1100BB1D9E /* LVMainNavigationView.m in Sources */,
 				311365F322759FB200BB1D9E /* LVLeftMenuHeaderView.m in Sources */,
@@ -421,6 +466,9 @@
 				311365FE2275BCEA00BB1D9E /* LVAboutVC.m in Sources */,
 				311365FA2275B73600BB1D9E /* LVLeftMenuFooterView.m in Sources */,
 				31A76CC3227586A5003E39B2 /* AppDelegate.m in Sources */,
+				18D4C7FF2281794C00CE5E02 /* LVLaunchCell.m in Sources */,
+				18D4C8032281796C00CE5E02 /* LVLaunchModel.m in Sources */,
+				18D4C8062281AB6F00CE5E02 /* KeyChainHelper.m in Sources */,
 				311365F022759F9E00BB1D9E /* LVLeftMenuCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

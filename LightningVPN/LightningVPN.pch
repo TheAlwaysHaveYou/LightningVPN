@@ -23,7 +23,8 @@
 #define kNavBarHeight (iPhoneX_?88:64)
 #define kTabBarHeight (iPhoneX_?83:49)
 
-#define FITSCALE(number)  ((number)*kSCREEN_WIDTH*1.0/375.0f)
+#define FITSCALE(number)  ((number)*(kSCREEN_WIDTH*1.0/375.0f))
+#define FITHEIGHTSCALE(number)  ((number)*(kSCREEN_HEIGHT*1.0/812.0f))
 
 #define FitFont(x)       [UIFont systemFontOfSize:FITSCALE(x)]
 #define FitBorderFont(x) [UIFont boldSystemFontOfSize:FITSCALE(x)]

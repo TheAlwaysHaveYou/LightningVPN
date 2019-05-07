@@ -12,6 +12,8 @@
 #import "LVMainConnectButtonView.h"
 #import "LVMainGetFreeView.h"
 #import "LVMainLineSelecteView.h"
+#import <NetworkExtension/NetworkExtension.h>
+#import "KeyChainHelper.h"
 
 @interface LVMainVC ()<LVMainNavigationViewDelegate,LVMainConnectButtonViewDelegate,LVMainLineSelecteViewDelegate>
 
@@ -27,6 +29,8 @@
 @property (nonatomic , strong) LVMainGetFreeView *getFreeView;
 @property (nonatomic , strong) LVMainLineSelecteView *lineView;
 @property (nonatomic , strong) UIControl *maskView;//选择线路的蒙版层
+
+@property (nonatomic , strong) NEVPNManager *manager;
 
 @end
 
@@ -92,6 +96,73 @@
         [UIView commitAnimations];
     }];
     
+//    self.manager = [NEVPNManager sharedManager];
+//    [self.manager loadFromPreferencesWithCompletionHandler:^(NSError * _Nullable error) {
+//        if (error) {
+//            NSLog(@"----VPN第一步报错啦--%@",error);
+//        }else {
+////            NEVPNProtocolIPSec *conf = [[NEVPNProtocolIPSec alloc] init];
+//            NEVPNProtocolIKEv2 *conf = [[NEVPNProtocolIKEv2 alloc] init];
+//            conf.serverAddress = @"xxx.xxx.xxx.xxx";
+//            conf.username = @"vpnuser";
+//            conf.authenticationMethod = NEVPNIKEAuthenticationMethodSharedSecret;//共享密钥方式
+//            conf.sharedSecretReference =  [[KeyChainHelper load:@"IPSecSharedPwd"] dataUsingEncoding:NSUTF8StringEncoding];//从keychain中获取共享密钥
+//            conf.passwordReference = [[KeyChainHelper load:@"vpnPwd"] dataUsingEncoding:NSUTF8StringEncoding];//从keychain中获取密码
+//            //本地id
+//            conf.localIdentifier = @"";
+//            conf.remoteIdentifier = @"xxx.xxx.xxx.xxx";//远程服务器的ID，该参数可以在自己服务器的VPN配置文件查询得到,这两个值没有看到是必须设置的
+//            conf.useExtendedAuthentication = YES;
+//            conf.disconnectOnSleep = NO;
+//
+//            //按需连接
+//            NSMutableArray *rules = [[NSMutableArray alloc] init];
+//            NEOnDemandRuleConnect *connectRule = [[NEOnDemandRuleConnect alloc] init];
+//            connectRule.interfaceTypeMatch = NEOnDemandRuleInterfaceTypeWiFi;
+//            [rules addObject:connectRule];
+//            self.manager.onDemandRules = rules;
+//
+//            [self.manager setProtocolConfiguration:conf];
+//            [self.manager setOnDemandEnabled:conf];
+//            self.manager.localizedDescription = @"闪连VPN";
+//            self.manager.enabled = true;
+//
+//            [self.manager saveToPreferencesWithCompletionHandler:^(NSError * _Nullable error) {
+//                if (error) {
+//                    NSLog(@"保存配置 error: %@", error);
+//                }else{
+//                    NSLog(@"保存配置成功");
+//                }
+//            }];
+//
+//        }
+//    }];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onVpnStateChange:) name:NEVPNStatusDidChangeNotification object:nil];
+}
+
+-(void)onVpnStateChange:(NSNotification *)Notification{
+    NEVPNStatus state = self.manager.connection.status;
+    
+    switch (state) {
+        case NEVPNStatusInvalid:
+            NSLog(@"链接无效");
+            break;
+        case NEVPNStatusDisconnected:
+            NSLog(@"未连接");
+            break;
+        case NEVPNStatusConnecting:
+            NSLog(@"正在连接");
+            break;
+        case NEVPNStatusConnected:
+            NSLog(@"已连接");
+            break;
+        case NEVPNStatusDisconnecting:
+            NSLog(@"断开连接");
+            break;
+            
+        default:
+            break;
+    }
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -196,14 +267,14 @@
     bottomImgV.image = IMGNAME(@"icon_main_bottomBg");
     [self.view addSubview:bottomImgV];
     
-    self.noteView = [[LVMainConnectNoteView alloc] initWithFrame:CGRectMake((kSCREEN_WIDTH-FITSCALE(62))/2, FITSCALE(515), FITSCALE(62), FITSCALE(18))];
+    self.noteView = [[LVMainConnectNoteView alloc] initWithFrame:CGRectMake((kSCREEN_WIDTH-FITSCALE(62))/2, FITHEIGHTSCALE(515), FITSCALE(62), FITSCALE(18))];
     [self.view addSubview:self.noteView];
     
-    self.connectView = [[LVMainConnectButtonView alloc] initWithFrame:CGRectMake(FITSCALE(24), FITSCALE(553), kSCREEN_WIDTH-FITSCALE(48), FITSCALE(56))];
+    self.connectView = [[LVMainConnectButtonView alloc] initWithFrame:CGRectMake(FITSCALE(24), FITHEIGHTSCALE(553), kSCREEN_WIDTH-FITSCALE(48), FITSCALE(56))];
     self.connectView.delegate = self;
     [self.view addSubview:self.connectView];
     
-    self.freeBtn = [[UIButton alloc] initWithFrame:CGRectMake(FITSCALE(18), FITSCALE(638), kSCREEN_WIDTH-FITSCALE(38), FITSCALE(18))];
+    self.freeBtn = [[UIButton alloc] initWithFrame:CGRectMake(FITSCALE(18), FITHEIGHTSCALE(638), kSCREEN_WIDTH-FITSCALE(38), FITSCALE(18))];
     [self.freeBtn setTitle:@"限时免费领取一个月VIP" forState:UIControlStateNormal];
     [self.freeBtn setTitleColor:kColor_4872FF forState:UIControlStateNormal];
     [self.freeBtn setImage:IMGNAME(@"icon_menu_leftArrow") forState:UIControlStateNormal];
@@ -226,6 +297,9 @@
 
 #pragma mark - LVMainConnectButtonViewDelegate
 - (void)LVMainConnectButtonView:(LVMainConnectButtonView *)connectView clickWithStatus:(LVConnectStatus)status {
+    
+    
+    
     
 }
 

@@ -7,6 +7,7 @@
 //
 
 #import "AppDelegate.h"
+#import "LVLaunchVC.h"
 #import "RESideMenu.h"
 #import "IQKeyboardManager.h"
 #import "LVLeftMenuVC.h"
@@ -25,9 +26,40 @@
     self.window.backgroundColor = [UIColor whiteColor];
     [self.window makeKeyAndVisible];
     
+    [self enterLeadController];
+    
+    [IQKeyboardManager sharedManager].previousNextDisplayMode = IQPreviousNextDisplayModeAlwaysHide;
+    [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
+    [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
+    
+    return YES;
+}
+
+- (void)enterLeadController {
+    static NSString *versionKay = @"VersionKey";
+    
+    NSString *oldVersion = [[NSUserDefaults standardUserDefaults] objectForKey:versionKay];
+    
+    if ([app_Version isEqualToString:oldVersion]) {
+        [self enterRootcontroller];
+    }else {
+        [[NSUserDefaults standardUserDefaults] setValue:app_Version forKey:versionKay];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
+        LVLaunchVC *vc = [[LVLaunchVC alloc] init];
+        vc.subject = [RACSubject subject];
+        @weakify(self)
+        [[vc.subject deliverOnMainThread] subscribeNext:^(id  _Nullable x) {
+            @strongify(self)
+            [self enterRootcontroller];
+        }];
+        self.window.rootViewController = vc;
+    }
+}
+
+- (void)enterRootcontroller {
     UINavigationController *mainNav = [[UINavigationController alloc] initWithRootViewController:[[LVMainVC alloc] init]];
     UINavigationController *leftNav = [[UINavigationController alloc] initWithRootViewController:[[LVLeftMenuVC alloc] init]];
-//    LVLeftMenuVC *leftVC = [[LVLeftMenuVC alloc] init];
     
     
     RESideMenu *sideMenuViewController = [[RESideMenu alloc] initWithContentViewController:mainNav
@@ -47,13 +79,8 @@
     UINavigationController *baseNav = [[UINavigationController alloc] initWithRootViewController:sideMenuViewController];
     [sideMenuViewController.navigationController setNavigationBarHidden:YES animated:YES];
     self.window.rootViewController = baseNav;
-    
-    [IQKeyboardManager sharedManager].previousNextDisplayMode = IQPreviousNextDisplayModeAlwaysHide;
-    [IQKeyboardManager sharedManager].shouldResignOnTouchOutside = YES;
-    [IQKeyboardManager sharedManager].enableAutoToolbar = NO;
-    
-    return YES;
 }
+
 #pragma mark - RESideMenuDelegate
 
 
