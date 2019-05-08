@@ -4,4 +4,5 @@ Pods
 Podfile.lock
 xcuserdata
 .svn
-
+Carthage
+Cartfile.resolved

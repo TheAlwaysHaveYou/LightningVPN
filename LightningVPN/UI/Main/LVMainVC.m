@@ -12,8 +12,7 @@
 #import "LVMainConnectButtonView.h"
 #import "LVMainGetFreeView.h"
 #import "LVMainLineSelecteView.h"
-#import <NetworkExtension/NetworkExtension.h>
-#import "KeyChainHelper.h"
+#import "LVVPNManager.h"
 
 @interface LVMainVC ()<LVMainNavigationViewDelegate,LVMainConnectButtonViewDelegate,LVMainLineSelecteViewDelegate>
 
@@ -29,8 +28,6 @@
 @property (nonatomic , strong) LVMainGetFreeView *getFreeView;
 @property (nonatomic , strong) LVMainLineSelecteView *lineView;
 @property (nonatomic , strong) UIControl *maskView;//选择线路的蒙版层
-
-@property (nonatomic , strong) NEVPNManager *manager;
 
 @end
 
@@ -96,73 +93,9 @@
         [UIView commitAnimations];
     }];
     
-//    self.manager = [NEVPNManager sharedManager];
-//    [self.manager loadFromPreferencesWithCompletionHandler:^(NSError * _Nullable error) {
-//        if (error) {
-//            NSLog(@"----VPN第一步报错啦--%@",error);
-//        }else {
-////            NEVPNProtocolIPSec *conf = [[NEVPNProtocolIPSec alloc] init];
-//            NEVPNProtocolIKEv2 *conf = [[NEVPNProtocolIKEv2 alloc] init];
-//            conf.serverAddress = @"xxx.xxx.xxx.xxx";
-//            conf.username = @"vpnuser";
-//            conf.authenticationMethod = NEVPNIKEAuthenticationMethodSharedSecret;//共享密钥方式
-//            conf.sharedSecretReference =  [[KeyChainHelper load:@"IPSecSharedPwd"] dataUsingEncoding:NSUTF8StringEncoding];//从keychain中获取共享密钥
-//            conf.passwordReference = [[KeyChainHelper load:@"vpnPwd"] dataUsingEncoding:NSUTF8StringEncoding];//从keychain中获取密码
-//            //本地id
-//            conf.localIdentifier = @"";
-//            conf.remoteIdentifier = @"xxx.xxx.xxx.xxx";//远程服务器的ID，该参数可以在自己服务器的VPN配置文件查询得到,这两个值没有看到是必须设置的
-//            conf.useExtendedAuthentication = YES;
-//            conf.disconnectOnSleep = NO;
-//
-//            //按需连接
-//            NSMutableArray *rules = [[NSMutableArray alloc] init];
-//            NEOnDemandRuleConnect *connectRule = [[NEOnDemandRuleConnect alloc] init];
-//            connectRule.interfaceTypeMatch = NEOnDemandRuleInterfaceTypeWiFi;
-//            [rules addObject:connectRule];
-//            self.manager.onDemandRules = rules;
-//
-//            [self.manager setProtocolConfiguration:conf];
-//            [self.manager setOnDemandEnabled:conf];
-//            self.manager.localizedDescription = @"闪连VPN";
-//            self.manager.enabled = true;
-//
-//            [self.manager saveToPreferencesWithCompletionHandler:^(NSError * _Nullable error) {
-//                if (error) {
-//                    NSLog(@"保存配置 error: %@", error);
-//                }else{
-//                    NSLog(@"保存配置成功");
-//                }
-//            }];
-//
-//        }
-//    }];
-    
-    [[NSNotificationCenter defaultCenter] addObserver:self selector:@selector(onVpnStateChange:) name:NEVPNStatusDidChangeNotification object:nil];
-}
-
--(void)onVpnStateChange:(NSNotification *)Notification{
-    NEVPNStatus state = self.manager.connection.status;
-    
-    switch (state) {
-        case NEVPNStatusInvalid:
-            NSLog(@"链接无效");
-            break;
-        case NEVPNStatusDisconnected:
-            NSLog(@"未连接");
-            break;
-        case NEVPNStatusConnecting:
-            NSLog(@"正在连接");
-            break;
-        case NEVPNStatusConnected:
-            NSLog(@"已连接");
-            break;
-        case NEVPNStatusDisconnecting:
-            NSLog(@"断开连接");
-            break;
-            
-        default:
-            break;
-    }
+    [RACObserve([LVVPNManager sharedInstance], VPNStatus) subscribeNext:^(id  _Nullable x) {
+        NSLog(@"vpn连接状态-----%@",x);
+    }];
 }
 
 - (void)viewWillAppear:(BOOL)animated {
@@ -297,10 +230,19 @@
 
 #pragma mark - LVMainConnectButtonViewDelegate
 - (void)LVMainConnectButtonView:(LVMainConnectButtonView *)connectView clickWithStatus:(LVConnectStatus)status {
-    
-    
-    
-    
+    /*
+     LVConnectStatus_normal  = 0,//默认
+     LVConnectStatus_ing     = 1,//连接中
+     LVConnectStatus_success = 2,//链接成功
+     LVConnectStatus_fail    = 3,//链接失败
+     */
+    if (LVConnectStatus_normal == status) {
+        [[LVVPNManager sharedInstance] connect];
+    }else if (LVConnectStatus_success == status) {
+        [[LVVPNManager sharedInstance] disconnect];
+    }else if (LVConnectStatus_fail == status) {
+        
+    }
 }
 
 #pragma mark - LVMainLineSelecteViewDelegate

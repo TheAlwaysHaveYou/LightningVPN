@@ -7,10 +7,25 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		18644284228322E200E8F4C6 /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18644283228322E200E8F4C6 /* PacketTunnelProvider.swift */; };
+		18644289228322E200E8F4C6 /* PacketTunnel.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 18644281228322E100E8F4C6 /* PacketTunnel.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		186442902283257700E8F4C6 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1864428F2283257700E8F4C6 /* NetworkExtension.framework */; };
+		186442912283258400E8F4C6 /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1864428F2283257700E8F4C6 /* NetworkExtension.framework */; };
+		1864429C228325D000E8F4C6 /* tun2socks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18644292228325CF00E8F4C6 /* tun2socks.framework */; };
+		1864429D228325D000E8F4C6 /* Yaml.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18644293228325CF00E8F4C6 /* Yaml.framework */; };
+		1864429E228325D000E8F4C6 /* CocoaLumberjackSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18644294228325CF00E8F4C6 /* CocoaLumberjackSwift.framework */; };
+		1864429F228325D000E8F4C6 /* NEKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18644295228325CF00E8F4C6 /* NEKit.framework */; };
+		186442A0228325D000E8F4C6 /* CocoaAsyncSocket.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18644296228325D000E8F4C6 /* CocoaAsyncSocket.framework */; };
+		186442A1228325D000E8F4C6 /* CocoaLumberjack.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18644297228325D000E8F4C6 /* CocoaLumberjack.framework */; };
+		186442A2228325D000E8F4C6 /* Resolver.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18644298228325D000E8F4C6 /* Resolver.framework */; };
+		186442A3228325D000E8F4C6 /* Sodium.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18644299228325D000E8F4C6 /* Sodium.framework */; };
+		186442A4228325D000E8F4C6 /* MMDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1864429A228325D000E8F4C6 /* MMDB.framework */; };
+		186442A5228325D000E8F4C6 /* lwip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1864429B228325D000E8F4C6 /* lwip.framework */; };
+		186442A72283263200E8F4C6 /* NEKitRule.conf in Resources */ = {isa = PBXBuildFile; fileRef = 186442A62283263200E8F4C6 /* NEKitRule.conf */; };
+		186442AA2283264900E8F4C6 /* LVVPNManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 186442A82283264900E8F4C6 /* LVVPNManager.m */; };
 		18D4C7FB2281788300CE5E02 /* LVLaunchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D4C7FA2281788300CE5E02 /* LVLaunchVC.m */; };
 		18D4C7FF2281794C00CE5E02 /* LVLaunchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D4C7FE2281794C00CE5E02 /* LVLaunchCell.m */; };
 		18D4C8032281796C00CE5E02 /* LVLaunchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D4C8022281796C00CE5E02 /* LVLaunchModel.m */; };
-		18D4C8062281AB6F00CE5E02 /* KeyChainHelper.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D4C8052281AB6F00CE5E02 /* KeyChainHelper.m */; };
 		311365E122758B9F00BB1D9E /* HTTPRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 311365E022758B9F00BB1D9E /* HTTPRequestManager.m */; };
 		311365E422758BB200BB1D9E /* GlobalManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 311365E322758BB200BB1D9E /* GlobalManager.m */; };
 		311365E9227597C900BB1D9E /* LVLeftMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 311365E8227597C900BB1D9E /* LVLeftMenuVC.m */; };
@@ -38,16 +53,57 @@
 		8601E951F92C6FD1E5FD3AC9 /* Pods_LightningVPN.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B40DB1612D275CA2A0B5AB78 /* Pods_LightningVPN.framework */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		18644287228322E200E8F4C6 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 31A76CB6227586A5003E39B2 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 18644280228322E100E8F4C6;
+			remoteInfo = PacketTunnel;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		1864428D228322E200E8F4C6 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				18644289228322E200E8F4C6 /* PacketTunnel.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
 		0BF3F11AFF53C3B71A800A62 /* Pods-LightningVPN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightningVPN.debug.xcconfig"; path = "Target Support Files/Pods-LightningVPN/Pods-LightningVPN.debug.xcconfig"; sourceTree = "<group>"; };
+		18644281228322E100E8F4C6 /* PacketTunnel.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PacketTunnel.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		18644283228322E200E8F4C6 /* PacketTunnelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketTunnelProvider.swift; sourceTree = "<group>"; };
+		18644285228322E200E8F4C6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		18644286228322E200E8F4C6 /* PacketTunnel.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = PacketTunnel.entitlements; sourceTree = "<group>"; };
+		1864428E2283255900E8F4C6 /* LightningVPN.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = LightningVPN.entitlements; sourceTree = "<group>"; };
+		1864428F2283257700E8F4C6 /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
+		18644292228325CF00E8F4C6 /* tun2socks.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = tun2socks.framework; path = Carthage/Build/iOS/tun2socks.framework; sourceTree = "<group>"; };
+		18644293228325CF00E8F4C6 /* Yaml.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Yaml.framework; path = Carthage/Build/iOS/Yaml.framework; sourceTree = "<group>"; };
+		18644294228325CF00E8F4C6 /* CocoaLumberjackSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjackSwift.framework; path = Carthage/Build/iOS/CocoaLumberjackSwift.framework; sourceTree = "<group>"; };
+		18644295228325CF00E8F4C6 /* NEKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NEKit.framework; path = Carthage/Build/iOS/NEKit.framework; sourceTree = "<group>"; };
+		18644296228325D000E8F4C6 /* CocoaAsyncSocket.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaAsyncSocket.framework; path = Carthage/Build/iOS/CocoaAsyncSocket.framework; sourceTree = "<group>"; };
+		18644297228325D000E8F4C6 /* CocoaLumberjack.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CocoaLumberjack.framework; path = Carthage/Build/iOS/CocoaLumberjack.framework; sourceTree = "<group>"; };
+		18644298228325D000E8F4C6 /* Resolver.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Resolver.framework; path = Carthage/Build/iOS/Resolver.framework; sourceTree = "<group>"; };
+		18644299228325D000E8F4C6 /* Sodium.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sodium.framework; path = Carthage/Build/iOS/Sodium.framework; sourceTree = "<group>"; };
+		1864429A228325D000E8F4C6 /* MMDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MMDB.framework; path = Carthage/Build/iOS/MMDB.framework; sourceTree = "<group>"; };
+		1864429B228325D000E8F4C6 /* lwip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = lwip.framework; path = Carthage/Build/iOS/lwip.framework; sourceTree = "<group>"; };
+		186442A62283263200E8F4C6 /* NEKitRule.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NEKitRule.conf; sourceTree = "<group>"; };
+		186442A82283264900E8F4C6 /* LVVPNManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVVPNManager.m; sourceTree = "<group>"; };
+		186442A92283264900E8F4C6 /* LVVPNManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVVPNManager.h; sourceTree = "<group>"; };
 		18D4C7F92281788300CE5E02 /* LVLaunchVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LVLaunchVC.h; sourceTree = "<group>"; };
 		18D4C7FA2281788300CE5E02 /* LVLaunchVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LVLaunchVC.m; sourceTree = "<group>"; };
 		18D4C7FD2281794C00CE5E02 /* LVLaunchCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LVLaunchCell.h; sourceTree = "<group>"; };
 		18D4C7FE2281794C00CE5E02 /* LVLaunchCell.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LVLaunchCell.m; sourceTree = "<group>"; };
 		18D4C8012281796C00CE5E02 /* LVLaunchModel.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LVLaunchModel.h; sourceTree = "<group>"; };
 		18D4C8022281796C00CE5E02 /* LVLaunchModel.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LVLaunchModel.m; sourceTree = "<group>"; };
-		18D4C8042281AB6F00CE5E02 /* KeyChainHelper.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = KeyChainHelper.h; sourceTree = "<group>"; };
-		18D4C8052281AB6F00CE5E02 /* KeyChainHelper.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = KeyChainHelper.m; sourceTree = "<group>"; };
 		2C6FA9D22EE21C4332121B61 /* Pods-LightningVPN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightningVPN.release.xcconfig"; path = "Target Support Files/Pods-LightningVPN/Pods-LightningVPN.release.xcconfig"; sourceTree = "<group>"; };
 		311365DF22758B9F00BB1D9E /* HTTPRequestManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPRequestManager.h; sourceTree = "<group>"; };
 		311365E022758B9F00BB1D9E /* HTTPRequestManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTTPRequestManager.m; sourceTree = "<group>"; };
@@ -102,17 +158,46 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		1864427E228322E100E8F4C6 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				186442912283258400E8F4C6 /* NetworkExtension.framework in Frameworks */,
+				1864429C228325D000E8F4C6 /* tun2socks.framework in Frameworks */,
+				1864429D228325D000E8F4C6 /* Yaml.framework in Frameworks */,
+				1864429E228325D000E8F4C6 /* CocoaLumberjackSwift.framework in Frameworks */,
+				1864429F228325D000E8F4C6 /* NEKit.framework in Frameworks */,
+				186442A0228325D000E8F4C6 /* CocoaAsyncSocket.framework in Frameworks */,
+				186442A1228325D000E8F4C6 /* CocoaLumberjack.framework in Frameworks */,
+				186442A2228325D000E8F4C6 /* Resolver.framework in Frameworks */,
+				186442A3228325D000E8F4C6 /* Sodium.framework in Frameworks */,
+				186442A4228325D000E8F4C6 /* MMDB.framework in Frameworks */,
+				186442A5228325D000E8F4C6 /* lwip.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		31A76CBB227586A5003E39B2 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				8601E951F92C6FD1E5FD3AC9 /* Pods_LightningVPN.framework in Frameworks */,
+				186442902283257700E8F4C6 /* NetworkExtension.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		18644282228322E200E8F4C6 /* PacketTunnel */ = {
+			isa = PBXGroup;
+			children = (
+				18644283228322E200E8F4C6 /* PacketTunnelProvider.swift */,
+				18644285228322E200E8F4C6 /* Info.plist */,
+				18644286228322E200E8F4C6 /* PacketTunnel.entitlements */,
+			);
+			path = PacketTunnel;
+			sourceTree = "<group>";
+		};
 		18D4C7F82281785B00CE5E02 /* Launch */ = {
 			isa = PBXGroup;
 			children = (
@@ -167,6 +252,8 @@
 			children = (
 				311365EA227597DA00BB1D9E /* LVMainVC.h */,
 				311365EB227597DA00BB1D9E /* LVMainVC.m */,
+				186442A92283264900E8F4C6 /* LVVPNManager.h */,
+				186442A82283264900E8F4C6 /* LVVPNManager.m */,
 				3113660E2276FF4A00BB1D9E /* Model */,
 				311365F42275AEFB00BB1D9E /* View */,
 			);
@@ -221,8 +308,6 @@
 			children = (
 				3113660F2276FF5E00BB1D9E /* LVMainLineModel.h */,
 				311366102276FF5E00BB1D9E /* LVMainLineModel.m */,
-				18D4C8042281AB6F00CE5E02 /* KeyChainHelper.h */,
-				18D4C8052281AB6F00CE5E02 /* KeyChainHelper.m */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -231,6 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				31A76CC0227586A5003E39B2 /* LightningVPN */,
+				18644282228322E200E8F4C6 /* PacketTunnel */,
 				31A76CBF227586A5003E39B2 /* Products */,
 				20B7931E36720AF70E31189E /* Pods */,
 				FEFDD66AF6F63DB5EBF7BD34 /* Frameworks */,
@@ -241,6 +327,7 @@
 			isa = PBXGroup;
 			children = (
 				31A76CBE227586A5003E39B2 /* LightningVPN.app */,
+				18644281228322E100E8F4C6 /* PacketTunnel.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -248,6 +335,8 @@
 		31A76CC0227586A5003E39B2 /* LightningVPN */ = {
 			isa = PBXGroup;
 			children = (
+				186442A62283263200E8F4C6 /* NEKitRule.conf */,
+				1864428E2283255900E8F4C6 /* LightningVPN.entitlements */,
 				31A76CC1227586A5003E39B2 /* AppDelegate.h */,
 				31A76CC2227586A5003E39B2 /* AppDelegate.m */,
 				31A76CDC22758A73003E39B2 /* app support */,
@@ -326,6 +415,17 @@
 		FEFDD66AF6F63DB5EBF7BD34 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				18644296228325D000E8F4C6 /* CocoaAsyncSocket.framework */,
+				18644297228325D000E8F4C6 /* CocoaLumberjack.framework */,
+				18644294228325CF00E8F4C6 /* CocoaLumberjackSwift.framework */,
+				1864429B228325D000E8F4C6 /* lwip.framework */,
+				1864429A228325D000E8F4C6 /* MMDB.framework */,
+				18644295228325CF00E8F4C6 /* NEKit.framework */,
+				18644298228325D000E8F4C6 /* Resolver.framework */,
+				18644299228325D000E8F4C6 /* Sodium.framework */,
+				18644292228325CF00E8F4C6 /* tun2socks.framework */,
+				18644293228325CF00E8F4C6 /* Yaml.framework */,
+				1864428F2283257700E8F4C6 /* NetworkExtension.framework */,
 				B40DB1612D275CA2A0B5AB78 /* Pods_LightningVPN.framework */,
 			);
 			name = Frameworks;
@@ -334,6 +434,23 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
+		18644280228322E100E8F4C6 /* PacketTunnel */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 1864428C228322E200E8F4C6 /* Build configuration list for PBXNativeTarget "PacketTunnel" */;
+			buildPhases = (
+				1864427D228322E100E8F4C6 /* Sources */,
+				1864427E228322E100E8F4C6 /* Frameworks */,
+				1864427F228322E100E8F4C6 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = PacketTunnel;
+			productName = PacketTunnel;
+			productReference = 18644281228322E100E8F4C6 /* PacketTunnel.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 		31A76CBD227586A5003E39B2 /* LightningVPN */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 31A76CD4227586A7003E39B2 /* Build configuration list for PBXNativeTarget "LightningVPN" */;
@@ -343,10 +460,13 @@
 				31A76CBB227586A5003E39B2 /* Frameworks */,
 				31A76CBC227586A5003E39B2 /* Resources */,
 				5456539E74B8942EECE12DF3 /* [CP] Embed Pods Frameworks */,
+				1864428D228322E200E8F4C6 /* Embed App Extensions */,
+				189BEA782283304600D5727A /* ShellScript */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				18644288228322E200E8F4C6 /* PBXTargetDependency */,
 			);
 			name = LightningVPN;
 			productName = LightningVPN;
@@ -359,11 +479,37 @@
 		31A76CB6227586A5003E39B2 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
+				LastSwiftUpdateCheck = 1020;
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = FKD;
 				TargetAttributes = {
+					18644280228322E100E8F4C6 = {
+						CreatedOnToolsVersion = 10.2.1;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.NetworkExtensions.iOS = {
+								enabled = 1;
+							};
+							com.apple.VPNLite = {
+								enabled = 1;
+							};
+						};
+					};
 					31A76CBD227586A5003E39B2 = {
 						CreatedOnToolsVersion = 10.2;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.NetworkExtensions.iOS = {
+								enabled = 1;
+							};
+							com.apple.VPNLite = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -381,22 +527,58 @@
 			projectRoot = "";
 			targets = (
 				31A76CBD227586A5003E39B2 /* LightningVPN */,
+				18644280228322E100E8F4C6 /* PacketTunnel */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
+		1864427F228322E100E8F4C6 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		31A76CBC227586A5003E39B2 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				31A76CCB227586A7003E39B2 /* Assets.xcassets in Resources */,
+				186442A72283263200E8F4C6 /* NEKitRule.conf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
+		189BEA782283304600D5727A /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/CocoaAsyncSocket.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/CocoaLumberjack.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/CocoaLumberjackSwift.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/lwip.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/MMDB.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/NEKit.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Sodium.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/tun2socks.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Yaml.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/Resolver.framework",
+			);
+			outputFileListPaths = (
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "# Type a script or drag a script file from your workspace to insert its path.\n/usr/local/bin/carthage copy-frameworks\n";
+		};
 		5456539E74B8942EECE12DF3 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -439,12 +621,21 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
+		1864427D228322E100E8F4C6 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				18644284228322E200E8F4C6 /* PacketTunnelProvider.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		31A76CBA227586A5003E39B2 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				311365EC227597DA00BB1D9E /* LVMainVC.m in Sources */,
 				311366012275EFF800BB1D9E /* LVMainConnectButtonView.m in Sources */,
+				186442AA2283264900E8F4C6 /* LVVPNManager.m in Sources */,
 				3113660A2276C75300BB1D9E /* LVMainGetFreeView.m in Sources */,
 				31A76CD1227586A7003E39B2 /* main.m in Sources */,
 				311366112276FF5E00BB1D9E /* LVMainLineModel.m in Sources */,
@@ -468,14 +659,75 @@
 				31A76CC3227586A5003E39B2 /* AppDelegate.m in Sources */,
 				18D4C7FF2281794C00CE5E02 /* LVLaunchCell.m in Sources */,
 				18D4C8032281796C00CE5E02 /* LVLaunchModel.m in Sources */,
-				18D4C8062281AB6F00CE5E02 /* KeyChainHelper.m in Sources */,
 				311365F022759F9E00BB1D9E /* LVLeftMenuCell.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		18644288228322E200E8F4C6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 18644280228322E100E8F4C6 /* PacketTunnel */;
+			targetProxy = 18644287228322E200E8F4C6 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
+		1864428A228322E200E8F4C6 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = PacketTunnel/PacketTunnel.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6RYXF8U2N6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = PacketTunnel/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = LightningVPN.temp.PacketTunnel;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Debug;
+		};
+		1864428B228322E200E8F4C6 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = PacketTunnel/PacketTunnel.entitlements;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = 6RYXF8U2N6;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Carthage/Build/iOS",
+				);
+				INFOPLIST_FILE = PacketTunnel/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = LightningVPN.temp.PacketTunnel;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = 1;
+			};
+			name = Release;
+		};
 		31A76CD2227586A7003E39B2 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
@@ -527,7 +779,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
@@ -580,7 +832,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
 				SDKROOT = iphoneos;
@@ -592,10 +844,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 0BF3F11AFF53C3B71A800A62 /* Pods-LightningVPN.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = LightningVPN/LightningVPN.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VW8U9YA9E8;
+				DEVELOPMENT_TEAM = 6RYXF8U2N6;
 				GCC_PREFIX_HEADER = LightningVPN/LightningVPN.pch;
 				INFOPLIST_FILE = LightningVPN/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -603,7 +857,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.FanKD.www.LightningVPN;
+				PRODUCT_BUNDLE_IDENTIFIER = LightningVPN.temp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -613,10 +867,12 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 2C6FA9D22EE21C4332121B61 /* Pods-LightningVPN.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CODE_SIGN_ENTITLEMENTS = LightningVPN/LightningVPN.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = VW8U9YA9E8;
+				DEVELOPMENT_TEAM = 6RYXF8U2N6;
 				GCC_PREFIX_HEADER = LightningVPN/LightningVPN.pch;
 				INFOPLIST_FILE = LightningVPN/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
@@ -624,7 +880,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.FanKD.www.LightningVPN;
+				PRODUCT_BUNDLE_IDENTIFIER = LightningVPN.temp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TARGETED_DEVICE_FAMILY = 1;
 			};
@@ -633,6 +889,15 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		1864428C228322E200E8F4C6 /* Build configuration list for PBXNativeTarget "PacketTunnel" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				1864428A228322E200E8F4C6 /* Debug */,
+				1864428B228322E200E8F4C6 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		31A76CB9227586A5003E39B2 /* Build configuration list for PBXProject "LightningVPN" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
