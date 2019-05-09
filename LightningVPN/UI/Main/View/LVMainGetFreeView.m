@@ -24,7 +24,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:[UIScreen mainScreen].bounds];
     if (self) {
-        self.backgroundColor = [UIColor colorWithHexString:@"#1F2227"];
+        self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.4];
         
         self.originY = frame.origin.y;
         
@@ -37,7 +37,7 @@
         self.contentView.layer.masksToBounds = YES;
         [self addSubview:self.contentView];
         
-        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake((self.contentView.width-FITSCALE(80))/2, FITSCALE(30.82), FITSCALE(80), FITSCALE(26))];
+        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake((self.contentView.width-FITSCALE(80))/2, FITHEIGHTSCALE(30.82), FITSCALE(80), FITSCALE(26))];
         titleLabel.font = FitBorderFont(19);
         titleLabel.textColor = kColor_404852;
         titleLabel.textAlignment = NSTextAlignmentCenter;
@@ -46,10 +46,10 @@
         
         [self creatSomeLabel:@[@"微信关注公众号——",@"后台回复",@"按照提示操作"] colorText:@[@"申请圈AppCircle",@"“闪连”",@"免费领取一个月VIP兑换码"] y:@[@(86.82),@(117.82),@(147.82)]];
         
-        self.codeView = [[LVMainCodeInputView alloc] initWithFrame:CGRectMake(FITSCALE(39), FITSCALE(198.24), self.contentView.width-FITSCALE(78), FITSCALE(64))];
+        self.codeView = [[LVMainCodeInputView alloc] initWithFrame:CGRectMake(FITSCALE(39), FITHEIGHTSCALE(198.24), self.contentView.width-FITSCALE(78), FITSCALE(64))];
         [self.contentView addSubview:self.codeView];
         
-        UIButton *enterBtn = [[UIButton alloc] initWithFrame:CGRectMake((self.contentView.width-FITSCALE(278))/2, FITSCALE(302.48), FITSCALE(278), FITSCALE(56))];
+        UIButton *enterBtn = [[UIButton alloc] initWithFrame:CGRectMake((self.contentView.width-FITSCALE(278))/2, FITHEIGHTSCALE(302.48), FITSCALE(278), FITSCALE(56))];
         [enterBtn setTitle:@"确认领取" forState:UIControlStateNormal];
         [enterBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         enterBtn.titleLabel.font = FitFont(17);
@@ -62,7 +62,7 @@
         [enterBtn addTarget:self action:@selector(functionButtonClick:) forControlEvents:UIControlEventTouchUpInside];
         [self.contentView addSubview:enterBtn];
         
-        UIButton *cancelBtn = [[UIButton alloc] initWithFrame:CGRectMake((self.contentView.width-FITSCALE(40))/2, FITSCALE(378.24), FITSCALE(40), FITSCALE(24))];
+        UIButton *cancelBtn = [[UIButton alloc] initWithFrame:CGRectMake((self.contentView.width-FITSCALE(40))/2, FITHEIGHTSCALE(378.24), FITSCALE(40), FITSCALE(24))];
         [cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
         [cancelBtn setTitleColor:kColor_4872FF forState:UIControlStateNormal];
         cancelBtn.titleLabel.font = FitFont(17);
@@ -79,7 +79,7 @@
         NSMutableAttributedString *secondAtt = [[NSMutableAttributedString alloc] initWithString:secondArr[idx] attributes:@{NSForegroundColorAttributeName:kColor_4872FF,NSFontAttributeName:FitFont(15)}];
         [secondAtt insertAttributedString:firstAtt atIndex:0];
         
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake((self.contentView.width-FITSCALE(270))/2, FITSCALE([yArr[idx] floatValue]), FITSCALE(270), FITSCALE(21))];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake((self.contentView.width-FITSCALE(270))/2, FITHEIGHTSCALE([yArr[idx] floatValue]), FITSCALE(270), FITSCALE(21))];
         label.textAlignment = NSTextAlignmentCenter;
         label.attributedText = secondAtt;
         [self.contentView addSubview:label];

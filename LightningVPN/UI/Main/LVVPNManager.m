@@ -167,7 +167,7 @@
             self.VPNStatus = VPNStatus_off;
             break;
         case NEVPNStatusInvalid://连接无效
-            self.VPNStatus = VPNStatus_off;
+            self.VPNStatus = VPNStatus_fail;
             break;
         default:
             break;

@@ -8,6 +8,10 @@
 
 #import "LVLeftMenuVIPBuyView.h"
 
+#define kBuyMonthID @""//一个月
+#define kBuySeasonID @""//一季度
+#define kBuyYearID @""//一年
+
 @interface LVLeftMenuVIPBuyView ()
 
 @property (nonatomic , strong) UIView *contentView;
@@ -21,7 +25,7 @@
 - (instancetype)initWithFrame:(CGRect)frame {
     self = [super initWithFrame:[UIScreen mainScreen].bounds];
     if (self) {
-        self.backgroundColor = [UIColor colorWithHexString:@"#1F2227"];
+        self.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.4];
         
         self.alpha = 0;
         self.hidden = YES;
@@ -51,7 +55,7 @@
         rocketImgV.transform = CGAffineTransformMakeRotation(M_PI/3);
         [self.contentView addSubview:rocketImgV];
         
-        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(FITSCALE(50), FITSCALE(120), FITSCALE(80), FITSCALE(26))];
+        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(FITSCALE(50), FITHEIGHTSCALE(120), FITSCALE(80), FITSCALE(26))];
         titleLabel.font = FitBorderFont(19);
         titleLabel.textColor = kColor_404852;
         titleLabel.text = @"VIP会员";
@@ -61,6 +65,8 @@
         
         NSArray *oneArr = @[@"$3.99",@"$10.99",@"$34.99"];
         NSArray *twoArr = @[@"一个月",@"一季度",@"一年"];
+        NSArray *idArr = @[kBuyMonthID,kBuySeasonID,kBuyYearID];
+        
         self.typeArr = [[NSMutableArray alloc] init];
         
         CGFloat space = FITSCALE(18);
@@ -69,13 +75,15 @@
             LVLeftMenuVIPBuyModel *model = [[LVLeftMenuVIPBuyModel alloc] init];
             model.money = obj;
             model.time = twoArr[idx];
+            model.buyID = idArr[idx];
+            
             if (idx == 0) {
                 model.selected = YES;
             }else {
                 model.selected = NO;
             }
             
-            LVLeftMenuVIPTypeView *typeView = [[LVLeftMenuVIPTypeView alloc] initWithFrame:CGRectMake(FITSCALE(20)+(w+space)*idx, FITSCALE(300), FITSCALE(100), FITSCALE(120.19))];
+            LVLeftMenuVIPTypeView *typeView = [[LVLeftMenuVIPTypeView alloc] initWithFrame:CGRectMake(FITSCALE(20)+(w+space)*idx, FITHEIGHTSCALE(300), FITSCALE(100), FITSCALE(120.19))];
             typeView.model = model;
             [typeView addTarget:self action:@selector(typeControlClick:) forControlEvents:UIControlEventTouchUpInside];
             [self.contentView addSubview:typeView];
@@ -84,7 +92,7 @@
         }];
         
         
-        UIButton *enterBtn = [[UIButton alloc] initWithFrame:CGRectMake((self.contentView.width-FITSCALE(327))/2, FITSCALE(480), FITSCALE(327), FITSCALE(56))];
+        UIButton *enterBtn = [[UIButton alloc] initWithFrame:CGRectMake((self.contentView.width-FITSCALE(327))/2, FITHEIGHTSCALE(480), FITSCALE(327), FITSCALE(56))];
         [enterBtn setTitle:@"立刻升级VIP" forState:UIControlStateNormal];
         [enterBtn setTitleColor:[UIColor whiteColor] forState:UIControlStateNormal];
         enterBtn.titleLabel.font = FitFont(17);
@@ -102,7 +110,7 @@
         imgV.image = IMGNAME(@"icon_main_connect_lightning");
         [enterBtn addSubview:imgV];
         
-        UIButton *cancelBtn = [[UIButton alloc] initWithFrame:CGRectMake((self.contentView.width-FITSCALE(40))/2, FITSCALE(564), FITSCALE(40), FITSCALE(24))];
+        UIButton *cancelBtn = [[UIButton alloc] initWithFrame:CGRectMake((self.contentView.width-FITSCALE(40))/2, FITHEIGHTSCALE(564), FITSCALE(40), FITSCALE(24))];
         [cancelBtn setTitle:@"取消" forState:UIControlStateNormal];
         [cancelBtn setTitleColor:kColor_4872FF forState:UIControlStateNormal];
         cancelBtn.titleLabel.font = FitFont(17);
@@ -115,13 +123,13 @@
 
 - (void)creatSomeLabel:(NSArray <NSString *> *)firstArr pointYArr:(NSArray <NSNumber *> *)pointYArr strYarr:(NSArray <NSNumber *> *)strYarr {
     [firstArr enumerateObjectsUsingBlock:^(NSString * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-        UIView *point = [[UIView alloc] initWithFrame:CGRectMake(FITSCALE(50), FITSCALE([pointYArr[idx] floatValue]), FITSCALE(6), FITSCALE(6))];
+        UIView *point = [[UIView alloc] initWithFrame:CGRectMake(FITSCALE(50), FITHEIGHTSCALE([pointYArr[idx] floatValue]), FITSCALE(6), FITSCALE(6))];
         point.backgroundColor = kColor_4872FF;
         point.layer.cornerRadius = FITSCALE(3);
         point.layer.masksToBounds = YES;
         [self.contentView addSubview:point];
         
-        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(FITSCALE(66), FITSCALE([strYarr[idx] floatValue]), FITSCALE(110), FITSCALE(21))];
+        UILabel *label = [[UILabel alloc] initWithFrame:CGRectMake(FITSCALE(66), FITHEIGHTSCALE([strYarr[idx] floatValue]), FITSCALE(110), FITSCALE(21))];
         label.font = FitFont(15);
         label.textColor = kColor_939AA8;
         label.text = obj;
@@ -143,7 +151,16 @@
 
 - (void)functionButtonClick:(UIButton *)sender {
     if (sender.tag == 10) {//确认
+        __block LVLeftMenuVIPBuyModel *model;
+        [self.typeArr enumerateObjectsUsingBlock:^(LVLeftMenuVIPTypeView * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+            if (obj.model.isSelected) {
+                model = obj.model;
+            }
+        }];
         
+        if ([self.delegate respondsToSelector:@selector(LVLeftMenuVIPBuyView:didSelectedBuyModel:)]) {
+            [self.delegate LVLeftMenuVIPBuyView:self didSelectedBuyModel:model];
+        }
     }else if (sender.tag == 11) {//取消
         
         

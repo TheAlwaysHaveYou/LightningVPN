@@ -94,7 +94,21 @@
     }];
     
     [RACObserve([LVVPNManager sharedInstance], VPNStatus) subscribeNext:^(id  _Nullable x) {
+        @strongify(self)
+        
         NSLog(@"vpn连接状态-----%@",x);
+        return ;
+        
+        VPNStatus status = [(NSNumber *)x integerValue];
+        if (VPNStatus_off == status || VPNStatus_disconnecting == status) {
+            self.connectView.status = LVConnectStatus_normal;
+        }else if (VPNStatus_connecting == status) {
+            self.connectView.status = LVConnectStatus_ing;
+        }else if (VPNStatus_on == status) {
+            self.connectView.status = LVConnectStatus_success;
+        }else if (VPNStatus_fail == status) {
+            self.connectView.status = LVConnectStatus_fail;
+        }
     }];
 }
 
@@ -137,7 +151,7 @@
 
 - (LVMainGetFreeView *)getFreeView {
     if (!_getFreeView) {
-        _getFreeView = [[LVMainGetFreeView alloc] initWithFrame:CGRectMake(FITSCALE(25), FITSCALE(185), FITSCALE(326), FITSCALE(430))];
+        _getFreeView = [[LVMainGetFreeView alloc] initWithFrame:CGRectMake(FITSCALE(25), FITHEIGHTSCALE(185), FITSCALE(326), FITHEIGHTSCALE(430))];
     }
     return _getFreeView;
 }
@@ -145,7 +159,7 @@
 - (UIView *)maskView {
     if (!_maskView) {
         _maskView = [[UIControl alloc] initWithFrame:[UIScreen mainScreen].bounds];
-        _maskView.backgroundColor = [UIColor colorWithHexString:@"#1F2227"];
+        _maskView.backgroundColor = [[UIColor blackColor] colorWithAlphaComponent:0.4];
         _maskView.alpha = 0;
         @weakify(self)
         [[_maskView rac_signalForControlEvents:UIControlEventTouchUpInside] subscribeNext:^(__kindof UIControl * _Nullable x) {
@@ -159,7 +173,7 @@
 - (LVMainLineSelecteView *)lineView {
     if (!_lineView) {
 //        _lineView = [[LVMainLineSelecteView alloc] initWithFrame:CGRectMake(0, FITSCALE(287), kSCREEN_WIDTH, FITSCALE(525))];
-        _lineView = [[LVMainLineSelecteView alloc] initWithFrame:CGRectMake(0,kSCREEN_HEIGHT - FITSCALE(90), kSCREEN_WIDTH, FITSCALE(525))];
+        _lineView = [[LVMainLineSelecteView alloc] initWithFrame:CGRectMake(0,kSCREEN_HEIGHT - FITSCALE(90), kSCREEN_WIDTH, FITHEIGHTSCALE(525))];
         _lineView.delegate = self;
     }
     return _lineView;

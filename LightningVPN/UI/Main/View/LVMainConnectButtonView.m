@@ -72,7 +72,7 @@
         self.nameLabel.textColor = kColor_404852;
         self.imgV.hidden = YES;
         
-        self.layer.backgroundColor = [UIColor clearColor].CGColor;
+        self.layer.backgroundColor = [UIColor whiteColor].CGColor;
         self.layer.cornerRadius = self.frame.size.height/2;
         self.layer.shadowColor = [UIColor clearColor].CGColor;
         self.layer.shadowOffset = CGSizeZero;
@@ -85,7 +85,7 @@
         self.nameLabel.textColor = kColor_404852;
         self.imgV.hidden = YES;
         
-        self.layer.backgroundColor = [UIColor clearColor].CGColor;
+        self.layer.backgroundColor = [UIColor whiteColor].CGColor;
         self.layer.cornerRadius = self.frame.size.height/2;
         self.layer.shadowColor = [UIColor clearColor].CGColor;
         self.layer.shadowOffset = CGSizeZero;
@@ -98,7 +98,7 @@
         self.nameLabel.textColor = kColor_EC6161;
         self.imgV.hidden = YES;
         
-        self.layer.backgroundColor = [UIColor clearColor].CGColor;
+        self.layer.backgroundColor = [UIColor whiteColor].CGColor;
         self.layer.cornerRadius = self.frame.size.height/2;
         self.layer.shadowColor = [UIColor clearColor].CGColor;
         self.layer.shadowOffset = CGSizeZero;

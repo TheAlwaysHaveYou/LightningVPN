@@ -15,6 +15,8 @@ NS_ASSUME_NONNULL_BEGIN
 @property (nonatomic , strong) NSString *money;
 @property (nonatomic , strong) NSString *time;
 
+@property (nonatomic , strong) NSString *buyID;
+
 @property (nonatomic , assign , getter=isSelected) BOOL selected;
 
 @end

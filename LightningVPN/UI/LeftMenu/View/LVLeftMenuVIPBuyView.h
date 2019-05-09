@@ -11,8 +11,16 @@
 
 NS_ASSUME_NONNULL_BEGIN
 
+@class LVLeftMenuVIPBuyView;
+@protocol LVLeftMenuVIPBuyViewDelegate <NSObject>
+
+- (void)LVLeftMenuVIPBuyView:(LVLeftMenuVIPBuyView *)view didSelectedBuyModel:(LVLeftMenuVIPBuyModel *)model;
+
+@end
+
 @interface LVLeftMenuVIPBuyView : UIView
 
+@property (nonatomic , weak) id <LVLeftMenuVIPBuyViewDelegate> delegate;
 
 - (void)show;
 

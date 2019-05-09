@@ -15,6 +15,7 @@ typedef NS_ENUM(NSInteger, VPNStatus){
     VPNStatus_connecting    = 1,//正在连接
     VPNStatus_on            = 2,//连接成功
     VPNStatus_disconnecting = 3,//断开连接
+    VPNStatus_fail          = 4,//连接失败
 };
 
 @interface LVVPNManager : NSObject
