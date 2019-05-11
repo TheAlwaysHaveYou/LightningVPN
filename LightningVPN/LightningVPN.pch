@@ -18,7 +18,7 @@
 
 #define LVSharedAppDelegate ((AppDelegate *)[UIApplication sharedApplication].delegate)
 
-#define LVSharedAppWindow [UIApplication sharedApplication].delegate.window
+#define LVSharedAppWindow [UIApplication sharedApplication].keyWindow
 
 #define kSCREEN_WIDTH  [UIScreen mainScreen].bounds.size.width
 #define kSCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height

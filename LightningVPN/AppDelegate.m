@@ -12,6 +12,7 @@
 #import "IQKeyboardManager.h"
 #import "LVLeftMenuVC.h"
 #import "LVMainVC.h"
+#import "AFNetworkActivityIndicatorManager.h"
 
 @interface AppDelegate ()<RESideMenuDelegate>
 
@@ -21,6 +22,8 @@
 
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
+    
+    [AFNetworkActivityIndicatorManager sharedManager].enabled = YES;
     
     self.window = [[UIWindow alloc] initWithFrame:[UIScreen mainScreen].bounds];
     self.window.backgroundColor = [UIColor whiteColor];

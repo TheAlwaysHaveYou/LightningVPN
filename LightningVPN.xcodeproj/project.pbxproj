@@ -22,6 +22,7 @@
 		186442A5228325D000E8F4C6 /* lwip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1864429B228325D000E8F4C6 /* lwip.framework */; };
 		186442A72283263200E8F4C6 /* NEKitRule.conf in Resources */ = {isa = PBXBuildFile; fileRef = 186442A62283263200E8F4C6 /* NEKitRule.conf */; };
 		186442AA2283264900E8F4C6 /* LVVPNManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 186442A82283264900E8F4C6 /* LVVPNManager.m */; };
+		188CD8C2228712C900203613 /* HUDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 188CD8C1228712C900203613 /* HUDManager.m */; };
 		18D4C7FB2281788300CE5E02 /* LVLaunchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D4C7FA2281788300CE5E02 /* LVLaunchVC.m */; };
 		18D4C7FF2281794C00CE5E02 /* LVLaunchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D4C7FE2281794C00CE5E02 /* LVLaunchCell.m */; };
 		18D4C8032281796C00CE5E02 /* LVLaunchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D4C8022281796C00CE5E02 /* LVLaunchModel.m */; };
@@ -100,6 +101,8 @@
 		186442A62283263200E8F4C6 /* NEKitRule.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NEKitRule.conf; sourceTree = "<group>"; };
 		186442A82283264900E8F4C6 /* LVVPNManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVVPNManager.m; sourceTree = "<group>"; };
 		186442A92283264900E8F4C6 /* LVVPNManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVVPNManager.h; sourceTree = "<group>"; };
+		188CD8C0228712C900203613 /* HUDManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HUDManager.h; sourceTree = "<group>"; };
+		188CD8C1228712C900203613 /* HUDManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HUDManager.m; sourceTree = "<group>"; };
 		18D4C7F92281788300CE5E02 /* LVLaunchVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LVLaunchVC.h; sourceTree = "<group>"; };
 		18D4C7FA2281788300CE5E02 /* LVLaunchVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LVLaunchVC.m; sourceTree = "<group>"; };
 		18D4C7FD2281794C00CE5E02 /* LVLaunchCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LVLaunchCell.h; sourceTree = "<group>"; };
@@ -378,6 +381,8 @@
 				31BF423D2277297500330422 /* UIButton+Extension.m */,
 				18DC4B682285BFED007F96BF /* UIWindow+MBProgressHUD.h */,
 				18DC4B692285BFED007F96BF /* UIWindow+MBProgressHUD.m */,
+				188CD8C0228712C900203613 /* HUDManager.h */,
+				188CD8C1228712C900203613 /* HUDManager.m */,
 			);
 			path = Extension;
 			sourceTree = "<group>";
@@ -654,6 +659,7 @@
 				31BF4245227749BD00330422 /* LVLeftMenuVIPBuyModel.m in Sources */,
 				31A76CE222758AF6003E39B2 /* LVBaseViewController.m in Sources */,
 				311366072276038500BB1D9E /* LVMainLineSelecteView.m in Sources */,
+				188CD8C2228712C900203613 /* HUDManager.m in Sources */,
 				311366042275FE0B00BB1D9E /* LVMainConnectNoteView.m in Sources */,
 				31A76CE522758B46003E39B2 /* LVTabbarController.m in Sources */,
 				311365E122758B9F00BB1D9E /* HTTPRequestManager.m in Sources */,

@@ -34,6 +34,10 @@ const char *finishedHandlerKey = "finishedHandlerKey";
     if(!hud) {
         UIView *hudSuperView = self;
         hud = [[MBProgressHUD alloc] initWithView:hudSuperView];
+//        hud.bezelView.color = [[UIColor blackColor] colorWithAlphaComponent:0.8];
+        hud.bezelView.color = [UIColor blackColor];
+        hud.bezelView.style = MBProgressHUDBackgroundStyleSolidColor;
+        hud.contentColor = [UIColor whiteColor];
         hud.removeFromSuperViewOnHide = YES;
         hud.delegate = self;
         [hudSuperView addSubview:hud];
@@ -62,6 +66,9 @@ const char *finishedHandlerKey = "finishedHandlerKey";
 }
 
 - (void)showHUD {
+    static NSInteger number = 0;
+    number ++;
+    NSLog(@"显示的次数----%d",number);
     [self _showHUDWithMessage:nil];
 }
 
@@ -70,6 +77,9 @@ const char *finishedHandlerKey = "finishedHandlerKey";
 }
 
 - (void)hideHUD {
+    static NSInteger number = 0;
+    number ++;
+    NSLog(@"隐藏的次数----%d",number);
     [self.progressHUD hideAnimated:YES];
 }
 
@@ -93,7 +103,7 @@ const char *finishedHandlerKey = "finishedHandlerKey";
     self.progressHUD.margin = 10.f;
     
     [self.progressHUD showAnimated:YES];
-    [self.progressHUD hideAnimated:YES afterDelay:1];
+    [self.progressHUD hideAnimated:YES afterDelay:2];
 }
 
 
@@ -142,6 +152,7 @@ const char *finishedHandlerKey = "finishedHandlerKey";
         self.finishedHandler();
         self.finishedHandler = nil;
     }
+    [self.progressHUD removeFromSuperview];
     self.progressHUD.delegate = nil;
     self.progressHUD = nil;
 }

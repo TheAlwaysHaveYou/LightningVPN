@@ -10,7 +10,9 @@
 
 #define kBuyMonthID @"LightingVPNVipMonth"  //一个月
 #define kBuySeasonID @"LightingVPNVipSeason"//一季度
-#define kBuyYearID @"LightingVPNVipYear"    //一年
+//#define kBuyYearID @"LightingVPNVipYear"    //一年
+#define kBuyYearID @"com.test.restore"
+
 
 @interface LVLeftMenuVIPBuyView ()
 
