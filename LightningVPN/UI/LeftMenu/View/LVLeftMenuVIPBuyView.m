@@ -8,9 +8,9 @@
 
 #import "LVLeftMenuVIPBuyView.h"
 
-#define kBuyMonthID @""//一个月
-#define kBuySeasonID @""//一季度
-#define kBuyYearID @""//一年
+#define kBuyMonthID @"LightingVPNVipMonth"  //一个月
+#define kBuySeasonID @"LightingVPNVipSeason"//一季度
+#define kBuyYearID @"LightingVPNVipYear"    //一年
 
 @interface LVLeftMenuVIPBuyView ()
 

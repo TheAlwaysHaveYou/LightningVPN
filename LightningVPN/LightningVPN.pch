@@ -14,6 +14,11 @@
 #import "MJExtension.h"
 #import "ReactiveObjC.h"
 #import "UIButton+Extension.h"
+#import "UIWindow+MBProgressHUD.h"
+
+#define LVSharedAppDelegate ((AppDelegate *)[UIApplication sharedApplication].delegate)
+
+#define LVSharedAppWindow [UIApplication sharedApplication].delegate.window
 
 #define kSCREEN_WIDTH  [UIScreen mainScreen].bounds.size.width
 #define kSCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height

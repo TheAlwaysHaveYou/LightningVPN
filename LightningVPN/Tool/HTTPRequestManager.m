@@ -7,16 +7,46 @@
 //
 
 #import "HTTPRequestManager.h"
+#import "AFNetWorking.h"
+
+
+@interface HTTPRequestManager ()
+
+@property (nonatomic,strong) AFHTTPSessionManager* manager;
+
+@end
 
 @implementation HTTPRequestManager
 
 + (instancetype)sharedInstance {
-    static HTTPRequestManager *manager;
+    static HTTPRequestManager *request;
     static dispatch_once_t onceToken;
     dispatch_once(&onceToken, ^{
-        manager = [[HTTPRequestManager alloc] init];
+        request = [[HTTPRequestManager alloc] init];
+        
+        request.manager = [[AFHTTPSessionManager alloc] initWithBaseURL:[NSURL URLWithString:@""]];
+        request.manager.responseSerializer = [AFJSONResponseSerializer serializer];
+        request.manager.requestSerializer = [AFJSONRequestSerializer serializer];
+//        request.manager.requestSerializer.HTTPMethodsEncodingParametersInURI = [NSSet setWithObjects:@"GET", @"HEAD",@"PUT", nil];//AFN默认吧get head delete方法的请求参数拼到了url的后面，写这个是移除了delete
+//
+//        [request.manager.requestSerializer setValue:@"application/json" forHTTPHeaderField:@"Accept"];
+//        [request.manager.requestSerializer setValue:@"application/json;charset=utf-8" forHTTPHeaderField:@"Content-Type"];
+//        request.manager.responseSerializer.acceptableContentTypes = [NSSet setWithObjects:@"application/json", @"image/jpeg", @"image/png",@"text/html",nil];
     });
-    return manager;
+    return request;
 }
 
+
+- (void)post {
+    NSURLSessionDataTask *task = [self.manager POST:@"http://118.190.206.2:19089/organization/queryAdList" parameters:@{@"cmd":@"organization/queryAdList",@"version":@"1.0",@"token":@"",@"params":@{}} progress:^(NSProgress * _Nonnull uploadProgress) {
+        NSLog(@"进度--------");
+    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
+        NSLog(@"成功--------");
+    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
+        NSLog(@"失败--------");
+    }];
+    
+    NSLog(@"请求的url---%@",task.currentRequest.URL);
+    
+}
 @end

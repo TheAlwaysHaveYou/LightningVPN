@@ -14,7 +14,7 @@
 	</array>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.tempLighting</string>
+		<string>group.LightingVPN</string>
 	</array>
 </dict>
 </plist>

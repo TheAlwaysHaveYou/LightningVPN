@@ -171,14 +171,6 @@ static NSString * const cellIdentifier = @"cell";
     }
 }
 
-- (void)requestProductData:(NSString *)type {
-    NSArray *product = @[type];
-    NSSet *set = [NSSet setWithArray:product];
-    SKProductsRequest *request = [[SKProductsRequest alloc] initWithProductIdentifiers:set];
-    request.delegate = self;
-    [request start];
-}
-
 #pragma mark - Protocol conformance
 
 #pragma mark - UITableViewDataSource
@@ -232,8 +224,19 @@ static NSString * const cellIdentifier = @"cell";
     }
 }
 
+- (void)requestProductData:(NSString *)type {
+    [LVSharedAppWindow showHUD];
+    
+    NSArray *product = @[@"LightingVPNVipMonth"];
+    NSSet *set = [NSSet setWithArray:product];
+    SKProductsRequest *request = [[SKProductsRequest alloc] initWithProductIdentifiers:set];
+    request.delegate = self;
+    [request start];
+}
+
 #pragma mark - SKProductsRequestDelegate
 - (void)productsRequest:(SKProductsRequest *)request didReceiveResponse:(SKProductsResponse *)response {
+    NSLog(@"收到了商品信息+++++++");
     NSArray *product = response.products;
     if (product.count == 0) {
         return;
@@ -252,14 +255,21 @@ static NSString * const cellIdentifier = @"cell";
     [[SKPaymentQueue defaultQueue] addPayment:payment];
 }
 
+#pragma mark - SKRequestDelegate
 - (void)request:(SKRequest *)request didFailWithError:(NSError *)error {
     //获取失败
-    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:[error localizedDescription] delegate:nil cancelButtonTitle:@"关闭" otherButtonTitles:nil, nil];
-    [alert show];
+    NSLog(@"获取商品信息失败---");
+    [LVSharedAppWindow hideHUD];
+    
+    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:[error localizedDescription] preferredStyle:UIAlertControllerStyleAlert];
+    [alert addAction:[UIAlertAction actionWithTitle:@"关闭" style:UIAlertActionStyleCancel handler:nil]];
+    [self presentViewController:alert animated:YES completion:nil];
 }
 
 - (void)requestDidFinish:(SKRequest *)request {
     //请求结束
+    NSLog(@"获取商品信息结束");
+    [LVSharedAppWindow hideHUD];
 }
 
 #pragma mark - SKPaymentTransactionObserver
@@ -275,11 +285,11 @@ static NSString * const cellIdentifier = @"cell";
                 break;
             case SKPaymentTransactionStateFailed:
                 NSLog(@"购买失败");
-                
+                [LVSharedAppWindow showHintHudWithMessage:@"购买失败"];
                 break;
             case SKPaymentTransactionStateRestored:
                 NSLog(@"这是已经购买过的商品");
-                
+                [LVSharedAppWindow showHintHudWithMessage:@"已经购买过的商品"];
                 break;
                 
             default:
@@ -335,20 +345,23 @@ static NSString * const cellIdentifier = @"cell";
 //    [sesson dataTaskWithRequest:storeRequest completionHandler:^(NSData * _Nullable data, NSURLResponse * _Nullable response, NSError * _Nullable error) {
 //
 //    }];
-    
+    [LVSharedAppWindow showHUD];
     [NSURLConnection sendAsynchronousRequest:storeRequest queue:queue completionHandler:^(NSURLResponse *response, NSData *data, NSError *connectionError) {
-        
         dispatch_async(dispatch_get_main_queue(), ^{
+            [LVSharedAppWindow hideHUD];
+            
             if (connectionError) {
-                UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:[connectionError localizedDescription] delegate:nil cancelButtonTitle:@"关闭" otherButtonTitles:nil, nil];
-                [alert show];
+                UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:[connectionError localizedDescription] preferredStyle:UIAlertControllerStyleAlert];
+                [alert addAction:[UIAlertAction actionWithTitle:@"关闭" style:UIAlertActionStyleCancel handler:nil]];
+                [self presentViewController:alert animated:YES completion:nil];
             } else {
                 NSError *error;
                 NSDictionary *jsonResponse = [NSJSONSerialization JSONObjectWithData:data options:0 error:&error];
                 NSLog(@"官网验证返回    %@",jsonResponse);
                 if (!jsonResponse) {
-                    UIAlertView *alert = [[UIAlertView alloc] initWithTitle:nil message:[error localizedDescription] delegate:nil cancelButtonTitle:@"关闭" otherButtonTitles:nil, nil];
-                    [alert show];
+                    UIAlertController *alert = [UIAlertController alertControllerWithTitle:nil message:[error localizedDescription] preferredStyle:UIAlertControllerStyleAlert];
+                    [alert addAction:[UIAlertAction actionWithTitle:@"关闭" style:UIAlertActionStyleCancel handler:nil]];
+                    [self presentViewController:alert animated:YES completion:nil];
                 }
                 
                 NSNumber *status = jsonResponse[@"status"];
