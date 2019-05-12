@@ -320,8 +320,8 @@ static NSString * const cellIdentifier = @"cell";
             case SKPaymentTransactionStateRestored:
                 NSLog(@"这是已经购买过的商品--恢复购买");
 //                [LVSharedAppWindow showHintHudWithMessage:@"已经购买过的商品"];
-                [[SKPaymentQueue defaultQueue] finishTransaction:tran];
                 [self completeTransaction:tran];
+                [[SKPaymentQueue defaultQueue] finishTransaction:tran];
                 break;
                 
             default:
@@ -345,7 +345,8 @@ static NSString * const cellIdentifier = @"cell";
         return;
     }
     NSError *error;
-    NSDictionary *requestContents = @{@"receipt-data": [receipt base64EncodedStringWithOptions:0] };
+    NSDictionary *requestContents = @{@"receipt-data": [receipt base64EncodedStringWithOptions:0],@"password":@"f5762cb4665a42a3be0fc17b8fa4b41c"};
+//    NSDictionary *requestContents = @{@"receipt-data": [receipt base64EncodedStringWithOptions:0]};
     NSData *requestData = [NSJSONSerialization dataWithJSONObject:requestContents options:0 error:&error];
     if (!requestData) {
         [LVSharedAppWindow hideHUD];
@@ -398,8 +399,13 @@ static NSString * const cellIdentifier = @"cell";
                 if (status.intValue == 0) {
                     //status code 0为成功
                     NSString *productId = [jsonResponse[@"receipt"][@"in_app"] firstObject][@"product_id"];
-                    //            NSString *productId = jsonResponse[@"receipt"][@"product_id"];
-                    NSLog(@"产品 productID  ---- %@",productId);
+                    //in_app字段是个数组，当恢复购买的时候会返回多数据
+                    NSArray *tempArr = jsonResponse[@"receipt"][@"in_app"];
+                    [tempArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+                        NSLog(@"票据信息----%@",obj);
+                    }];
+        //            NSString *productId = jsonResponse[@"receipt"][@"product_id"];
+//                    NSLog(@"产品 productID  ---- %@",productId);
                     
 //                    [[self.viewModel.verifySuccessCommad execute:RACTuplePack(self.userPayID,@(1))] subscribeNext:^(id x) {
 //                        [self showHintHudWithMessage:@"充值成功"];
