@@ -60,6 +60,9 @@
             NSLog(@"初始化出错-----%@",error);
         }else{
             NSLog(@"startVPNTunnel---OK");
+            dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+                [self updateVPNStatus:manager];
+            });
         }
     }];
 }
@@ -67,6 +70,10 @@
 - (void)disconnect {
     [self loadProviderManager:^(NETunnelProviderManager *manager) {
         [manager.connection stopVPNTunnel];
+        
+        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(1.5 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+            [self updateVPNStatus:manager];
+        });
     }];
 }
 
@@ -113,23 +120,31 @@
         manager.enabled = YES;
         
         NSMutableDictionary *conf = @{}.mutableCopy;
-        conf[@"ss_address"] = @"";
-        conf[@"ss_port"] = @2018;//注意是number值、、、
+        conf[@"ss_address"] = @"103.95.207.14";
+        conf[@"ss_port"] = @9876;//注意是number值、、、
         conf[@"ss_method"] = @"AES256CFB";
-        conf[@"ss_password"] = @"";
+        conf[@"ss_password"] = @"test";
         
         conf[@"ymal_conf"] = [self getRuleConf];
         NETunnelProviderProtocol *orignConf = (NETunnelProviderProtocol *)manager.protocolConfiguration;
         orignConf.providerConfiguration = conf;
         manager.protocolConfiguration = orignConf;
         
+        [[NSUserDefaults standardUserDefaults] removeObjectForKey:kConfigureSuccess];
+        [[NSUserDefaults standardUserDefaults] synchronize];
+        
         //保存 vpn 参数信息
         [manager saveToPreferencesWithCompletionHandler:^(NSError * _Nullable error) {
             if (error == nil) {
-                //注意这里保存配置成功后，一定要再次load，否则会导致后面StartVPN出异常
+                [[NSUserDefaults standardUserDefaults] setValue:kConfigureSuccess forKey:kConfigureSuccess];
+                [[NSUserDefaults standardUserDefaults] synchronize];
+
+                
+//                注意这里保存配置成功后，一定要再次load，否则会导致后面StartVPN出异常
                 [manager loadFromPreferencesWithCompletionHandler:^(NSError * _Nullable error) {
                     if (error == nil) {
                         NSLog(@"保存vpn设置成功 success");
+                        
                         compelte(manager);return;
                     }
                     compelte(nil);return;

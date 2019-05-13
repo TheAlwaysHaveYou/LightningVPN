@@ -118,21 +118,27 @@
         [UIView animateWithDuration:0.5 animations:^{
             self.status = LVConnectStatus_ing;
         }];
-        
-        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
-            [UIView animateWithDuration:0.5 animations:^{
-                self.status = LVConnectStatus_success;
-            }];
-        });
-    }else if (LVConnectStatus_ing == self.status) {
-        
-    }else if (LVConnectStatus_success == self.status) {
-        [UIView animateWithDuration:0.5 animations:^{
-            self.status = LVConnectStatus_normal;
-        }];
-    }else if (LVConnectStatus_fail == self.status) {
-        
     }
+    
+//    if (LVConnectStatus_normal == self.status) {
+//        [UIView animateWithDuration:0.5 animations:^{
+//            self.status = LVConnectStatus_ing;
+//        }];
+//
+//        dispatch_after(dispatch_time(DISPATCH_TIME_NOW, (int64_t)(3 * NSEC_PER_SEC)), dispatch_get_main_queue(), ^{
+//            [UIView animateWithDuration:0.5 animations:^{
+//                self.status = LVConnectStatus_success;
+//            }];
+//        });
+//    }else if (LVConnectStatus_ing == self.status) {
+//
+//    }else if (LVConnectStatus_success == self.status) {
+//        [UIView animateWithDuration:0.5 animations:^{
+//            self.status = LVConnectStatus_normal;
+//        }];
+//    }else if (LVConnectStatus_fail == self.status) {
+//
+//    }
 }
 
 @end

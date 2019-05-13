@@ -97,8 +97,10 @@
         @strongify(self)
         
         NSLog(@"vpn连接状态-----%@",x);
-        return ;
-        
+//        return ;
+        if (![[[NSUserDefaults standardUserDefaults] objectForKey:kConfigureSuccess] isEqualToString:kConfigureSuccess]) {
+            return ;
+        }
         VPNStatus status = [(NSNumber *)x integerValue];
         if (VPNStatus_off == status || VPNStatus_disconnecting == status) {
             self.connectView.status = LVConnectStatus_normal;
@@ -250,7 +252,7 @@
      LVConnectStatus_success = 2,//链接成功
      LVConnectStatus_fail    = 3,//链接失败
      */
-    if (LVConnectStatus_normal == status) {
+    if (LVConnectStatus_normal == status || LVConnectStatus_fail == status) {
         [[LVVPNManager sharedInstance] connect];
     }else if (LVConnectStatus_success == status) {
         [[LVVPNManager sharedInstance] disconnect];

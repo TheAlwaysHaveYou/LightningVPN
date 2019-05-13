@@ -306,6 +306,13 @@ static NSString * const cellIdentifier = @"cell";
             {
                 NSLog(@"购买成功");
 //                [LVSharedAppWindow hideHUD];
+                //订阅特殊处理
+                if(tran.originalTransaction){
+                    //如果是自动续费的订单originalTransaction会有内容
+                    [LVSharedAppWindow showHUD];
+                }else{
+                    //普通购买，以及 第一次购买 自动订阅
+                }
                 [[SKPaymentQueue defaultQueue] finishTransaction:tran];
                 [self completeTransaction:tran];
             }
@@ -398,12 +405,11 @@ static NSString * const cellIdentifier = @"cell";
                 NSNumber *status = jsonResponse[@"status"];
                 if (status.intValue == 0) {
                     //status code 0为成功
-                    NSString *productId = [jsonResponse[@"receipt"][@"in_app"] firstObject][@"product_id"];
+//                    NSString *productId = [jsonResponse[@"receipt"][@"in_app"] firstObject][@"product_id"];
                     //in_app字段是个数组，当恢复购买的时候会返回多数据
-                    NSArray *tempArr = jsonResponse[@"receipt"][@"in_app"];
-                    [tempArr enumerateObjectsUsingBlock:^(id  _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
-                        NSLog(@"票据信息----%@",obj);
-                    }];
+                    NSString *lastReceipt = jsonResponse[@"latest_receipt"];
+                    NSLog(@"服务器保存最新收据----%@",lastReceipt);
+                    
         //            NSString *productId = jsonResponse[@"receipt"][@"product_id"];
 //                    NSLog(@"产品 productID  ---- %@",productId);
                     
@@ -423,6 +429,8 @@ static NSString * const cellIdentifier = @"cell";
                     //21008 receipt是生产receipt，但却发送至Sandbox环境的验证服务
                     if (status.intValue == 21007) {//苹果审核的时候,用的是沙盒环境,要重新换沙盒URL
                         [self verifyReceiptToAppleServerWithURL:VerifyTestEnvironment];
+                    }else {
+                        [LVSharedAppWindow showHintHudWithMessage:@"验证失败"];
                     }
                 }
             }
@@ -430,33 +438,4 @@ static NSString * const cellIdentifier = @"cell";
     }];
 }
 
-    
-    
-    /*购买数据
-     官网验证返回    {
-     environment = Sandbox;
-     receipt =     {
-     "adam_id" = 0;
-     "app_item_id" = 0;
-     "application_version" = 1;
-     "bundle_id" = "LightningVPN.Pro";
-     "download_id" = 0;
-     "in_app" =         (
-     {
-     "is_trial_period" = false;
-     "original_purchase_date" = "2019-05-11 07:45:32 Etc/GMT";
-     "original_purchase_date_ms" = 1557560732000;
-     "original_purchase_date_pst" = "2019-05-11 00:45:32 America/Los_Angeles";
-     "original_transaction_id" = 1000000526843258;
-     "product_id" = LightingVPNVipMonth;
-     "purchase_date" = "2019-05-11 07:45:32 Etc/GMT";
-     "purchase_date_ms" = 1557560732000;
-     "purchase_date_pst" = "2019-05-11 00:45:32 America/Los_Angeles";
-     quantity = 1;
-     "transaction_id" = 1000000526843258;
-     
-     },
-     {
-     "is_trial_period" = fal
-     */
 @end
