@@ -29,6 +29,7 @@
 		186442A72283263200E8F4C6 /* NEKitRule.conf in Resources */ = {isa = PBXBuildFile; fileRef = 186442A62283263200E8F4C6 /* NEKitRule.conf */; };
 		186442AA2283264900E8F4C6 /* LVVPNManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 186442A82283264900E8F4C6 /* LVVPNManager.m */; };
 		188CD8C2228712C900203613 /* HUDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 188CD8C1228712C900203613 /* HUDManager.m */; };
+		18C092F3228DAECA000EC690 /* NEKitNoRule.conf in Resources */ = {isa = PBXBuildFile; fileRef = 18C092F2228DAECA000EC690 /* NEKitNoRule.conf */; };
 		18D4C7FB2281788300CE5E02 /* LVLaunchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D4C7FA2281788300CE5E02 /* LVLaunchVC.m */; };
 		18D4C7FF2281794C00CE5E02 /* LVLaunchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D4C7FE2281794C00CE5E02 /* LVLaunchCell.m */; };
 		18D4C8032281796C00CE5E02 /* LVLaunchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D4C8022281796C00CE5E02 /* LVLaunchModel.m */; };
@@ -125,6 +126,7 @@
 		186442A92283264900E8F4C6 /* LVVPNManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVVPNManager.h; sourceTree = "<group>"; };
 		188CD8C0228712C900203613 /* HUDManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HUDManager.h; sourceTree = "<group>"; };
 		188CD8C1228712C900203613 /* HUDManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HUDManager.m; sourceTree = "<group>"; };
+		18C092F2228DAECA000EC690 /* NEKitNoRule.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NEKitNoRule.conf; sourceTree = "<group>"; };
 		18D4C7F92281788300CE5E02 /* LVLaunchVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LVLaunchVC.h; sourceTree = "<group>"; };
 		18D4C7FA2281788300CE5E02 /* LVLaunchVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LVLaunchVC.m; sourceTree = "<group>"; };
 		18D4C7FD2281794C00CE5E02 /* LVLaunchCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LVLaunchCell.h; sourceTree = "<group>"; };
@@ -398,6 +400,7 @@
 			children = (
 				18424C03228DA8FC006B72DE /* SiriShortCuts */,
 				186442A62283263200E8F4C6 /* NEKitRule.conf */,
+				18C092F2228DAECA000EC690 /* NEKitNoRule.conf */,
 				1864428E2283255900E8F4C6 /* LightningVPN.entitlements */,
 				31A76CC1227586A5003E39B2 /* AppDelegate.h */,
 				31A76CC2227586A5003E39B2 /* AppDelegate.m */,
@@ -651,6 +654,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				18C092F3228DAECA000EC690 /* NEKitNoRule.conf in Resources */,
 				31A76CCB227586A7003E39B2 /* Assets.xcassets in Resources */,
 				186442A72283263200E8F4C6 /* NEKitRule.conf in Resources */,
 			);

@@ -16,6 +16,7 @@
 #import <IntentsUI/IntentsUI.h>
 #import <Intents/Intents.h>
 #import "StartIntentIntent.h"
+#import "LVVPNManager.h"
 
 #define VerifyTestEnvironment @"https://sandbox.itunes.apple.com/verifyReceipt"//测试环境验证
 #define VerifyRealEnvironment @"https://buy.itunes.apple.com/verifyReceipt"//正式环境验证
@@ -198,7 +199,13 @@ static NSString * const cellIdentifier = @"cell";
     NSLog(@"点击功能---%ld",(long)indexPath.row);
     if (indexPath.row == 0) {//购买
         [self.buyView show];
-    }else if (indexPath.row == 3){
+    }else if (indexPath.row == 1) {
+        
+    }else if (indexPath.row == 2) {
+        [LVVPNManager sharedInstance].rule == VPNConnectRule_HaveRule ?([LVVPNManager sharedInstance].rule=VPNConnectRule_NoRule):([LVVPNManager sharedInstance].rule=VPNConnectRule_HaveRule);
+        NSLog(@"改变了智能规则---%d",[LVVPNManager sharedInstance].rule);
+        
+    }else if (indexPath.row == 3) {
         if (@available(iOS 12.0, *)) {
             StartIntentIntent *intent = [[StartIntentIntent alloc] init];
             intent.suggestedInvocationPhrase = @"VPN功能打开";//提示用户

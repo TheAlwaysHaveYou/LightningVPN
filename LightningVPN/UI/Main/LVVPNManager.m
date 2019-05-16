@@ -31,6 +31,7 @@
         //默认出事赋值
         self.observerAdded = NO;
         self.VPNStatus = VPNStatus_off;
+        self.rule = VPNConnectRule_HaveRule;
         
         __weak typeof(self) weakself = self;
         [self loadProviderManager:^(NETunnelProviderManager *manager) {
@@ -157,7 +158,7 @@
 }
 
 - (NSString *)getRuleConf {
-    NSString * Path = [[NSBundle mainBundle] pathForResource:@"NEKitRule" ofType:@"conf"];
+    NSString * Path = [[NSBundle mainBundle] pathForResource:(VPNConnectRule_HaveRule == self.rule)?@"NEKitRule":@"NEKitNoRule" ofType:@"conf"];
     NSData *data = [NSData dataWithContentsOfURL:[NSURL fileURLWithPath:Path]];
     return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 }

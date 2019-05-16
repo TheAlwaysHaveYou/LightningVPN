@@ -20,9 +20,16 @@ typedef NS_ENUM(NSInteger, VPNStatus){
     VPNStatus_fail          = 4,//连接失败
 };
 
+typedef NS_ENUM(NSInteger , VPNConnectRule) {
+    VPNConnectRule_HaveRule = 0,//智能，有过滤规则
+    VPNConnectRule_NoRule   = 1,//全局，所有流量都走VPN
+};
+
 @interface LVVPNManager : NSObject
 
-@property (nonatomic) VPNStatus VPNStatus;
+@property (nonatomic , assign) VPNStatus VPNStatus;
+
+@property (nonatomic , assign ) VPNConnectRule rule;
 
 + (instancetype)sharedInstance;
 
