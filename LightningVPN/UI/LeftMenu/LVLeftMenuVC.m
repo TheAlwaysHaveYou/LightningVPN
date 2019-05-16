@@ -13,11 +13,14 @@
 #import "LVAboutVC.h"
 #import "LVLeftMenuVIPBuyView.h"
 #import <StoreKit/StoreKit.h>
+#import <IntentsUI/IntentsUI.h>
+#import <Intents/Intents.h>
+#import "StartIntentIntent.h"
 
 #define VerifyTestEnvironment @"https://sandbox.itunes.apple.com/verifyReceipt"//测试环境验证
 #define VerifyRealEnvironment @"https://buy.itunes.apple.com/verifyReceipt"//正式环境验证
 
-@interface LVLeftMenuVC ()<UITableViewDelegate,UITableViewDataSource,LVLeftMenuHeaderViewDelegate,LVLeftMenuFooterViewDelegate,LVLeftMenuVIPBuyViewDelegate,SKPaymentTransactionObserver, SKProductsRequestDelegate>
+@interface LVLeftMenuVC ()<UITableViewDelegate,UITableViewDataSource,LVLeftMenuHeaderViewDelegate,LVLeftMenuFooterViewDelegate,LVLeftMenuVIPBuyViewDelegate,SKPaymentTransactionObserver, SKProductsRequestDelegate,INUIAddVoiceShortcutViewControllerDelegate>
 
 @property (nonatomic , strong) LVLeftMenuHeaderView *headerView;
 
@@ -61,6 +64,7 @@ static NSString * const cellIdentifier = @"cell";
     self.sourceArr = @[@{@"image":@"icon_menu_membership",@"title":@"VIP会员"},
                        @{@"image":@"icon_menu_share",@"title":@"分享给朋友"},
                        @{@"image":@"icon_menu_evaluate",@"title":@"给个好评"},
+                       @{@"image":@"icon_menu_evaluate",@"title":@"Siri捷径"},
                        @{@"image":@"icon_menu_evaluate",@"title":@"恢复购买"}];
     
     [self.view addSubview:self.tableView];
@@ -194,7 +198,15 @@ static NSString * const cellIdentifier = @"cell";
     NSLog(@"点击功能---%ld",(long)indexPath.row);
     if (indexPath.row == 0) {//购买
         [self.buyView show];
-    }else if (indexPath.row == 3) {//恢复购买
+    }else if (indexPath.row == 3){
+        if (@available(iOS 12.0, *)) {
+            StartIntentIntent *intent = [[StartIntentIntent alloc] init];
+            intent.suggestedInvocationPhrase = @"VPN功能打开";//提示用户
+            INUIAddVoiceShortcutViewController *vc = [[INUIAddVoiceShortcutViewController alloc] initWithShortcut:[[INShortcut alloc] initWithIntent:intent]];
+            vc.delegate = self;
+            [self presentViewController:vc animated:YES completion:nil];
+        }
+    }else if (indexPath.row == 4) {//恢复购买
         [LVSharedAppWindow showHUD];
 //        [[SKPaymentQueue defaultQueue] restoreCompletedTransactionsWithApplicationUsername:app_DisplayName];
         [[SKPaymentQueue defaultQueue] restoreCompletedTransactions];
@@ -436,6 +448,23 @@ static NSString * const cellIdentifier = @"cell";
             }
         });
     }];
+}
+
+#pragma mark - INUIAddVoiceShortcutViewControllerDelegate
+
+- (void)addVoiceShortcutViewController:(INUIAddVoiceShortcutViewController *)controller didFinishWithVoiceShortcut:(nullable INVoiceShortcut *)voiceShortcut error:(nullable NSError *)error API_AVAILABLE(ios(12.0)) {
+    if (error) {
+        NSLog(@"Siri ShortCuts添加出错---%@",[error localizedDescription]);
+    }else {
+        NSLog(@"Siri ShortCuts添加成功------");
+        [LVSharedAppWindow showHintHudWithMessage:@"添加成功"];
+    }
+    
+    [controller dismissViewControllerAnimated:YES completion:nil];
+}
+
+- (void)addVoiceShortcutViewControllerDidCancel:(INUIAddVoiceShortcutViewController *)controller  API_AVAILABLE(ios(12.0)) {
+    [controller dismissViewControllerAnimated:YES completion:nil];
 }
 
 @end
