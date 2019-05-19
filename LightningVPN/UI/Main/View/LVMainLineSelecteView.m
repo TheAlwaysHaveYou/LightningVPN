@@ -10,12 +10,19 @@
 
 @interface LVMainLineSelecteView ()<UITableViewDelegate,UITableViewDataSource>
 
+@property (nonatomic , strong) UILabel *titleLabel;
 @property (nonatomic , strong) UIButton *arrowBtn;
 @property (nonatomic , strong) UILabel *nameLabel;
 @property (nonatomic , strong) UITableView *tableView;
 
 @property (nonatomic , assign) CGFloat minY;
 @property (nonatomic , assign) CGFloat showY;
+
+@property (nonatomic , strong) NSArray <NSArray <LVMainLineModel *> *> *modelArr;
+
+@property (nonatomic , strong) UIPanGestureRecognizer *panGesture;
+
+@property (nonatomic , strong) UISwitch *switchControl;
 
 @end
 
@@ -38,11 +45,19 @@ static NSString * const headerIdentifier = @"header";
         maskLayer.path = maskPath.CGPath;
         self.layer.mask = maskLayer;
         
-        UILabel *titleLabel = [[UILabel alloc] initWithFrame:CGRectMake((self.width-FITSCALE(334))/2, FITSCALE(30), FITSCALE(334), FITSCALE(26))];
-        titleLabel.font = FitBorderFont(19);
-        titleLabel.textColor = kColor_404852;
-        titleLabel.text = @"选择线路";
-        [self addSubview:titleLabel];
+        self.panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureAction:)];
+//        [self addGestureRecognizer:self.panGesture];
+        
+        self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake((self.width-FITSCALE(334))/2, FITSCALE(30), FITSCALE(334), FITSCALE(26))];
+        self.titleLabel.font = FitBorderFont(19);
+        self.titleLabel.textColor = kColor_404852;
+        self.titleLabel.text = @"选择线路(智能模式)";
+        [self addSubview:self.titleLabel];
+        
+        self.switchControl = [[UISwitch alloc] initWithFrame:CGRectMake(self.width-FITSCALE(100), FITSCALE(30), FITSCALE(50), FITSCALE(26))];
+        self.switchControl.on = YES;
+        [self.switchControl addTarget:self action:@selector(changeLinkModel:) forControlEvents:UIControlEventTouchUpInside];
+        [self addSubview:self.switchControl];
         
         self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake((self.width-FITSCALE(334))/2, FITSCALE(56), FITSCALE(334), FITSCALE(18))];
         self.nameLabel.font = FitFont(15);
@@ -82,13 +97,95 @@ static NSString * const headerIdentifier = @"header";
             }
         }];
         
+        [[RACObserve(self.panGesture, state) deliverOnMainThread] subscribeNext:^(id  _Nullable x) {
+            @strongify(self)
+            if ([x integerValue] == UIGestureRecognizerStateEnded) {
+                if (self.top <= (self.minY+self.showY)/2) {
+                    if (self.top == self.showY) {
+                        return ;
+                    }
+                    [UIView animateWithDuration:0.5 animations:^{
+                        self.top = self.showY;
+                        
+                    }];
+                }else {
+                    if (self.top == self.minY) {
+                        return ;
+                    }
+                    [UIView animateWithDuration:0.5 animations:^{
+                        self.top = self.minY;
+                    } completion:^(BOOL finished) {
+                    }];
+                }
+            }
+        }];
         
+        LVMainLineModel *model1 = [[LVMainLineModel alloc] init];
+        model1.title = @"101.254.225.172端口";
+        model1.ip = @"101.254.225.172";
+        model1.port = @9877;
+        model1.password = @"test";
+        model1.selected = YES;
+        
+        LVMainLineModel *model2 = [[LVMainLineModel alloc] init];
+        model2.title = @"60.190.81.141端口";
+        model2.ip = @"60.190.81.141";
+        model2.port = @55361;
+        model2.password = @"test30";
+        model2.selected = NO;
+        
+        self.modelArr = @[@[model1],@[model2]];
+        [self.tableView reloadData];
+        
+        [LVVPNManager sharedInstance].lineModel = model1;
     }
     return self;
 }
 
+- (void)changeLinkModel:(UISwitch *)switchControl {
+    if (switchControl.isOn) {
+        self.titleLabel.text = @"选择线路(智能模式)";
+    }else {
+        self.titleLabel.text = @"选择线路(全局模式)";
+    }
+    
+    [LVVPNManager sharedInstance].rule == VPNConnectRule_HaveRule ?([LVVPNManager sharedInstance].rule=VPNConnectRule_NoRule):([LVVPNManager sharedInstance].rule=VPNConnectRule_HaveRule);
+    NSLog(@"改变了智能规则---%d",[LVVPNManager sharedInstance].rule);
+}
+
 - (void)arrowBtnClick:(UIButton *)sender {
+    
     [self show];
+}
+
+- (void)panGestureAction:(UIPanGestureRecognizer *)panGesture {
+    CGPoint point = [panGesture translationInView:[self superview]];
+    
+    if (self.top <= self.showY+3) {
+        if (point.y < 0) {
+//            if (self.tableView.contentSize.height <= self.tableView.height) {//防止当Cell行数太少的时候，还继续往上滑动
+//                return;
+//            }
+//
+//            if (self.tableView.contentOffset.y+self.tableView.height >= self.tableView.contentSize.height) {//防止行数稍微超出tableview高，手势没停产生误差
+//                self.tableView.scrollEnabled = YES;
+//                return;
+//            }
+//
+//            [self.tableView setContentOffset:CGPointMake(0, -point.y) animated:NO];
+//            self.tableView.scrollEnabled = YES;
+            return;
+        }
+    }
+
+    if (self.top >= self.minY-3) {
+        if (point.y > 0) {
+            return;
+        }
+    }
+    
+    panGesture.view.center = CGPointMake(panGesture.view.center.x, panGesture.view.center.y + point.y);
+    [panGesture setTranslation:CGPointZero inView:[self superview]];
 }
 
 - (void)show {
@@ -109,15 +206,18 @@ static NSString * const headerIdentifier = @"header";
 
 #pragma mark - UITableViewDelegate
 - (NSInteger)numberOfSectionsInTableView:(UITableView *)tableView {
-    return 2;
+    return self.modelArr.count;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return 3;
+    return self.modelArr[section].count;
 }
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     LVMainLineSelecteCell *cell = [tableView dequeueReusableCellWithIdentifier:cellIdentifier forIndexPath:indexPath];
+    
+    LVMainLineModel *model = self.modelArr[indexPath.section][indexPath.row];
+    cell.model = model;
     
     return cell;
 }
@@ -150,7 +250,19 @@ static NSString * const headerIdentifier = @"header";
 }
 
 - (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    __block LVMainLineModel *tempModel;
+    [self.modelArr enumerateObjectsUsingBlock:^(NSArray<LVMainLineModel *> * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
+        [obj enumerateObjectsUsingBlock:^(LVMainLineModel * _Nonnull subObj, NSUInteger subIdx, BOOL * _Nonnull subStop) {
+            subObj.selected = NO;
+            if (indexPath.section == idx && indexPath.row == subIdx) {
+                subObj.selected = YES;
+                tempModel = subObj;
+            }
+        }];
+    }];
+    [self.tableView reloadData];
     
+    [LVVPNManager sharedInstance].lineModel = tempModel;
 }
 
 @end

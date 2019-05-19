@@ -8,6 +8,7 @@
 
 #import <UIKit/UIKit.h>
 #import "LVMainLineModel.h"
+#import "LVVPNManager.h"
 
 NS_ASSUME_NONNULL_BEGIN
 

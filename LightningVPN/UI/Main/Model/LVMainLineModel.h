@@ -14,6 +14,11 @@ NS_ASSUME_NONNULL_BEGIN
 
 @property (nonatomic , strong) NSString *title;
 @property (nonatomic , strong) NSString *detail;
+
+@property (nonatomic , strong) NSString *ip;
+@property (nonatomic , strong) NSNumber *port;
+@property (nonatomic , strong) NSString *password;
+
 @property (nonatomic , assign , getter=isSelected) BOOL selected;
 
 @end

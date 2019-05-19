@@ -62,7 +62,7 @@
         titleLabel.text = @"VIP会员";
         [self.contentView addSubview:titleLabel];
         
-        [self creatSomeLabel:@[@"无广告",@"VIP专享线路",@"一对一客服",@"---"] pointYArr:@[@(162),@(188),@(214),@(240)] strYarr:@[@(155),@(181),@(207),@(233)]];
+        [self creatSomeLabel:@[@"无广告",@"VIP专享线路",@"一对一客服"] pointYArr:@[@(162),@(188),@(214)] strYarr:@[@(155),@(181),@(207)]];
         
         NSArray *oneArr = @[@"$3.99",@"$10.99",@"$34.99"];
         NSArray *twoArr = @[@"一个月",@"一季度",@"一年"];

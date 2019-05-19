@@ -7,6 +7,7 @@
 //
 
 #import <Foundation/Foundation.h>
+#import "LVMainLineModel.h"
 
 #define kConfigureSuccess @"kConfigureSuccess"
 
@@ -30,6 +31,8 @@ typedef NS_ENUM(NSInteger , VPNConnectRule) {
 @property (nonatomic , assign) VPNStatus VPNStatus;
 
 @property (nonatomic , assign ) VPNConnectRule rule;
+
+@property (nonatomic , strong) LVMainLineModel *lineModel;
 
 + (instancetype)sharedInstance;
 

@@ -202,8 +202,6 @@ static NSString * const cellIdentifier = @"cell";
     }else if (indexPath.row == 1) {
         
     }else if (indexPath.row == 2) {
-        [LVVPNManager sharedInstance].rule == VPNConnectRule_HaveRule ?([LVVPNManager sharedInstance].rule=VPNConnectRule_NoRule):([LVVPNManager sharedInstance].rule=VPNConnectRule_HaveRule);
-        NSLog(@"改变了智能规则---%d",[LVVPNManager sharedInstance].rule);
         
     }else if (indexPath.row == 3) {
         if (@available(iOS 12.0, *)) {

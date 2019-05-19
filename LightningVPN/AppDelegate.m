@@ -44,13 +44,13 @@
     static NSString *versionKay = @"VersionKey";
     
     NSString *oldVersion = [[NSUserDefaults standardUserDefaults] objectForKey:versionKay];
-    
+
     if ([app_Version isEqualToString:oldVersion]) {
         [self enterRootcontroller];
     }else {
         [[NSUserDefaults standardUserDefaults] setValue:app_Version forKey:versionKay];
         [[NSUserDefaults standardUserDefaults] synchronize];
-        
+
         LVLaunchVC *vc = [[LVLaunchVC alloc] init];
         vc.subject = [RACSubject subject];
         @weakify(self)

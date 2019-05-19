@@ -121,10 +121,10 @@
         manager.enabled = YES;
         
         NSMutableDictionary *conf = @{}.mutableCopy;
-        conf[@"ss_address"] = @"103.95.207.14";
-        conf[@"ss_port"] = @9876;//注意是number值、、、
+        conf[@"ss_address"] = self.lineModel.ip;
+        conf[@"ss_port"] = self.lineModel.port;//注意是number值、、、
         conf[@"ss_method"] = @"AES256CFB";
-        conf[@"ss_password"] = @"test";
+        conf[@"ss_password"] = self.lineModel.password;
         
         conf[@"ymal_conf"] = [self getRuleConf];
         NETunnelProviderProtocol *orignConf = (NETunnelProviderProtocol *)manager.protocolConfiguration;

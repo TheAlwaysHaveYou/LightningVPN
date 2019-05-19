@@ -92,8 +92,8 @@
     
     UIImageView *imgV = [[UIImageView alloc] initWithFrame:CGRectMake(FITSCALE(116), (kSCREEN_WIDTH-FITSCALE(134))/2, FITSCALE(134), FITSCALE(134))];
     imgV.contentMode = UIViewContentModeScaleAspectFit;
-    imgV.image = IMGNAME(@"");
-    imgV.backgroundColor = [UIColor whiteColor];
+    imgV.image = IMGNAME(@"icon_about_logo");
+//    imgV.backgroundColor = [UIColor whiteColor];
     [self.view addSubview:imgV];
     
     UILabel *nameLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, FITSCALE(280), kSCREEN_WIDTH, FITSCALE(23))];
