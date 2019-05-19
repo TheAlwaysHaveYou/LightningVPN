@@ -85,6 +85,11 @@
 }
 
 - (void)setupSubViews {
+    UIButton *closeBtn = [[UIButton alloc] initWithFrame:CGRectMake(FITSCALE(22), kNavBarHeight-FITSCALE(13)-FITSCALE(18), FITSCALE(18), FITSCALE(18))];
+    closeBtn.backgroundColor = [UIColor redColor];
+    [closeBtn addTarget:self action:@selector(closeViewController:) forControlEvents:UIControlEventTouchUpInside];
+    [self.view addSubview:closeBtn];
+    
     UIImageView *imgV = [[UIImageView alloc] initWithFrame:CGRectMake(FITSCALE(116), (kSCREEN_WIDTH-FITSCALE(134))/2, FITSCALE(134), FITSCALE(134))];
     imgV.contentMode = UIViewContentModeScaleAspectFit;
     imgV.image = IMGNAME(@"");
@@ -136,6 +141,10 @@
     privacyBtn.tag = 12;
     [privacyBtn addTarget:self action:@selector(functionBtnClick:) forControlEvents:UIControlEventTouchUpInside];
     [self.view addSubview:privacyBtn];
+}
+
+- (void)closeViewController:(UIButton *)sender {
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 - (void)functionBtnClick:(UIButton *)sender {

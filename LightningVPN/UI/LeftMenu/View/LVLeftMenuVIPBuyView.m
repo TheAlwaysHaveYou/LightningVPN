@@ -8,9 +8,9 @@
 
 #import "LVLeftMenuVIPBuyView.h"
 
-#define kBuyMonthID @"com.lightingVPN.oneMonth"  //一个月
-#define kBuySeasonID @"com.lightingVPN.season"//一季度
-#define kBuyYearID @"com.lightingVPN.year"    //一年
+#define kBuyMonthID @"com.lighting.oneMonth"  //一个月
+#define kBuySeasonID @"com.lighting.season"//一季度
+#define kBuyYearID @"com.lighting.year"    //一年
 
 
 @interface LVLeftMenuVIPBuyView ()
@@ -62,7 +62,7 @@
         titleLabel.text = @"VIP会员";
         [self.contentView addSubview:titleLabel];
         
-        [self creatSomeLabel:@[@"免广告",@"不限速 防拥挤",@"海外专享节点",@"3设备同事在线"] pointYArr:@[@(162),@(188),@(214),@(240)] strYarr:@[@(155),@(181),@(207),@(233)]];
+        [self creatSomeLabel:@[@"无广告",@"VIP专享线路",@"一对一客服",@"---"] pointYArr:@[@(162),@(188),@(214),@(240)] strYarr:@[@(155),@(181),@(207),@(233)]];
         
         NSArray *oneArr = @[@"$3.99",@"$10.99",@"$34.99"];
         NSArray *twoArr = @[@"一个月",@"一季度",@"一年"];

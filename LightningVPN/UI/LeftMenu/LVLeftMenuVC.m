@@ -232,7 +232,7 @@ static NSString * const cellIdentifier = @"cell";
     
     LVAboutVC *vc = [[LVAboutVC alloc] init];
 //    [self.navigationController pushViewController:vc animated:YES];
-    [self.sideMenuViewController.navigationController pushViewController:vc animated:YES];
+    [self.sideMenuViewController.navigationController presentViewController:vc animated:YES completion:nil];
 }
 
 #pragma mark - LVLeftMenuVIPBuyViewDelegate

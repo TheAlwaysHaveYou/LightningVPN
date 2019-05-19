@@ -24,7 +24,7 @@
         
         self.imgV = [[UIImageView alloc] initWithFrame:CGRectMake(FITSCALE(24), FITHEIGHTSCALE(175), frame.size.width-FITSCALE(24*2), FITHEIGHTSCALE(327))];
         self.imgV.contentMode = UIViewContentModeScaleAspectFit;
-        self.imgV.backgroundColor = [UIColor cyanColor];
+//        self.imgV.backgroundColor = [UIColor cyanColor];
         [self.contentView addSubview:self.imgV];
         
         self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake(0, FITHEIGHTSCALE(542), frame.size.width, FITSCALE(40))];

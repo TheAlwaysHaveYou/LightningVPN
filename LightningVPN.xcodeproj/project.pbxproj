@@ -29,6 +29,10 @@
 		186442A72283263200E8F4C6 /* NEKitRule.conf in Resources */ = {isa = PBXBuildFile; fileRef = 186442A62283263200E8F4C6 /* NEKitRule.conf */; };
 		186442AA2283264900E8F4C6 /* LVVPNManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 186442A82283264900E8F4C6 /* LVVPNManager.m */; };
 		188CD8C2228712C900203613 /* HUDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 188CD8C1228712C900203613 /* HUDManager.m */; };
+		18B183D1229159F300B66CAC /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B183CB229159F300B66CAC /* RECommonFunctions.m */; };
+		18B183D2229159F300B66CAC /* RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B183CC229159F300B66CAC /* RESideMenu.m */; };
+		18B183D3229159F300B66CAC /* UIViewController+RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B183D0229159F300B66CAC /* UIViewController+RESideMenu.m */; };
+		18BF512A228FD28000649338 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BF5129228FD28000649338 /* Launch Screen.storyboard */; };
 		18C092F3228DAECA000EC690 /* NEKitNoRule.conf in Resources */ = {isa = PBXBuildFile; fileRef = 18C092F2228DAECA000EC690 /* NEKitNoRule.conf */; };
 		18D4C7FB2281788300CE5E02 /* LVLaunchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D4C7FA2281788300CE5E02 /* LVLaunchVC.m */; };
 		18D4C7FF2281794C00CE5E02 /* LVLaunchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D4C7FE2281794C00CE5E02 /* LVLaunchCell.m */; };
@@ -126,6 +130,13 @@
 		186442A92283264900E8F4C6 /* LVVPNManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVVPNManager.h; sourceTree = "<group>"; };
 		188CD8C0228712C900203613 /* HUDManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HUDManager.h; sourceTree = "<group>"; };
 		188CD8C1228712C900203613 /* HUDManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HUDManager.m; sourceTree = "<group>"; };
+		18B183CB229159F300B66CAC /* RECommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECommonFunctions.m; sourceTree = "<group>"; };
+		18B183CC229159F300B66CAC /* RESideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RESideMenu.m; sourceTree = "<group>"; };
+		18B183CD229159F300B66CAC /* RESideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RESideMenu.h; sourceTree = "<group>"; };
+		18B183CE229159F300B66CAC /* UIViewController+RESideMenu.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIViewController+RESideMenu.h"; sourceTree = "<group>"; };
+		18B183CF229159F300B66CAC /* RECommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECommonFunctions.h; sourceTree = "<group>"; };
+		18B183D0229159F300B66CAC /* UIViewController+RESideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RESideMenu.m"; sourceTree = "<group>"; };
+		18BF5129228FD28000649338 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
 		18C092F2228DAECA000EC690 /* NEKitNoRule.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NEKitNoRule.conf; sourceTree = "<group>"; };
 		18D4C7F92281788300CE5E02 /* LVLaunchVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LVLaunchVC.h; sourceTree = "<group>"; };
 		18D4C7FA2281788300CE5E02 /* LVLaunchVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LVLaunchVC.m; sourceTree = "<group>"; };
@@ -257,6 +268,19 @@
 				18644286228322E200E8F4C6 /* PacketTunnel.entitlements */,
 			);
 			path = PacketTunnel;
+			sourceTree = "<group>";
+		};
+		18B183CA229159EA00B66CAC /* RESideMenu */ = {
+			isa = PBXGroup;
+			children = (
+				18B183CF229159F300B66CAC /* RECommonFunctions.h */,
+				18B183CB229159F300B66CAC /* RECommonFunctions.m */,
+				18B183CD229159F300B66CAC /* RESideMenu.h */,
+				18B183CC229159F300B66CAC /* RESideMenu.m */,
+				18B183CE229159F300B66CAC /* UIViewController+RESideMenu.h */,
+				18B183D0229159F300B66CAC /* UIViewController+RESideMenu.m */,
+			);
+			path = RESideMenu;
 			sourceTree = "<group>";
 		};
 		18D4C7F82281785B00CE5E02 /* Launch */ = {
@@ -412,6 +436,7 @@
 				31A76CCA227586A7003E39B2 /* Assets.xcassets */,
 				31A76CCF227586A7003E39B2 /* Info.plist */,
 				31A76CD72275892F003E39B2 /* LightningVPN.pch */,
+				18BF5129228FD28000649338 /* Launch Screen.storyboard */,
 				31A76CD0227586A7003E39B2 /* main.m */,
 			);
 			path = LightningVPN;
@@ -457,6 +482,7 @@
 		31A76CDB22758A63003E39B2 /* Tool */ = {
 			isa = PBXGroup;
 			children = (
+				18B183CA229159EA00B66CAC /* RESideMenu */,
 				311365E222758BB200BB1D9E /* GlobalManager.h */,
 				311365E322758BB200BB1D9E /* GlobalManager.m */,
 				311365DF22758B9F00BB1D9E /* HTTPRequestManager.h */,
@@ -656,6 +682,7 @@
 			files = (
 				18C092F3228DAECA000EC690 /* NEKitNoRule.conf in Resources */,
 				31A76CCB227586A7003E39B2 /* Assets.xcassets in Resources */,
+				18BF512A228FD28000649338 /* Launch Screen.storyboard in Resources */,
 				186442A72283263200E8F4C6 /* NEKitRule.conf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -698,9 +725,13 @@
 			inputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-LightningVPN/Pods-LightningVPN-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
+			inputPaths = (
+			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-LightningVPN/Pods-LightningVPN-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -761,6 +792,7 @@
 				31A76CD1227586A7003E39B2 /* main.m in Sources */,
 				311366112276FF5E00BB1D9E /* LVMainLineModel.m in Sources */,
 				31BF4245227749BD00330422 /* LVLeftMenuVIPBuyModel.m in Sources */,
+				18B183D1229159F300B66CAC /* RECommonFunctions.m in Sources */,
 				31A76CE222758AF6003E39B2 /* LVBaseViewController.m in Sources */,
 				311366072276038500BB1D9E /* LVMainLineSelecteView.m in Sources */,
 				188CD8C2228712C900203613 /* HUDManager.m in Sources */,
@@ -778,6 +810,7 @@
 				311365F322759FB200BB1D9E /* LVLeftMenuHeaderView.m in Sources */,
 				31BF424122773D0500330422 /* LVLeftMenuVIPBuyView.m in Sources */,
 				311365E422758BB200BB1D9E /* GlobalManager.m in Sources */,
+				18B183D2229159F300B66CAC /* RESideMenu.m in Sources */,
 				31BF423E2277297500330422 /* UIButton+Extension.m in Sources */,
 				311365FE2275BCEA00BB1D9E /* LVAboutVC.m in Sources */,
 				311365FA2275B73600BB1D9E /* LVLeftMenuFooterView.m in Sources */,
@@ -785,6 +818,7 @@
 				18D4C7FF2281794C00CE5E02 /* LVLaunchCell.m in Sources */,
 				18D4C8032281796C00CE5E02 /* LVLaunchModel.m in Sources */,
 				311365F022759F9E00BB1D9E /* LVLeftMenuCell.m in Sources */,
+				18B183D3229159F300B66CAC /* UIViewController+RESideMenu.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1018,7 +1052,6 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = LightningVPN/LightningVPN.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
@@ -1047,7 +1080,6 @@
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
 				CODE_SIGN_ENTITLEMENTS = LightningVPN/LightningVPN.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;

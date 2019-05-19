@@ -43,9 +43,9 @@ static NSString * const identifier = @"item";
     
     self.view.backgroundColor = [UIColor whiteColor];
     
-    NSArray <NSArray <NSString *> *> *tempArr = @[@[@"",@"支持Siri捷径",@"无需打开软件，在任何界面唤醒Siri，\n说出指令，即可快速连接。"],
-                         @[@"",@"价格最优惠",@"用最低的价格，即可体验最好的优质服务，\n这是最具性价比的选择"],
-                         @[@"",@"超高速专线",@"独家超高速专线，让你畅享超高清音乐\n和高清视频"],];
+    NSArray <NSArray <NSString *> *> *tempArr = @[@[@"icon_launch_one",@"支持Siri捷径",@"无需打开软件，在任何界面唤醒Siri，\n说出指令，即可快速连接。"],
+                         @[@"icon_launch_two",@"价格最优惠",@"用最低的价格，即可体验最好的优质服务，\n这是最具性价比的选择"],
+                         @[@"icon_launch_three",@"超高速专线",@"独家超高速专线，让你畅享超高清音乐\n和高清视频"],];
     NSMutableArray *modelArr = [NSMutableArray array];
     [tempArr enumerateObjectsUsingBlock:^(NSArray<NSString *> * _Nonnull obj, NSUInteger idx, BOOL * _Nonnull stop) {
         LVLaunchModel *model = [[LVLaunchModel alloc] init];
