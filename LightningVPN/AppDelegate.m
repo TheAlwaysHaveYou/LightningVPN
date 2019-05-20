@@ -74,7 +74,7 @@
     sideMenuViewController.menuPreferredStatusBarStyle = 1; // UIStatusBarStyleLightContent
     sideMenuViewController.delegate = self;
     sideMenuViewController.bouncesHorizontally = NO;
-    
+    sideMenuViewController.parallaxEnabled = NO;
 //    sideMenuViewController.contentViewShadowColor = [UIColor blackColor];
 //    sideMenuViewController.contentViewShadowOffset = CGSizeMake(0, 0);
 //    sideMenuViewController.contentViewShadowOpacity = 0.6;

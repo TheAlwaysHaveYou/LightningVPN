@@ -158,7 +158,8 @@
 }
 
 - (NSString *)getRuleConf {
-    NSString * Path = [[NSBundle mainBundle] pathForResource:(VPNConnectRule_HaveRule == self.rule)?@"NEKitRule":@"NEKitNoRule" ofType:@"conf"];
+//    NSString * Path = [[NSBundle mainBundle] pathForResource:(VPNConnectRule_HaveRule == self.rule)?@"NEKitRule":@"NEKitNoRule" ofType:@"conf"];
+    NSString * Path = [[NSBundle mainBundle] pathForResource:@"NEKitRule" ofType:@"conf"];
     NSData *data = [NSData dataWithContentsOfURL:[NSURL fileURLWithPath:Path]];
     return [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
 }
