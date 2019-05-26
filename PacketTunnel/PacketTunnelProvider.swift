@@ -33,7 +33,12 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
             NSLog("[ERROR] No ProtocolConfiguration Found")
             exit(EXIT_FAILURE)
         }
-        
+        // 判断是不是在app里面启动
+//        if let name = options?[NEVPNConnectionStartOptionUsername] {
+//            NSLog((name as! String) + "df")
+//        }else {
+//            exit(EXIT_FAILURE)
+//        }
         
         let ss_adder = conf["ss_address"] as! String
         NSLog(ss_adder)
@@ -255,6 +260,8 @@ class PacketTunnelProvider: NEPacketTunnelProvider {
                     let delayTime = DispatchTime.now() + Double(Int64(1 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)
                     DispatchQueue.main.asyncAfter(deadline: delayTime) {
                         self.startTunnel(options: nil){_ in}
+                        //判断是否app内部启动
+//                        self.startTunnel(options: @{NEVPNConnectionStartOptionUsername:@"随便字符串"}){_ in}
                     }
                 }
             }else{

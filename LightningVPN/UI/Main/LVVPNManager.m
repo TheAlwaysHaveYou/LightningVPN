@@ -56,7 +56,8 @@
         }
         NSError *error;
         [manager.connection startVPNTunnelAndReturnError:&error];
-//        [manager.connection startVPNTunnelWithOptions:@{} andReturnError:&error];
+        //判断是不是在app内部启动
+        //        [manager.connection startVPNTunnelWithOptions:@{NEVPNConnectionStartOptionUsername:@"随便字符串"} andReturnError:&error];
         if (error) {
             NSLog(@"初始化出错-----%@",error);
         }else{
