@@ -8,11 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		18424BEB228DA3C8006B72DE /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 18424BEA228DA3C8006B72DE /* Intents.intentdefinition */; };
-		18424BF4228DA429006B72DE /* IntentHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 18424BF3228DA429006B72DE /* IntentHandler.m */; };
-		18424BF8228DA429006B72DE /* IntentHandler.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 18424BF0228DA428006B72DE /* IntentHandler.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		18424C00228DA4EB006B72DE /* StartIntentHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 18424BFF228DA4EB006B72DE /* StartIntentHandler.m */; };
-		18424C01228DA4EB006B72DE /* StartIntentHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 18424BFF228DA4EB006B72DE /* StartIntentHandler.m */; };
-		18424C02228DA682006B72DE /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 18424BEA228DA3C8006B72DE /* Intents.intentdefinition */; };
 		184F56202285715500441D6B /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 184F561F2285715500441D6B /* NetworkExtension.framework */; };
 		18644284228322E200E8F4C6 /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18644283228322E200E8F4C6 /* PacketTunnelProvider.swift */; };
 		18644289228322E200E8F4C6 /* PacketTunnel.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 18644281228322E100E8F4C6 /* PacketTunnel.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -68,13 +64,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		18424BF6228DA429006B72DE /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 31A76CB6227586A5003E39B2 /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 18424BEF228DA428006B72DE;
-			remoteInfo = IntentHandler;
-		};
 		18644287228322E200E8F4C6 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = 31A76CB6227586A5003E39B2 /* Project object */;
@@ -92,7 +81,6 @@
 			dstSubfolderSpec = 13;
 			files = (
 				18644289228322E200E8F4C6 /* PacketTunnel.appex in Embed App Extensions */,
-				18424BF8228DA429006B72DE /* IntentHandler.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -102,11 +90,6 @@
 /* Begin PBXFileReference section */
 		0BF3F11AFF53C3B71A800A62 /* Pods-LightningVPN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightningVPN.debug.xcconfig"; path = "Target Support Files/Pods-LightningVPN/Pods-LightningVPN.debug.xcconfig"; sourceTree = "<group>"; };
 		18424BEA228DA3C8006B72DE /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = "<group>"; };
-		18424BF0228DA428006B72DE /* IntentHandler.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = IntentHandler.appex; sourceTree = BUILT_PRODUCTS_DIR; };
-		18424BF2228DA429006B72DE /* IntentHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = IntentHandler.h; sourceTree = "<group>"; };
-		18424BF3228DA429006B72DE /* IntentHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = IntentHandler.m; sourceTree = "<group>"; };
-		18424BF5228DA429006B72DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		18424BFC228DA43F006B72DE /* IntentHandler.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = IntentHandler.entitlements; sourceTree = "<group>"; };
 		18424BFE228DA4EB006B72DE /* StartIntentHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StartIntentHandler.h; sourceTree = "<group>"; };
 		18424BFF228DA4EB006B72DE /* StartIntentHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StartIntentHandler.m; sourceTree = "<group>"; };
 		184F561F2285715500441D6B /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
@@ -201,13 +184,6 @@
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		18424BED228DA428006B72DE /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1864427E228322E100E8F4C6 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -239,17 +215,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		18424BF1228DA429006B72DE /* IntentHandler */ = {
-			isa = PBXGroup;
-			children = (
-				18424BFC228DA43F006B72DE /* IntentHandler.entitlements */,
-				18424BF2228DA429006B72DE /* IntentHandler.h */,
-				18424BF3228DA429006B72DE /* IntentHandler.m */,
-				18424BF5228DA429006B72DE /* Info.plist */,
-			);
-			path = IntentHandler;
-			sourceTree = "<group>";
-		};
 		18424C03228DA8FC006B72DE /* SiriShortCuts */ = {
 			isa = PBXGroup;
 			children = (
@@ -402,7 +367,6 @@
 			children = (
 				31A76CC0227586A5003E39B2 /* LightningVPN */,
 				18644282228322E200E8F4C6 /* PacketTunnel */,
-				18424BF1228DA429006B72DE /* IntentHandler */,
 				31A76CBF227586A5003E39B2 /* Products */,
 				20B7931E36720AF70E31189E /* Pods */,
 				FEFDD66AF6F63DB5EBF7BD34 /* Frameworks */,
@@ -414,7 +378,6 @@
 			children = (
 				31A76CBE227586A5003E39B2 /* LightningVPN.app */,
 				18644281228322E100E8F4C6 /* PacketTunnel.appex */,
-				18424BF0228DA428006B72DE /* IntentHandler.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -530,23 +493,6 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		18424BEF228DA428006B72DE /* IntentHandler */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 18424BF9228DA429006B72DE /* Build configuration list for PBXNativeTarget "IntentHandler" */;
-			buildPhases = (
-				18424BEC228DA428006B72DE /* Sources */,
-				18424BED228DA428006B72DE /* Frameworks */,
-				18424BEE228DA428006B72DE /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = IntentHandler;
-			productName = IntentHandler;
-			productReference = 18424BF0228DA428006B72DE /* IntentHandler.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		18644280228322E100E8F4C6 /* PacketTunnel */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 1864428C228322E200E8F4C6 /* Build configuration list for PBXNativeTarget "PacketTunnel" */;
@@ -580,7 +526,6 @@
 			);
 			dependencies = (
 				18644288228322E200E8F4C6 /* PBXTargetDependency */,
-				18424BF7228DA429006B72DE /* PBXTargetDependency */,
 			);
 			name = LightningVPN;
 			productName = LightningVPN;
@@ -597,14 +542,6 @@
 				LastUpgradeCheck = 1020;
 				ORGANIZATIONNAME = FKD;
 				TargetAttributes = {
-					18424BEF228DA428006B72DE = {
-						CreatedOnToolsVersion = 10.2.1;
-						SystemCapabilities = {
-							com.apple.ApplicationGroups.iOS = {
-								enabled = 1;
-							};
-						};
-					};
 					18644280228322E100E8F4C6 = {
 						CreatedOnToolsVersion = 10.2.1;
 						SystemCapabilities = {
@@ -632,7 +569,7 @@
 								enabled = 1;
 							};
 							com.apple.Siri = {
-								enabled = 1;
+								enabled = 0;
 							};
 							com.apple.VPNLite = {
 								enabled = 1;
@@ -656,19 +593,11 @@
 			targets = (
 				31A76CBD227586A5003E39B2 /* LightningVPN */,
 				18644280228322E100E8F4C6 /* PacketTunnel */,
-				18424BEF228DA428006B72DE /* IntentHandler */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		18424BEE228DA428006B72DE /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1864427F228322E100E8F4C6 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -763,16 +692,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		18424BEC228DA428006B72DE /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				18424C02228DA682006B72DE /* Intents.intentdefinition in Sources */,
-				18424BF4228DA429006B72DE /* IntentHandler.m in Sources */,
-				18424C01228DA4EB006B72DE /* StartIntentHandler.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		1864427D228322E100E8F4C6 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -825,11 +744,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		18424BF7228DA429006B72DE /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 18424BEF228DA428006B72DE /* IntentHandler */;
-			targetProxy = 18424BF6228DA429006B72DE /* PBXContainerItemProxy */;
-		};
 		18644288228322E200E8F4C6 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			target = 18644280228322E100E8F4C6 /* PacketTunnel */;
@@ -838,54 +752,12 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		18424BFA228DA429006B72DE /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = IntentHandler/IntentHandler.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 82TB9VAX4K;
-				INFOPLIST_FILE = IntentHandler/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = LightningVPN.Pro.IntentHandler;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Debug;
-		};
-		18424BFB228DA429006B72DE /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_ENTITLEMENTS = IntentHandler/IntentHandler.entitlements;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 82TB9VAX4K;
-				INFOPLIST_FILE = IntentHandler/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
-				LD_RUNPATH_SEARCH_PATHS = (
-					"$(inherited)",
-					"@executable_path/Frameworks",
-					"@executable_path/../../Frameworks",
-				);
-				PRODUCT_BUNDLE_IDENTIFIER = LightningVPN.Pro.IntentHandler;
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = 1;
-			};
-			name = Release;
-		};
 		1864428A228322E200E8F4C6 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = PacketTunnel/PacketTunnel.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 82TB9VAX4K;
+				DEVELOPMENT_TEAM = 6RYXF8U2N6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -897,7 +769,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = LightningVPN.Pro.PacketTunnel;
+				PRODUCT_BUNDLE_IDENTIFIER = "LightningVPN.temp.PacketTunnel-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
@@ -912,7 +784,7 @@
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = PacketTunnel/PacketTunnel.entitlements;
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 82TB9VAX4K;
+				DEVELOPMENT_TEAM = 6RYXF8U2N6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -924,7 +796,7 @@
 					"@executable_path/Frameworks",
 					"@executable_path/../../Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = LightningVPN.Pro.PacketTunnel;
+				PRODUCT_BUNDLE_IDENTIFIER = "LightningVPN.temp.PacketTunnel-";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_COMPILATION_MODE = wholemodule;
@@ -1055,7 +927,7 @@
 				CODE_SIGN_ENTITLEMENTS = LightningVPN/LightningVPN.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 82TB9VAX4K;
+				DEVELOPMENT_TEAM = 6RYXF8U2N6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1067,7 +939,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = LightningVPN.Pro;
+				PRODUCT_BUNDLE_IDENTIFIER = LightningVPN.temp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1083,7 +955,7 @@
 				CODE_SIGN_ENTITLEMENTS = LightningVPN/LightningVPN.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = 82TB9VAX4K;
+				DEVELOPMENT_TEAM = 6RYXF8U2N6;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/Carthage/Build/iOS",
@@ -1095,7 +967,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = LightningVPN.Pro;
+				PRODUCT_BUNDLE_IDENTIFIER = LightningVPN.temp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1105,15 +977,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		18424BF9228DA429006B72DE /* Build configuration list for PBXNativeTarget "IntentHandler" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				18424BFA228DA429006B72DE /* Debug */,
-				18424BFB228DA429006B72DE /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		1864428C228322E200E8F4C6 /* Build configuration list for PBXNativeTarget "PacketTunnel" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (

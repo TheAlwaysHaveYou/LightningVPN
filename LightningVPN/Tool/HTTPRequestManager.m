@@ -35,18 +35,4 @@
     });
     return request;
 }
-
-
-- (void)post {
-    NSURLSessionDataTask *task = [self.manager POST:@"http://118.190.206.2:19089/organization/queryAdList" parameters:@{@"cmd":@"organization/queryAdList",@"version":@"1.0",@"token":@"",@"params":@{}} progress:^(NSProgress * _Nonnull uploadProgress) {
-        NSLog(@"进度--------");
-    } success:^(NSURLSessionDataTask * _Nonnull task, id  _Nullable responseObject) {
-        NSLog(@"成功--------");
-    } failure:^(NSURLSessionDataTask * _Nullable task, NSError * _Nonnull error) {
-        NSLog(@"失败--------");
-    }];
-    
-    NSLog(@"请求的url---%@",task.currentRequest.URL);
-    
-}
 @end
