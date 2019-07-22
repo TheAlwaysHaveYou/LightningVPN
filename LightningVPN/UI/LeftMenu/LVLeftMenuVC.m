@@ -15,7 +15,6 @@
 #import <StoreKit/StoreKit.h>
 #import <IntentsUI/IntentsUI.h>
 #import <Intents/Intents.h>
-#import "StartIntentIntent.h"
 #import "LVVPNManager.h"
 
 #define VerifyTestEnvironment @"https://sandbox.itunes.apple.com/verifyReceipt"//测试环境验证
@@ -205,13 +204,8 @@ static NSString * const cellIdentifier = @"cell";
     }else if (indexPath.row == 2) {
         
     }else if (indexPath.row == 3) {
-        if (@available(iOS 12.0, *)) {
-            StartIntentIntent *intent = [[StartIntentIntent alloc] init];
-            intent.suggestedInvocationPhrase = @"VPN功能打开";//提示用户
-            INUIAddVoiceShortcutViewController *vc = [[INUIAddVoiceShortcutViewController alloc] initWithShortcut:[[INShortcut alloc] initWithIntent:intent]];
-            vc.delegate = self;
-            [self presentViewController:vc animated:YES completion:nil];
-        }
+        
+        
     }else if (indexPath.row == 4) {//恢复购买
         [LVSharedAppWindow showHUD];
 //        [[SKPaymentQueue defaultQueue] restoreCompletedTransactionsWithApplicationUsername:app_DisplayName];

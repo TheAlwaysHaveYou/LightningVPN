@@ -219,11 +219,11 @@
     self.noteView = [[LVMainConnectNoteView alloc] initWithFrame:CGRectMake((kSCREEN_WIDTH-FITSCALE(62))/2, FITHEIGHTSCALE(515), FITSCALE(62), FITSCALE(18))];
     [self.view addSubview:self.noteView];
     
-    self.connectView = [[LVMainConnectButtonView alloc] initWithFrame:CGRectMake(FITSCALE(24), FITHEIGHTSCALE(553), kSCREEN_WIDTH-FITSCALE(48), FITSCALE(56))];
+    self.connectView = [[LVMainConnectButtonView alloc] initWithFrame:CGRectMake(FITSCALE(24), FITSCALE(460), kSCREEN_WIDTH-FITSCALE(48), FITSCALE(56))];
     self.connectView.delegate = self;
     [self.view addSubview:self.connectView];
     
-    self.freeBtn = [[UIButton alloc] initWithFrame:CGRectMake(FITSCALE(18), FITHEIGHTSCALE(638), kSCREEN_WIDTH-FITSCALE(38), FITSCALE(18))];
+    self.freeBtn = [[UIButton alloc] initWithFrame:CGRectMake(FITSCALE(18), FITSCALE(550), kSCREEN_WIDTH-FITSCALE(38), FITSCALE(18))];
     [self.freeBtn setTitle:@"限时免费领取一个月VIP" forState:UIControlStateNormal];
     [self.freeBtn setTitleColor:kColor_4872FF forState:UIControlStateNormal];
     [self.freeBtn setImage:IMGNAME(@"icon_menu_leftArrow") forState:UIControlStateNormal];

@@ -35,10 +35,10 @@
                                 <color key="textColor" red="0.25098039215686274" green="0.28235294117647058" blue="0.32156862745098036" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="支持Siri 一键闪连回国" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SGV-kC-6qo">
-                                <rect key="frame" x="112.66666666666669" y="680" width="150" height="18"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="搭配ShadowSocks服务使用" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SGV-kC-6qo">
+                                <rect key="frame" x="100" y="680" width="177" height="18"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="150" id="JCH-ga-v85"/>
+                                    <constraint firstAttribute="width" constant="177" id="JCH-ga-v85"/>
                                     <constraint firstAttribute="height" constant="18" id="e8K-Pp-qAa"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
@@ -50,7 +50,7 @@
                         <constraints>
                             <constraint firstItem="E83-2R-A4s" firstAttribute="centerX" secondItem="Bcu-3y-fUS" secondAttribute="centerX" id="0Xe-S5-VBS"/>
                             <constraint firstAttribute="bottomMargin" secondItem="jWN-w5-OXB" secondAttribute="bottom" constant="160" id="Nkk-X2-yg4"/>
-                            <constraint firstItem="SGV-kC-6qo" firstAttribute="centerX" secondItem="Bcu-3y-fUS" secondAttribute="centerX" id="SKP-US-Oi6"/>
+                            <constraint firstItem="SGV-kC-6qo" firstAttribute="centerX" secondItem="Bcu-3y-fUS" secondAttribute="centerX" constant="1" id="SKP-US-Oi6"/>
                             <constraint firstAttribute="bottomMargin" secondItem="E83-2R-A4s" secondAttribute="bottom" constant="106" id="fLd-v4-4tD"/>
                             <constraint firstItem="jWN-w5-OXB" firstAttribute="centerX" secondItem="Bcu-3y-fUS" secondAttribute="centerX" id="m33-m5-7cz"/>
                             <constraint firstAttribute="bottomMargin" secondItem="SGV-kC-6qo" secondAttribute="bottom" constant="80" id="zN7-br-Aqx"/>

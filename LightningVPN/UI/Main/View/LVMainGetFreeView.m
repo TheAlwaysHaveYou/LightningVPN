@@ -44,7 +44,7 @@
         titleLabel.text = @"合作推广";
         [self.contentView addSubview:titleLabel];
         
-        [self creatSomeLabel:@[@"微信关注公众号——",@"后台回复",@"按照提示操作"] colorText:@[@"申请圈AppCircle",@"“闪连”",@"免费领取一个月VIP兑换码"] y:@[@(86.82),@(117.82),@(147.82)]];
+        [self creatSomeLabel:@[@"微信关注公众号——",@"后台回复",@"按照提示操作"] colorText:@[@"XXXXX",@"“闪连”",@"免费领取一个月VIP兑换码"] y:@[@(86.82),@(117.82),@(147.82)]];
         
         self.codeView = [[LVMainCodeInputView alloc] initWithFrame:CGRectMake(FITSCALE(39), FITHEIGHTSCALE(198.24), self.contentView.width-FITSCALE(78), FITSCALE(64))];
         [self.contentView addSubview:self.codeView];

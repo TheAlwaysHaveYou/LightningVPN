@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		18424BEB228DA3C8006B72DE /* Intents.intentdefinition in Sources */ = {isa = PBXBuildFile; fileRef = 18424BEA228DA3C8006B72DE /* Intents.intentdefinition */; };
-		18424C00228DA4EB006B72DE /* StartIntentHandler.m in Sources */ = {isa = PBXBuildFile; fileRef = 18424BFF228DA4EB006B72DE /* StartIntentHandler.m */; };
 		184F56202285715500441D6B /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 184F561F2285715500441D6B /* NetworkExtension.framework */; };
 		18644284228322E200E8F4C6 /* PacketTunnelProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18644283228322E200E8F4C6 /* PacketTunnelProvider.swift */; };
 		18644289228322E200E8F4C6 /* PacketTunnel.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 18644281228322E100E8F4C6 /* PacketTunnel.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -22,22 +20,19 @@
 		186442A3228325D000E8F4C6 /* Sodium.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18644299228325D000E8F4C6 /* Sodium.framework */; };
 		186442A4228325D000E8F4C6 /* MMDB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1864429A228325D000E8F4C6 /* MMDB.framework */; };
 		186442A5228325D000E8F4C6 /* lwip.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1864429B228325D000E8F4C6 /* lwip.framework */; };
-		186442A72283263200E8F4C6 /* NEKitRule.conf in Resources */ = {isa = PBXBuildFile; fileRef = 186442A62283263200E8F4C6 /* NEKitRule.conf */; };
 		186442AA2283264900E8F4C6 /* LVVPNManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 186442A82283264900E8F4C6 /* LVVPNManager.m */; };
+		188BCF3422E58B520086A67C /* NEKitRule.conf in Resources */ = {isa = PBXBuildFile; fileRef = 188BCF3322E58B520086A67C /* NEKitRule.conf */; };
 		188CD8C2228712C900203613 /* HUDManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 188CD8C1228712C900203613 /* HUDManager.m */; };
 		18B183D1229159F300B66CAC /* RECommonFunctions.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B183CB229159F300B66CAC /* RECommonFunctions.m */; };
 		18B183D2229159F300B66CAC /* RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B183CC229159F300B66CAC /* RESideMenu.m */; };
 		18B183D3229159F300B66CAC /* UIViewController+RESideMenu.m in Sources */ = {isa = PBXBuildFile; fileRef = 18B183D0229159F300B66CAC /* UIViewController+RESideMenu.m */; };
 		18BF512A228FD28000649338 /* Launch Screen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 18BF5129228FD28000649338 /* Launch Screen.storyboard */; };
-		18C092F3228DAECA000EC690 /* NEKitNoRule.conf in Resources */ = {isa = PBXBuildFile; fileRef = 18C092F2228DAECA000EC690 /* NEKitNoRule.conf */; };
 		18D4C7FB2281788300CE5E02 /* LVLaunchVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D4C7FA2281788300CE5E02 /* LVLaunchVC.m */; };
 		18D4C7FF2281794C00CE5E02 /* LVLaunchCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D4C7FE2281794C00CE5E02 /* LVLaunchCell.m */; };
 		18D4C8032281796C00CE5E02 /* LVLaunchModel.m in Sources */ = {isa = PBXBuildFile; fileRef = 18D4C8022281796C00CE5E02 /* LVLaunchModel.m */; };
 		18DC4B672285AF06007F96BF /* NetworkExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 184F561F2285715500441D6B /* NetworkExtension.framework */; };
 		18DC4B6A2285BFED007F96BF /* UIWindow+MBProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = 18DC4B692285BFED007F96BF /* UIWindow+MBProgressHUD.m */; };
 		18DC4B912286987E007F96BF /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 18DC4B902286987E007F96BF /* StoreKit.framework */; };
-		311365E122758B9F00BB1D9E /* HTTPRequestManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 311365E022758B9F00BB1D9E /* HTTPRequestManager.m */; };
-		311365E422758BB200BB1D9E /* GlobalManager.m in Sources */ = {isa = PBXBuildFile; fileRef = 311365E322758BB200BB1D9E /* GlobalManager.m */; };
 		311365E9227597C900BB1D9E /* LVLeftMenuVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 311365E8227597C900BB1D9E /* LVLeftMenuVC.m */; };
 		311365EC227597DA00BB1D9E /* LVMainVC.m in Sources */ = {isa = PBXBuildFile; fileRef = 311365EB227597DA00BB1D9E /* LVMainVC.m */; };
 		311365F022759F9E00BB1D9E /* LVLeftMenuCell.m in Sources */ = {isa = PBXBuildFile; fileRef = 311365EF22759F9E00BB1D9E /* LVLeftMenuCell.m */; };
@@ -89,9 +84,6 @@
 
 /* Begin PBXFileReference section */
 		0BF3F11AFF53C3B71A800A62 /* Pods-LightningVPN.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightningVPN.debug.xcconfig"; path = "Target Support Files/Pods-LightningVPN/Pods-LightningVPN.debug.xcconfig"; sourceTree = "<group>"; };
-		18424BEA228DA3C8006B72DE /* Intents.intentdefinition */ = {isa = PBXFileReference; lastKnownFileType = file.intentdefinition; path = Intents.intentdefinition; sourceTree = "<group>"; };
-		18424BFE228DA4EB006B72DE /* StartIntentHandler.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = StartIntentHandler.h; sourceTree = "<group>"; };
-		18424BFF228DA4EB006B72DE /* StartIntentHandler.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = StartIntentHandler.m; sourceTree = "<group>"; };
 		184F561F2285715500441D6B /* NetworkExtension.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NetworkExtension.framework; path = System/Library/Frameworks/NetworkExtension.framework; sourceTree = SDKROOT; };
 		18644281228322E100E8F4C6 /* PacketTunnel.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PacketTunnel.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		18644283228322E200E8F4C6 /* PacketTunnelProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PacketTunnelProvider.swift; sourceTree = "<group>"; };
@@ -108,9 +100,9 @@
 		18644299228325D000E8F4C6 /* Sodium.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Sodium.framework; path = Carthage/Build/iOS/Sodium.framework; sourceTree = "<group>"; };
 		1864429A228325D000E8F4C6 /* MMDB.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MMDB.framework; path = Carthage/Build/iOS/MMDB.framework; sourceTree = "<group>"; };
 		1864429B228325D000E8F4C6 /* lwip.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = lwip.framework; path = Carthage/Build/iOS/lwip.framework; sourceTree = "<group>"; };
-		186442A62283263200E8F4C6 /* NEKitRule.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NEKitRule.conf; sourceTree = "<group>"; };
 		186442A82283264900E8F4C6 /* LVVPNManager.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LVVPNManager.m; sourceTree = "<group>"; };
 		186442A92283264900E8F4C6 /* LVVPNManager.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LVVPNManager.h; sourceTree = "<group>"; };
+		188BCF3322E58B520086A67C /* NEKitRule.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NEKitRule.conf; sourceTree = "<group>"; };
 		188CD8C0228712C900203613 /* HUDManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HUDManager.h; sourceTree = "<group>"; };
 		188CD8C1228712C900203613 /* HUDManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HUDManager.m; sourceTree = "<group>"; };
 		18B183CB229159F300B66CAC /* RECommonFunctions.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RECommonFunctions.m; sourceTree = "<group>"; };
@@ -120,7 +112,6 @@
 		18B183CF229159F300B66CAC /* RECommonFunctions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RECommonFunctions.h; sourceTree = "<group>"; };
 		18B183D0229159F300B66CAC /* UIViewController+RESideMenu.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIViewController+RESideMenu.m"; sourceTree = "<group>"; };
 		18BF5129228FD28000649338 /* Launch Screen.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = "Launch Screen.storyboard"; sourceTree = "<group>"; };
-		18C092F2228DAECA000EC690 /* NEKitNoRule.conf */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = NEKitNoRule.conf; sourceTree = "<group>"; };
 		18D4C7F92281788300CE5E02 /* LVLaunchVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LVLaunchVC.h; sourceTree = "<group>"; };
 		18D4C7FA2281788300CE5E02 /* LVLaunchVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LVLaunchVC.m; sourceTree = "<group>"; };
 		18D4C7FD2281794C00CE5E02 /* LVLaunchCell.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LVLaunchCell.h; sourceTree = "<group>"; };
@@ -131,10 +122,6 @@
 		18DC4B692285BFED007F96BF /* UIWindow+MBProgressHUD.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = "UIWindow+MBProgressHUD.m"; sourceTree = "<group>"; };
 		18DC4B902286987E007F96BF /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		2C6FA9D22EE21C4332121B61 /* Pods-LightningVPN.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-LightningVPN.release.xcconfig"; path = "Target Support Files/Pods-LightningVPN/Pods-LightningVPN.release.xcconfig"; sourceTree = "<group>"; };
-		311365DF22758B9F00BB1D9E /* HTTPRequestManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = HTTPRequestManager.h; sourceTree = "<group>"; };
-		311365E022758B9F00BB1D9E /* HTTPRequestManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = HTTPRequestManager.m; sourceTree = "<group>"; };
-		311365E222758BB200BB1D9E /* GlobalManager.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = GlobalManager.h; sourceTree = "<group>"; };
-		311365E322758BB200BB1D9E /* GlobalManager.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = GlobalManager.m; sourceTree = "<group>"; };
 		311365E7227597C900BB1D9E /* LVLeftMenuVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LVLeftMenuVC.h; sourceTree = "<group>"; };
 		311365E8227597C900BB1D9E /* LVLeftMenuVC.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LVLeftMenuVC.m; sourceTree = "<group>"; };
 		311365EA227597DA00BB1D9E /* LVMainVC.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = LVMainVC.h; sourceTree = "<group>"; };
@@ -215,16 +202,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		18424C03228DA8FC006B72DE /* SiriShortCuts */ = {
-			isa = PBXGroup;
-			children = (
-				18424BEA228DA3C8006B72DE /* Intents.intentdefinition */,
-				18424BFE228DA4EB006B72DE /* StartIntentHandler.h */,
-				18424BFF228DA4EB006B72DE /* StartIntentHandler.m */,
-			);
-			path = SiriShortCuts;
-			sourceTree = "<group>";
-		};
 		18644282228322E200E8F4C6 /* PacketTunnel */ = {
 			isa = PBXGroup;
 			children = (
@@ -385,9 +362,7 @@
 		31A76CC0227586A5003E39B2 /* LightningVPN */ = {
 			isa = PBXGroup;
 			children = (
-				18424C03228DA8FC006B72DE /* SiriShortCuts */,
-				186442A62283263200E8F4C6 /* NEKitRule.conf */,
-				18C092F2228DAECA000EC690 /* NEKitNoRule.conf */,
+				188BCF3322E58B520086A67C /* NEKitRule.conf */,
 				1864428E2283255900E8F4C6 /* LightningVPN.entitlements */,
 				31A76CC1227586A5003E39B2 /* AppDelegate.h */,
 				31A76CC2227586A5003E39B2 /* AppDelegate.m */,
@@ -446,10 +421,6 @@
 			isa = PBXGroup;
 			children = (
 				18B183CA229159EA00B66CAC /* RESideMenu */,
-				311365E222758BB200BB1D9E /* GlobalManager.h */,
-				311365E322758BB200BB1D9E /* GlobalManager.m */,
-				311365DF22758B9F00BB1D9E /* HTTPRequestManager.h */,
-				311365E022758B9F00BB1D9E /* HTTPRequestManager.m */,
 			);
 			path = Tool;
 			sourceTree = "<group>";
@@ -609,10 +580,9 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				18C092F3228DAECA000EC690 /* NEKitNoRule.conf in Resources */,
+				188BCF3422E58B520086A67C /* NEKitRule.conf in Resources */,
 				31A76CCB227586A7003E39B2 /* Assets.xcassets in Resources */,
 				18BF512A228FD28000649338 /* Launch Screen.storyboard in Resources */,
-				186442A72283263200E8F4C6 /* NEKitRule.conf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -717,18 +687,14 @@
 				188CD8C2228712C900203613 /* HUDManager.m in Sources */,
 				311366042275FE0B00BB1D9E /* LVMainConnectNoteView.m in Sources */,
 				31A76CE522758B46003E39B2 /* LVTabbarController.m in Sources */,
-				18424C00228DA4EB006B72DE /* StartIntentHandler.m in Sources */,
-				311365E122758B9F00BB1D9E /* HTTPRequestManager.m in Sources */,
 				311365E9227597C900BB1D9E /* LVLeftMenuVC.m in Sources */,
 				18DC4B6A2285BFED007F96BF /* UIWindow+MBProgressHUD.m in Sources */,
 				31A76CDF22758ADD003E39B2 /* LVBaseModel.m in Sources */,
 				18D4C7FB2281788300CE5E02 /* LVLaunchVC.m in Sources */,
 				3113660D2276E2CF00BB1D9E /* LVMainCodeInputView.m in Sources */,
-				18424BEB228DA3C8006B72DE /* Intents.intentdefinition in Sources */,
 				311365F72275AF1100BB1D9E /* LVMainNavigationView.m in Sources */,
 				311365F322759FB200BB1D9E /* LVLeftMenuHeaderView.m in Sources */,
 				31BF424122773D0500330422 /* LVLeftMenuVIPBuyView.m in Sources */,
-				311365E422758BB200BB1D9E /* GlobalManager.m in Sources */,
 				18B183D2229159F300B66CAC /* RESideMenu.m in Sources */,
 				31BF423E2277297500330422 /* UIButton+Extension.m in Sources */,
 				311365FE2275BCEA00BB1D9E /* LVAboutVC.m in Sources */,

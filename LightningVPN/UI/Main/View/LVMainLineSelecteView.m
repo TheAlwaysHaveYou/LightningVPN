@@ -46,18 +46,18 @@ static NSString * const headerIdentifier = @"header";
         self.layer.mask = maskLayer;
         
         self.panGesture = [[UIPanGestureRecognizer alloc] initWithTarget:self action:@selector(panGestureAction:)];
-//        [self addGestureRecognizer:self.panGesture];
+        [self addGestureRecognizer:self.panGesture];
         
         self.titleLabel = [[UILabel alloc] initWithFrame:CGRectMake((self.width-FITSCALE(334))/2, FITSCALE(30), FITSCALE(334), FITSCALE(26))];
         self.titleLabel.font = FitBorderFont(19);
         self.titleLabel.textColor = kColor_404852;
         self.titleLabel.text = @"选择线路(智能模式)";
-        [self addSubview:self.titleLabel];
+//        [self addSubview:self.titleLabel];
         
         self.switchControl = [[UISwitch alloc] initWithFrame:CGRectMake(self.width-FITSCALE(100), FITSCALE(30), FITSCALE(50), FITSCALE(26))];
         self.switchControl.on = YES;
         [self.switchControl addTarget:self action:@selector(changeLinkModel:) forControlEvents:UIControlEventTouchUpInside];
-        [self addSubview:self.switchControl];
+//        [self addSubview:self.switchControl];
         
         self.nameLabel = [[UILabel alloc] initWithFrame:CGRectMake((self.width-FITSCALE(334))/2, FITSCALE(56), FITSCALE(334), FITSCALE(18))];
         self.nameLabel.font = FitFont(15);

@@ -13,7 +13,6 @@
 #import "LVLeftMenuVC.h"
 #import "LVMainVC.h"
 #import "AFNetworkActivityIndicatorManager.h"
-#import "StartIntentIntent.h"
 #import "LVVPNManager.h"
 
 @interface AppDelegate ()<RESideMenuDelegate>
@@ -113,20 +112,6 @@
 
 - (void)applicationWillTerminate:(UIApplication *)application {
     // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
-}
-
-- (BOOL)application:(UIApplication *)application continueUserActivity:(NSUserActivity *)userActivity restorationHandler:(void(^)(NSArray<id<UIUserActivityRestoring>> * __nullable restorableObjects))restorationHandler {
-    if (@available(iOS 12.0, *)) {
-        if([userActivity.interaction.intent isKindOfClass:[StartIntentIntent class]]){
-            NSLog(@"唤醒处理数据啦+++++++++++++++++");
-            if (VPNStatus_on == [LVVPNManager sharedInstance].VPNStatus) {
-                [[LVVPNManager sharedInstance] disconnect];
-            }else {
-                [[LVVPNManager sharedInstance] connect];
-            }
-        }
-    }
-    return YES;
 }
 
 @end
